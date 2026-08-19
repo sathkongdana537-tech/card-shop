@@ -1,0 +1,1012 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ZEALLA</title>
+<link rel="icon" type="image/x-icon" href="pf/no game png-01.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bungee&family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+<style>
+
+/* ============ TOKENS (light theme) ============ */
+:root{
+    --bg:#faf9fc;
+    --elevated:#ffffff;
+    --surface:#f3f3f9;
+    --surface-2:#eaeaf4;
+    --border:#e4e4f0;
+    --text:#15161f;
+    --text-dim:#5c5f74;
+    --text-faint:#9395a8;
+
+    --gold:#e8a921;
+    --fire:#ff6b4a;
+    --water:#2f9fe0;
+    --grass:#3fae5c;
+    --electric:#e0a800;
+    --psychic:#a24fe0;
+    --dragon:#6b4de0;
+    --dark:#4a4e69;
+    --fairy:#e85fb0;
+    --steel:#5f7896;
+    --ice:#3fa9c9;
+    --ground:#a97a42;
+
+    --radius-lg:24px;
+    --radius-md:16px;
+    --radius-sm:10px;
+
+    --shadow-soft:0 20px 45px rgba(30,20,60,.12);
+    --shadow-card:0 2px 10px rgba(30,20,60,.06);
+}
+
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{
+    background: var(--bg);
+    color:var(--text);
+    font-family:'Inter',sans-serif;
+    overflow-x:hidden;
+}
+h1,h2,h3,.display{font-family:'Bungee',cursive;letter-spacing:.5px;}
+.mono{font-family:'JetBrains Mono',monospace;}
+a{color:inherit;}
+button{font-family:inherit;cursor:pointer;border:none;}
+img{max-width:100%;display:block;}
+::selection{background:var(--water);color:#fff;}
+
+.wrap{width:88%;max-width:1240px;margin:0 auto;}
+.eyebrow{
+    display:inline-flex;align-items:center;gap:8px;
+    font-family:'JetBrains Mono',monospace;
+    font-size:12px;letter-spacing:2px;text-transform:uppercase;
+    color:var(--psychic);margin-bottom:14px;
+}
+.eyebrow::before{content:"◆";color:var(--gold);}
+
+/* ============ NAVBAR ============ */
+.navbar{
+    position:sticky;top:0;z-index:1000;
+    background:rgba(255,255,255,.95);
+    backdrop-filter:blur(14px);
+    border-bottom:1px solid var(--border);
+    display:flex;align-items:center;justify-content:space-between;
+    padding:16px 5%;
+}
+.logo{
+    font-family:'Bungee',cursive;
+    font-size:22px;
+    display:flex;align-items:center;gap:8px;
+    text-decoration:none;
+    color:var(--text);
+}
+.logo .mark{
+    width:34px;height:34px;border-radius:8px;
+    background: whitesmoke;
+    display:flex;align-items:center;justify-content:center;
+    font-size:16px;
+    color:#fff;
+}
+.logo span{color:var(--gold);}
+
+.menu{display:flex;gap:6px;}
+.menu a{
+    text-decoration:none;color:var(--text-dim);font-weight:600;font-size:14px;
+    padding:10px 16px;border-radius:999px;transition:.25s;
+}
+.menu a:hover{background:var(--surface);color:var(--text);}
+
+.nav-actions{display:flex;align-items:center;gap:12px;}
+.cart-btn{
+    position:relative;
+    background:var(--surface);
+    border:1px solid var(--border);
+    color:var(--text);
+    width:42px;height:42px;border-radius:12px;
+    display:flex;align-items:center;justify-content:center;
+    font-size:18px;transition:.25s;
+}
+.cart-btn:hover{border-color:var(--water);transform:translateY(-2px);}
+.cart-count{
+    position:absolute;top:-6px;right:-6px;
+    background:var(--gold);color:#1a1300;
+    font-size:11px;font-weight:800;
+    min-width:18px;height:18px;border-radius:999px;
+    display:flex;align-items:center;justify-content:center;
+    padding:0 3px;
+    font-family:'JetBrains Mono',monospace;
+}
+.hamburger{display:none;background:var(--surface);color:var(--text);font-size:18px;width:42px;height:42px;border-radius:12px;border:1px solid var(--border);align-items:center;justify-content:center;transition:.2s;}
+.hamburger:hover{border-color:var(--water);}
+.mobile-menu{
+    display:none;flex-direction:column;
+    max-height:0;overflow:hidden;
+    background:var(--elevated);border-bottom:1px solid var(--border);
+    transition:max-height .35s ease;
+}
+.mobile-menu.open{max-height:400px;}
+.mobile-menu a{
+    text-decoration:none;color:var(--text-dim);font-weight:600;font-size:15px;
+    padding:16px 8%;border-bottom:1px solid var(--border);transition:.2s;
+}
+.mobile-menu a:hover,.mobile-menu a:active{background:var(--surface);color:var(--text);}
+
+/* ============ HERO ============ */
+.hero{
+    width:88%;max-width:1240px;margin:50px auto 30px;
+    display:grid;grid-template-columns:1.1fr .9fr;
+    gap:50px;align-items:center;
+    padding:20px 0;
+}
+.hero h1{
+    font-size:56px;line-height:1.05;margin-bottom:20px;
+}
+.hero h1 .accent{
+    color:var(--dragon);
+}
+.hero p{color:var(--text-dim);font-size:17px;line-height:1.7;margin-bottom:30px;max-width:480px;}
+.hero-ctas{display:flex;gap:14px;flex-wrap:wrap;}
+.btn-primary{
+    background:var(--gold);color:#fff;font-weight:800;font-size:14px;
+    padding:15px 26px;border-radius:12px;transition:.25s;
+    box-shadow:0 10px 25px rgba(232,169,33,.28);
+}
+.btn-primary:hover{transform:translateY(-3px);opacity:.9;}
+.btn-ghost{
+    background:#fff;border:1px solid var(--border);color:var(--text);
+    font-weight:700;font-size:14px;padding:15px 26px;border-radius:12px;transition:.25s;
+}
+.btn-ghost:hover{border-color:var(--water);color:var(--water);}
+
+.hero-stats{display:flex;gap:30px;margin-top:36px;}
+.hero-stats .num{font-family:'JetBrains Mono',monospace;font-size:24px;font-weight:700;color:var(--dragon);}
+.hero-stats .lab{font-size:12px;color:var(--text-faint);text-transform:uppercase;letter-spacing:1px;}
+
+.hero-card-stage{display:flex;justify-content:center;}
+.hero-card{
+    width:290px;aspect-ratio:5/7;
+    border-radius:20px;
+    position:relative;
+    background:#1a1030;
+    border:2px solid var(--dragon);
+    box-shadow:var(--shadow-soft);
+    padding:16px;
+    overflow:hidden;
+    color:#fff;
+}
+.hero-card .rarity-tag{
+    position:relative;z-index:2;
+    display:inline-block;font-family:'JetBrains Mono',monospace;font-size:10px;font-weight:700;
+    letter-spacing:1.5px;background:var(--dragon);color:white;padding:4px 10px;border-radius:999px;
+}
+.hero-card .art{
+    position:relative;z-index:2;
+    height:150px;display:flex;align-items:center;justify-content:center;
+    font-size:80px;margin:14px 0;
+}
+.hero-card .art img{width:100%;height:100%;object-fit:contain;border-radius:10px;}
+.hero-card h3{position:relative;z-index:2;font-size:20px;margin-bottom:6px;}
+.hero-card p{position:relative;z-index:2;font-size:12px;color:#c7c9dd;line-height:1.5;}
+.hero-card .stat-row{
+    position:relative;z-index:2;
+    display:flex;justify-content:space-between;align-items:center;
+    margin-top:14px;padding-top:14px;border-top:1px dashed rgba(255,255,255,.2);
+}
+.hero-card .price{font-family:'JetBrains Mono',monospace;color:var(--gold);font-weight:700;}
+
+/* ============ SECTION HEADERS ============ */
+section{width:88%;max-width:1240px;margin:90px auto;}
+.section-head{display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:36px;flex-wrap:wrap;gap:16px;}
+.section-head h2{font-size:34px;}
+.section-head p{color:var(--text-dim);max-width:440px;font-size:15px;}
+
+/* ============ FILTERS ============ */
+.filters{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:32px;}
+.filter-btn{
+    background:#fff;border:1px solid var(--border);color:var(--text-dim);
+    font-size:13px;font-weight:700;padding:10px 18px;border-radius:999px;transition:.2s;
+    display:flex;align-items:center;gap:6px;
+}
+.filter-btn:hover{color:var(--text);border-color:var(--text-faint);}
+.filter-btn.active{background:var(--text);color:#fff;border-color:var(--text);}
+
+/* ============ CARD GRID ============ */
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:22px;}
+.card{
+    background:var(--elevated);
+    border:1px solid var(--border);
+    border-radius:var(--radius-md);
+    padding:18px;
+    position:relative;
+    overflow:hidden;
+    transition:transform .35s ease, box-shadow .35s ease, border-color .35s ease;
+    box-shadow:var(--shadow-card);
+}
+.card:hover{transform:translateY(-8px);box-shadow:var(--shadow-soft);}
+.card.rarity-common{border-color:var(--border);}
+.card.rarity-rare{border-color:var(--gold);}
+.card.rarity-holo{border-color:var(--water);}
+.card.rarity-ultra{border-color:var(--dragon);box-shadow:0 0 0 1px var(--dragon) inset, var(--shadow-card);}
+
+.card-badge{
+    position:absolute;top:14px;right:14px;z-index:2;
+    font-family:'JetBrains Mono',monospace;font-size:9px;font-weight:700;letter-spacing:1px;
+    padding:4px 8px;border-radius:999px;text-transform:uppercase;
+}
+.badge-common{background:var(--surface-2);color:var(--text-dim);}
+.badge-rare{background:var(--gold);color:#fff;}
+.badge-holo{background:var(--water);color:#fff;}
+.badge-ultra{background:var(--dragon);color:white;}
+
+.type-chip{
+    display:inline-flex;align-items:center;gap:5px;
+    font-size:10px;font-weight:700;letter-spacing:1px;text-transform:uppercase;
+    color:var(--text-faint);margin-bottom:10px;
+}
+.type-dot{width:8px;height:8px;border-radius:50%;}
+.dot-fire{background:var(--fire);} .dot-water{background:var(--water);}
+.dot-grass{background:var(--grass);} .dot-electric{background:var(--electric);}
+.dot-psychic{background:var(--psychic);} .dot-dragon{background:var(--dragon);}
+.dot-dark{background:var(--dark);} .dot-fairy{background:var(--fairy);} .dot-steel{background:var(--steel);}
+.dot-ice{background:var(--ice);} .dot-ground{background:var(--ground);}
+
+.card-art{
+    height:130px;display:flex;align-items:center;justify-content:center;
+    font-size:52px;border-radius:12px;margin-bottom:14px;
+    background:var(--surface);
+    overflow:hidden;
+}
+.card-art img{width:100%;height:100%;object-fit:contain;border-radius:10px;}
+.card h3{font-size:17px;margin-bottom:6px;}
+.card .flavor{font-size:12.5px;color:var(--text-dim);line-height:1.5;min-height:38px;margin-bottom:14px;}
+.card .card-footer{display:flex;justify-content:space-between;align-items:center;}
+.card .price{font-family:'JetBrains Mono',monospace;font-weight:700;color:var(--text);font-size:15px;}
+.add-btn{
+    background:var(--surface);color:var(--text);font-size:12px;font-weight:700;
+    padding:9px 14px;border-radius:9px;transition:.2s;border:1px solid var(--border);
+}
+.add-btn:hover{background:var(--gold);color:#fff;border-color:var(--gold);}
+
+/* ============ SPOTLIGHT ============ */
+.spotlight{
+    background:#171233;
+    border:1px solid var(--border);
+    border-radius:var(--radius-lg);
+    padding:56px;
+    display:grid;grid-template-columns:.9fr 1.1fr;gap:50px;align-items:center;
+    position:relative;overflow:hidden;
+    color:#fff;
+}
+.spotlight-card{
+    position:relative;z-index:2;
+    aspect-ratio:5/7;max-width:280px;margin:0 auto;
+    border-radius:18px;border:2px solid var(--dragon);
+    background:#1e1638;
+    padding:20px;box-shadow:0 25px 60px rgba(0,0,0,.4);
+}
+.spotlight-card .art{font-size:90px;text-align:center;margin:16px 0;height:180px;display:flex;align-items:center;justify-content:center;}
+.spotlight-card .art img{width:100%;height:100%;object-fit:contain;border-radius:10px;}
+.spotlight-text{position:relative;z-index:2;}
+.spotlight-text h2{font-size:38px;margin-bottom:16px;}
+.spotlight-text p{color:#c7c9dd;line-height:1.8;margin-bottom:26px;font-size:15px;}
+.spotlight-meta{display:flex;gap:26px;margin-bottom:26px;flex-wrap:wrap;}
+.spotlight-meta .num{font-family:'JetBrains Mono',monospace;font-size:20px;color:var(--gold);font-weight:700;}
+.spotlight-meta .lab{font-size:11px;color:#9295b5;text-transform:uppercase;letter-spacing:1px;}
+
+/* ============ REVIEWS ============ */
+.review-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:22px;}
+.review-card{
+    background:var(--elevated);border:1px solid var(--border);border-radius:var(--radius-md);
+    padding:26px;transition:.3s;box-shadow:var(--shadow-card);
+}
+.review-card:hover{transform:translateY(-6px);border-color:var(--water);box-shadow:var(--shadow-soft);}
+.stars{color:var(--gold);letter-spacing:2px;margin-bottom:12px;font-size:14px;}
+.review-card p{color:var(--text-dim);font-size:14px;line-height:1.7;margin-bottom:18px;}
+.reviewer{display:flex;align-items:center;gap:10px;}
+.reviewer .avatar{
+    width:34px;height:34px;border-radius:50%;
+    display:flex;align-items:center;justify-content:center;font-weight:800;font-size:13px;color:#fff;
+}
+.reviewer .name{font-weight:700;font-size:13px;}
+.reviewer .tag{font-size:11px;color:var(--text-faint);}
+
+/* ============ TEAM / CONTACT ============ */
+.team-banner{
+    background:#0b0d17;
+    border-radius:var(--radius-lg);padding:50px;text-align:center;margin-bottom:26px;
+    border:1px solid var(--border);color:#fff;
+}
+.team-banner h2{font-size:32px;margin-bottom:30px;}
+.team-members{display:flex;justify-content:center;gap:30px;flex-wrap:wrap;}
+.member{width:230px;background:#1c2038;border:1px solid #2c3253;border-radius:var(--radius-md);overflow:hidden;text-align:center;transition:.3s;}
+.member:hover{transform:translateY(-8px);border-color:var(--water);}
+.member img{width:100%;height:220px;object-fit:cover;}
+.member h3{font-size:15px;margin:16px 0 4px;font-family:'Inter',sans-serif;font-weight:800;color:#fff;}
+.member p{font-size:12px;color:#9295b5;padding-bottom:18px;}
+.logo-member{display:flex;align-items:center;justify-content:center;background:transparent;border:none;}
+.logo-member .mark-big{
+    width:150px;height:150px;border-radius:26px;
+    display:flex;align-items:center;justify-content:center;font-size:60px;
+    color:#fff;
+}
+
+.contact-box{
+    background:var(--elevated);border:1px solid var(--border);
+    border-radius:var(--radius-lg);padding:50px;text-align:center;box-shadow:var(--shadow-card);
+}
+.contact-box h2{font-size:32px;margin-bottom:14px;}
+.contact-box>p{color:var(--text-dim);margin-bottom:36px;font-size:15px;}
+.contact-items{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:20px;}
+.contact-item{
+    background:#15161f;border:1px solid #15161f;color:white;
+    padding:30px;border-radius:16px;transition:.3s;
+}
+.contact-item:hover{transform:translateY(-8px);border-color:var(--water);}
+.contact-item h3{color:var(--water);margin-bottom:10px;font-size:16px;}
+.contact-item a{color:white;text-decoration:none;font-size:15px;}
+.contact-item a:hover{color:var(--water);}
+
+/* ============ FOOTER ============ */
+footer{
+    background:#0b0d17;color:white;text-align:center;padding:60px 20px 40px;margin-top:100px;
+}
+footer .logo{justify-content:center;margin-bottom:10px;color:#fff;}
+footer p{color:#8d90ab;font-size:13px;margin-top:8px;}
+.top-btn{
+    position:fixed;bottom:30px;right:30px;z-index:900;
+    width:46px;height:46px;border-radius:50%;
+    background:var(--gold);color:#fff;
+    display:flex;align-items:center;justify-content:center;font-size:18px;font-weight:800;
+    text-decoration:none;box-shadow:0 10px 25px rgba(30,20,60,.25);transition:.25s;
+}
+.top-btn:hover{transform:translateY(-5px);}
+
+/* ============ CART DRAWER ============ */
+.overlay{
+    position:fixed;inset:0;background:rgba(20,20,35,.5);
+    opacity:0;pointer-events:none;transition:.3s;z-index:1998;
+}
+.overlay.show{opacity:1;pointer-events:auto;}
+.drawer{
+    position:fixed;top:0;right:-420px;width:400px;max-width:90vw;height:100%;
+    background:var(--elevated);border-left:1px solid var(--border);
+    z-index:1999;transition:right .35s ease;display:flex;flex-direction:column;
+    box-shadow:-10px 0 40px rgba(30,20,60,.12);
+}
+.drawer.open{right:0;}
+.drawer-head{display:flex;justify-content:space-between;align-items:center;padding:22px 24px;border-bottom:1px solid var(--border);}
+.drawer-head h3{font-size:18px;}
+.icon-btn{background:var(--surface);color:var(--text);width:34px;height:34px;border-radius:9px;font-size:16px;}
+.drawer-body{flex:1;overflow-y:auto;padding:20px 24px;}
+.cart-row{display:flex;gap:14px;align-items:center;padding:14px 0;border-bottom:1px solid var(--border);}
+.cart-row .art{width:52px;height:52px;border-radius:10px;background:var(--surface);display:flex;align-items:center;justify-content:center;font-size:26px;flex-shrink:0;overflow:hidden;}
+.cart-row .art img{width:100%;height:100%;object-fit:contain;}
+.cart-row .info{flex:1;}
+.cart-row .info h4{font-size:14px;margin-bottom:4px;}
+.cart-row .info .meta{font-size:12px;color:var(--text-faint);}
+.qty-controls{display:flex;align-items:center;gap:8px;margin-top:6px;}
+.qty-controls button{background:var(--surface-2);width:22px;height:22px;border-radius:6px;color:var(--text);font-size:13px;}
+.qty-controls span{font-family:'JetBrains Mono',monospace;font-size:13px;min-width:16px;text-align:center;}
+.remove-btn{color:var(--text-faint);font-size:12px;text-decoration:underline;background:none;margin-top:6px;}
+.remove-btn:hover{color:var(--fire);}
+.empty-cart{text-align:center;color:var(--text-faint);padding:60px 10px;font-size:14px;}
+.empty-cart .big{font-size:44px;margin-bottom:16px;}
+.drawer-foot{padding:22px 24px;border-top:1px solid var(--border);}
+.drawer-foot .row{display:flex;justify-content:space-between;margin-bottom:16px;font-size:15px;}
+.drawer-foot .row .total{font-family:'JetBrains Mono',monospace;color:var(--text);font-weight:700;font-size:19px;}
+.checkout-btn{width:100%;background:var(--gold);color:#fff;font-weight:800;padding:16px;border-radius:12px;font-size:14px;}
+.checkout-btn:hover{opacity:.9;}
+
+/* ============ TOAST ============ */
+.toast{
+    position:fixed;bottom:30px;left:50%;transform:translateX(-50%) translateY(20px);
+    background:#15161f;border:1px solid var(--water);color:#fff;
+    padding:14px 22px;border-radius:12px;font-size:13px;font-weight:600;
+    opacity:0;pointer-events:none;transition:.3s;z-index:3000;
+    display:flex;align-items:center;gap:10px;box-shadow:0 15px 35px rgba(30,20,60,.3);
+}
+.toast.show{opacity:1;transform:translateX(-50%) translateY(0);}
+
+/* ============ RESPONSIVE ============ */
+@media(max-width:900px){
+    .menu{display:none;}
+    .hamburger{display:flex;}
+    .hero{grid-template-columns:1fr;text-align:center;}
+    .hero p{margin:0 auto 30px;}
+    .hero-stats{justify-content:center;}
+    .hero-card-stage{margin-top:20px;}
+    .hero-ctas{justify-content:center;}
+    .spotlight{grid-template-columns:1fr;padding:32px;text-align:center;}
+    .spotlight-meta{justify-content:center;}
+    .navbar{padding:14px 5%;}
+    .mobile-menu{display:flex;}
+}
+</style>
+</head>
+<body>
+
+<nav class="navbar">
+    <a href="#home" class="logo">ZEALLA<span>VAULT</span></a>
+    <div class="menu">
+        <a href="#home">Home</a>
+        <a href="#shop">Shop</a>
+        <a href="#featured">Spotlight</a>
+        <a href="#reviews">Reviews</a>
+        <a href="#contact">Contact</a>
+
+        <a href="khmer.html">KH</a>
+    </div>
+    <div class="nav-actions">
+        <button class="cart-btn" onclick="toggleCart(true)" aria-label="Open cart">
+            🛒<span class="cart-count" id="cartCount">0</span>
+        </button>
+        <button class="hamburger" id="hamburgerBtn" onclick="toggleMobileMenu()" aria-label="Open menu">☰</button>
+    </div>
+</nav>
+<div class="mobile-menu" id="mobileMenu">
+    <a href="#home" onclick="closeMobileMenu()">Home</a>
+    <a href="#shop" onclick="closeMobileMenu()">Shop</a>
+    <a href="#featured" onclick="closeMobileMenu()">Spotlight</a>
+    <a href="#reviews" onclick="closeMobileMenu()">Reviews</a>
+    <a href="#contact" onclick="closeMobileMenu()">Contact</a>
+</div>
+
+<section id="home" class="hero" style="margin-top:60px;">
+    <div>
+        <div class="eyebrow">New drops every friday</div>
+        <h1>Open the <span class="accent">Vault.</span><br>Pull something legendary.</h1>
+        <p>Hand-graded trading cards across eleven elements — from starter commons to ultra-rare holos. Build your binder, one pack at a time.</p>
+        <div class="hero-ctas">
+            <a href="#shop" class="btn-primary">Browse the Vault →</a>
+            <a href="#featured" class="btn-ghost">See this week's pull</a>
+        </div>
+        <div class="hero-stats">
+            <div><div class="num">12.4K</div><div class="lab">Cards graded</div></div>
+            <div><div class="num">98%</div><div class="lab">Trade satisfaction</div></div>
+            <div><div class="num">11</div><div class="lab">Elemental types</div></div>
+        </div>
+    </div>
+    <div class="hero-card-stage">
+        <div class="hero-card">
+            <span class="rarity-tag">ULTRA RARE</span>
+            <div class="art"><img src="pic/Rayquaza.jpg" alt=""></div>
+            <h3>Rayquaza</h3>
+            <p>Ancient, immense, and nearly impossible to pull.</p>
+            <div class="stat-row">
+                <span class="mono price">$2,500</span>
+                <span class="mono" style="color:#9295b5;font-size:11px;">#001/039</span>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="shop">
+    <div class="section-head">
+        <div>
+            <div class="eyebrow">The binder</div>
+            <h2>Shop the Collection</h2>
+        </div>
+        <p>Filter by element to find the card your deck's missing.</p>
+    </div>
+
+    <div class="filters" id="filters">
+        <button class="filter-btn active" data-type="all">✨ All</button>
+        <button class="filter-btn" data-type="fire">🔥 Fire</button>
+        <button class="filter-btn" data-type="water">💧 Water</button>
+        <button class="filter-btn" data-type="grass">🌿 Grass</button>
+        <button class="filter-btn" data-type="electric">⚡ Electric</button>
+        <button class="filter-btn" data-type="psychic">🔮 Psychic</button>
+        <button class="filter-btn" data-type="dragon">🐉 Dragon</button>
+        <button class="filter-btn" data-type="dark">🌑 Dark</button>
+        <button class="filter-btn" data-type="fairy">🧚 Fairy</button>
+        <button class="filter-btn" data-type="steel">⚙️ Steel</button>
+        <button class="filter-btn" data-type="ice">❄️ Ice</button>
+        <button class="filter-btn" data-type="ground">🏜️ Ground</button>
+    </div>
+
+    <div class="grid" id="cardGrid"></div>
+</section>
+
+<section id="featured">
+    <div class="spotlight">
+        <div class="spotlight-card">
+            <span class="rarity-tag" style="background:var(--dragon);color:white;font-family:'JetBrains Mono',monospace;font-size:10px;font-weight:700;padding:4px 10px;border-radius:999px;">ULTRA RARE · #001</span>
+            <div class="art"><img src="pic/Rayquaza.jpg" alt=""></div>
+            <h3 style="text-align:center;font-size:20px;color:#fff;">Rayquaza</h3>
+        </div>
+        <div class="spotlight-text">
+            <div class="eyebrow">This week's headline pull</div>
+            <h2>Rayquaza, the Sky High</h2>
+            <p>Only ten Rayquaza cards were ever printed in this foil run. Its emerald scales shift color under light, and collectors say the holo pattern never repeats the same way twice. If your binder has an empty dragon-type slot, this is the one to chase.</p>
+            <div class="spotlight-meta">
+                <div><div class="num">39</div><div class="lab">Ever printed</div></div>
+                <div><div class="num">PSA 10</div><div class="lab">Grade</div></div>
+                <div><div class="num">$2,500</div><div class="lab">Current price</div></div>
+            </div>
+            <button class="btn-primary" onclick="addToCart(10)">Add Rayquaza to Cart</button>
+        </div>
+    </div>
+</section>
+
+<section id="reviews">
+    <div class="section-head">
+        <div>
+            <div class="eyebrow">Trusted by collectors</div>
+            <h2>What the Vault's Traders Say</h2>
+        </div>
+    </div>
+    <div class="review-grid">
+        <div class="review-card">
+            <div class="stars">★★★★★</div>
+            <p>"Pulled Raikou out of my ass today and it's flawless, corners sharp, holo pattern is incredible in person cuz of my shit. i want to suck cock"</p>
+            <div class="reviewer">
+                <div class="avatar" style="background:var(--fire); color:#fff;">D</div>
+                <div><div class="name">D. Powel</div><div class="tag">Verified buyer</div></div>
+            </div>
+        </div>
+        <div class="review-card">
+            <div class="stars">★★★★★</div>
+            <p>"I saw a guy pulling a card from his ass today 10/10 would recommend."</p>
+            <div class="reviewer">
+                <div class="avatar" style="background:var(--water); color:#fff;">O</div>
+                <div><div class="name">O. Veasna</div><div class="tag">Verified buyer</div></div>
+            </div>
+        </div>
+        <div class="review-card">
+            <div class="stars">★★★★☆</div>
+            <p>"Alakazam's price is fair for a rare, and the description matched the actual card condition exactly. Will order again."</p>
+            <div class="reviewer">
+                <div class="avatar" style="background:var(--psychic); color:#fff;">P</div>
+                <div><div class="name">P. Both</div><div class="tag">Verified buyer</div></div>
+            </div>
+        </div>
+        <div class="review-card">
+            <div class="stars">★★★★★</div>
+            <p>"Been doing cocain for 8 years and ZeallaVault's shop now recommended me to do meth."</p>
+            <div class="reviewer">
+                <div class="avatar" style="background:var(--grass); color:#fff;">J</div>
+                <div><div class="name">J. Bart</div><div class="tag">Verified buyer</div></div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="contact">
+    <div class="team-banner">
+        <h2>SETEC INSTITUTE</h2>
+        <div class="team-members">
+            <div class="member">
+                <img src="pf/teacher.jpg" alt="Teacher">
+                <h3>MR. RY VISAN</h3>
+                <p>Web Development Teacher</p>
+            </div>
+            <div class="member logo-member">
+                <div class="mark-big">
+                    <img src="pf/setec Logo.png" alt="Logo" style="width:100%;height:100%;object-fit:cover;border-radius:inherit;">
+                </div>
+            </div>
+            <div class="member">
+                <img src="pf/me.jpg" alt="Student">
+                <h3>SAT KONGDANA</h3>
+                <p>GROUP: SX7</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="contact-box">
+        <h2>Get In Touch</h2>
+        <p>You can contact us using phone number, Telegram, or email.</p>
+        <div class="contact-items">
+            <div class="contact-item">
+                <h3>Phone Number</h3>
+                <p><a href="tel:+85598494948">+855 98 4949 48</a></p>
+            </div>
+            <div class="contact-item">
+                <h3>Telegram</h3>
+                <p><a href="https://t.me/KonGDaaN" target="_blank">@KonGDaaN</a></p>
+            </div>
+            <div class="contact-item">
+                <h3>Email</h3>
+                <p><a href="mailto:sathkongdana537@gmail.com">sathkongdana537@gmail.com</a></p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<footer>
+    <a href="#home" class="logo"><span class="mark"><img src="pf/no game png-01.png" alt=""></span>ZEALLA<span>VAULT</span></a>
+    <p>Collect the Legendary • Trade the Rare • 2026</p>
+    
+    <!-- Final Exam & Academic Info -->
+    <div style="margin-top: 24px; border-top: 1px solid #2c3253; padding-top: 20px; font-size: 13px; color: #9295b5;">
+        <p style="font-weight: 700; color: #fff; letter-spacing: 1px;">SETEC INSTITUTE — FINAL EXAM PROJECT</p>
+        <p style="margin-top: 6px;">Student: <strong style="color: #fff;">SAT KONGDANA</strong> | Group: <strong style="color: #fff;">SX7</strong></p>
+        <p style="margin-top: 4px;">Teacher: <strong style="color: #fff;">MR. RY VISAN</strong> (Web Development Teacher)</p>
+    </div>
+</footer>
+
+<a href="#home" class="top-btn">↑</a>
+
+<div class="overlay" id="overlay" onclick="toggleCart(false);"></div>
+<div class="drawer" id="drawer">
+    <div class="drawer-head">
+        <h3>Your Vault Cart</h3>
+        <button class="icon-btn" onclick="toggleCart(false)">✕</button>
+    </div>
+    <div class="drawer-body" id="drawerBody"></div>
+    <div class="drawer-foot">
+        <div class="row"><span>Subtotal</span><span class="total mono" id="cartTotal">$0.00</span></div>
+        <button class="checkout-btn" onclick="checkout()">Checkout</button>
+    </div>
+</div>
+
+<div class="toast" id="toast"></div>
+
+<script>
+const CARDS = [
+    /* ============ FIRE TYPE (19 cards) ============ */
+    {id:1,  name:"Charizard",      type:"fire",     rarity:"rare",   icon:"🔥", img:"pix/Charizard.jpg", price:35.99,  desc:"A swift predator wreathed in living flame."},
+    {id:2,  name:"Arcanine",       type:"fire",     rarity:"common", icon:"🐕", img:"pix/arcanine.jpg", price:15.99,   desc:"Small but fierce, its claws smolder with heat."},
+    {id:3,  name:"Ninetales",      type:"fire",     rarity:"holo",   icon:"🦊", img:"pic/ninetales.jpg", price:54.99,  desc:"Charges leave scorched hoofprints in its wake."},
+    {id:26, name:"Moltres",        type:"fire",     rarity:"ultra",  icon:"🔥", img:"pic/moltres.jpg", price:129.99, desc:"Its wings glow white-hot before it takes flight."},
+    {id:45, name:"Blaziken",       type:"fire",     rarity:"rare",   icon:"🦅", img:"pix/blaziken.jpg", price:45.00, desc:"Flames spout from its wrists, enveloping its knuckles in heat."},
+    {id:101,name:"Charmander",     type:"fire",     rarity:"common", icon:"🔥", img:"pix/charmander.jpg", price:4.99, desc:"Its tail flame flickers with its mood."},
+    {id:102,name:"Charmeleon",     type:"fire",     rarity:"common", icon:"🔥", img:"pix/charmeleon.jpg", price:9.99, desc:"Slashes foes with sharp claws in fiery rage."},
+    {id:103,name:"Cyndaquil",      type:"fire",     rarity:"common", icon:"🔥", img:"pix/cyndaquil.jpg", price:3.99, desc:"Timid by nature, its back flames flare when startled."},
+    {id:104,name:"Quilava",        type:"fire",     rarity:"common", icon:"🔥", img:"pic/quilava.jpg", price:12.50, desc:"Intimidates opponents with gusts of scorching air."},
+    {id:105,name:"Typhlosion",     type:"fire",     rarity:"holo",   icon:"🔥", img:"pic/typhlosion.jpg", price:42.00, desc:"Creates blazing heat explosions to reduce foes to ash."},
+    {id:106,name:"Torchic",        type:"fire",     rarity:"common", icon:"🔥", img:"pic/torchic.jpg", price:4.50, desc:"Keeps a small fire burning inside its belly constantly."},
+    {id:107,name:"Combusken",      type:"fire",     rarity:"common", icon:"🔥", img:"pix/combusken.jpg", price:11.00, desc:"Punches at lightning speed with fiery martial arts."},
+    {id:108,name:"Chimchar",       type:"fire",     rarity:"common", icon:"🔥", img:"pix/chimchar.jpg", price:5.00, desc:"Scales sheer cliffs using nimble footwork and fire."},
+    {id:109,name:"Monferno",       type:"fire",     rarity:"common", icon:"🔥", img:"pic/monferno.jpg", price:14.00, desc:"Uses ceiling and walls to launch aerial fire strikes."},
+    {id:110,name:"Infernape",      type:"fire",     rarity:"holo",   icon:"🔥", img:"pix/infernape.jpg", price:68.00, desc:"Fights with a fiery crown blazing proudly on its head."},
+    {id:111,name:"Tepig",          type:"fire",     rarity:"common", icon:"🔥", img:"pic/tepig.jpg", price:3.50, desc:"Blows fireballs from its snout when excited."},
+    {id:112,name:"Pignite",        type:"fire",     rarity:"common", icon:"🔥", img:"pic/pignite.jpg", price:10.50, desc:"Internal fire roars louder when it gets pumped up."},
+    {id:113,name:"Emboar",         type:"fire",     rarity:"rare",   icon:"🔥", img:"pix/emboar.jpg", price:38.00, desc:"Fires blazing heat from its fiery chin bristles."},
+    {id:114,name:"Magmortar",      type:"fire",     rarity:"rare",   icon:"🔥", img:"pic/magmortar.jpg", price:29.99, desc:"Shoots fireballs hotter than 3,600 degrees Fahrenheit."},
+
+    /* ============ WATER TYPE (19 cards) ============ */
+    {id:4,  name:"Gyarados",       type:"water",    rarity:"holo",   icon:"🌊", img:"pix/gyarados.jpg", price:49.99,  desc:"Rides deep currents, scales shimmer like glass."},
+    {id:5,  name:"Squirtle",       type:"water",    rarity:"common", icon:"💧", img:"pic/squirtle.jpg", price:2.99,   desc:"A playful creature that loves shallow pools."},
+    {id:6,  name:"Lapras",         type:"water",    rarity:"rare",   icon:"🦕", img:"pic/lapras.jpg", price:22.99,  desc:"Breathes air cold enough to frost a pond's edge."},
+    {id:27, name:"Magikarp",       type:"water",    rarity:"common", icon:"🐟", img:"pic/magikarp.jpg", price:3.49,   desc:"Splashes around, waiting for its true power to awaken."},
+    {id:41, name:"Lugia",          type:"water",    rarity:"ultra",  icon:"🌪️", img:"pic/lugia.jpg", price:1200.00, desc:"The guardian of the seas, its wings can cause 40-day storms."},
+    {id:201,name:"Wartortle",      type:"water",    rarity:"common", icon:"💧", img:"pic/wartortle.jpg", price:8.99, desc:"Long, furry tail is a symbol of ancient longevity."},
+    {id:202,name:"Blastoise",      type:"water",    rarity:"rare",   icon:"💧", img:"pix/blastoise.jpg", price:48.00, desc:"Water spouts from heavy steel cannons on its shell."},
+    {id:203,name:"Totodile",       type:"water",    rarity:"common", icon:"💧", img:"pic/totodile.jpg", price:5.50, desc:"Will bite anything that moves with powerful jaws."},
+    {id:204,name:"Feraligatr",     type:"water",    rarity:"rare",   icon:"💧", img:"pix/feraligatr.jpg", price:41.00, desc:"Intimidates foes by opening its massive, toothy maw."},
+    {id:205,name:"Psyduck",        type:"water",    rarity:"common", icon:"💧", img:"pic/psyduck.jpg", price:3.25, desc:"Always suffers from headaches that unlock hidden psychic power."},
+    {id:206,name:"Golduck",        type:"water",    rarity:"common", icon:"💧", img:"pix/golduck.jpg", price:12.00, desc:"Swims smoothly through turbulent rivers with ease."},
+    {id:207,name:"Horsea",         type:"water",    rarity:"common", icon:"💧", img:"pix/horsea.jpg", price:3.00, desc:"Shoots ink to escape from swift ocean predators."},
+    {id:208,name:"Seadra",         type:"water",    rarity:"common", icon:"💧", img:"pic/seadra.jpg", price:9.50, desc:"Poisonous barbs cover its entire streamlined body."},
+    {id:209,name:"Kingdra",        type:"water",    rarity:"holo",   icon:"💧", img:"pix/kingdra.jpg", price:55.00, desc:"Sleeps deep on the ocean floor, creating whirlpools."},
+    {id:210,name:"Staryu",         type:"water",    rarity:"common", icon:"⭐", img:"pic/staryu.jpg", price:3.75, desc:"Central core glows with a mysterious red radiance."},
+    {id:211,name:"Starmie",        type:"water",    rarity:"rare",   icon:"⭐", img:"pic/starmie.jpg", price:26.50, desc:"Emits radio waves into deep outer space from its core."},
+    {id:212,name:"Vaporeon",       type:"water",    rarity:"holo",   icon:"💧", img:"pic/vaporeon.jpg", price:49.00, desc:"Can dissolve into water to vanish completely from sight."},
+    {id:213,name:"Milotic",        type:"water",    rarity:"holo",   icon:"💧", img:"pic/milotic.jpg", price:75.00, desc:"Known as the most beautiful Pokémon in existence."},
+    {id:214,name:"Kyogre",         type:"ultra",    type:"water",    rarity:"ultra", icon:"🌊", img:"pix/kyogre.jpg", price:1100.00, desc:"Expanded the seas of ancient legend by bringing heavy rain."},
+
+    /* ============ GRASS TYPE (19 cards) ============ */
+    {id:7,  name:"Venusaur",       type:"grass",    rarity:"rare",   icon:"🌿", img:"pic/venusaur.jpg", price:19.99,  desc:"Its plant bloom grows larger and more fragrant each season."},
+    {id:8,  name:"Bulbasaur",      type:"grass",    rarity:"common", icon:"🌱", img:"pix/bulbasaur.jpg", price:2.99,   desc:"Just beginning to bud — full of potential."},
+    {id:9,  name:"Turtwig",        type:"grass",    rarity:"common", icon:"🐢", img:"pic/turtwig.jpg", price:3.99,   desc:"Moves slowly; the bush on its head is centuries old."},
+    {id:28, name:"Roserade",       type:"grass",    rarity:"holo",   icon:"🌹", img:"pic/roserade.jpg", price:47.99,  desc:"Strikes fast, wrapped in sweet-scented vines."},
+    {id:301,name:"Ivysaur",        type:"grass",    rarity:"common", icon:"🌿", img:"pix/ivysaur.jpg", price:9.49, desc:"Bud on its back draws solar energy to bloom."},
+    {id:302,name:"Oddish",         type:"grass",    rarity:"common", icon:"🌱", img:"pic/oddish.jpg", price:2.49, desc:"Walks about on its two root feet under moonlight."},
+    {id:303,name:"Gloom",          type:"grass",    rarity:"common", icon:"🌿", img:"pix/gloom.jpg", price:7.50, desc:"Stinky fluid from its pistil smells like rotten trash."},
+    {id:304,name:"Vileplume",      type:"grass",    rarity:"rare",   icon:"🌸", img:"pic/vileplume.jpg", price:31.00, desc:"Scatters heavy toxic pollen from giant red petals."},
+    {id:305,name:"Chikorita",      type:"grass",    rarity:"common", icon:"🌱", img:"pix/chikorita.jpg", price:4.20, desc:"Waves its leaf antenna to check surrounding warmth."},
+    {id:306,name:"Bayleef",        type:"grass",    rarity:"common", icon:"🌿", img:"pix/bayleef.jpg", price:11.50, desc:"Spicy aroma from its neck leaf calms aggressive moods."},
+    {id:307,name:"Meganium",       type:"grass",    rarity:"holo",   icon:"🌿", img:"pic/meganium.jpg", price:52.00, desc:"Breath revives dead plants and drooping flowers."},
+    {id:308,name:"Treecko",        type:"grass",    rarity:"common", icon:"🦎", img:"pic/treecko.jpg", price:4.80, desc:"Scales smooth glass walls easily with hooked toes."},
+    {id:309,name:"Grovyle",        type:"grass",    rarity:"common", icon:"🌿", img:"pix/grovyle.jpg", price:13.20, desc:"Leaps swiftly through dense jungle foliage."},
+    {id:310,name:"Sceptile",       type:"grass",    rarity:"holo",   icon:"🌿", img:"pic/sceptile.jpg", price:65.00, desc:"Leaf blades on its arms can slice down thick trees."},
+    {id:311,name:"Roselia",        type:"grass",    rarity:"common", icon:"🌹", img:"pic/roselia.jpg", price:6.00, desc:"Drinks nutrient-rich spring water to keep flowers bright."},
+    {id:312,name:"Budew",          type:"grass",    rarity:"common", icon:"🌱", img:"pix/budew.jpg", price:3.10, desc:"Closes up tightly during cold winter nights."},
+    {id:313,name:"Leafeon",        type:"grass",    rarity:"holo",   icon:"🌿", img:"pic/leafeon.jpg", price:44.00, desc:"Cells are similar to plants, performing clean photosynthesis."},
+    {id:314,name:"Snivy",          type:"grass",    rarity:"common", icon:"🐍", img:"pic/snivy.jpg", price:4.00, desc:"Exposes its tail to sunlight to absorb solar energy."},
+    {id:315,name:"Serperior",      type:"grass",    rarity:"rare",   icon:"🌿", img:"pic/serperior.jpg", price:39.50, desc:"Overawes opponents with a regal, majestic glare."},
+
+    /* ============ DRAGON TYPE (19 cards) ============ */
+    {id:10, name:"Rayquaza",       type:"dragon",   rarity:"ultra",  icon:"🐉", img:"pic/rayquaza.jpg", price:2500.00, desc:"Ancient, immense, and nearly impossible to pull."},
+    {id:11, name:"Dragonite",      type:"dragon",   rarity:"holo",   icon:"🐲", img:"pix/dragonite.jpg", price:119.99, desc:"Circles high above storms, waiting to strike."},
+    {id:12, name:"Dratini",        type:"dragon",   rarity:"common", icon:"🐍", img:"pix/dratini.jpg", price:6.99,   desc:"Still shedding its old skin in quiet waters."},
+    {id:31, name:"Salamence",      type:"dragon",   rarity:"rare",   icon:"🐉", img:"pic/salamence.jpg", price:69.99,  desc:"Breathes embers hot enough to fuse sand into glass."},
+    {id:401,name:"Dragonair",      type:"dragon",   rarity:"common", icon:"🐉", img:"pix/dragonair.jpg", price:18.00, desc:"Aura of mystical serenity surrounds its long body."},
+    {id:402,name:"Bagon",          type:"dragon",   rarity:"common", icon:"🐉", img:"pix/bagon.jpg", price:5.00, desc:"Leaps off cliffs daily, dreaming of soaring high."},
+    {id:403,name:"Shelgon",        type:"dragon",   rarity:"common", icon:"🐉", img:"pic/shelgon.jpg", price:14.50, desc:"Tough outer shell repels steel blades and fire."},
+    {id:404,name:"Gible",          type:"dragon",   rarity:"common", icon:"🦈", img:"pix/gible.jpg", price:4.50, desc:"Nests in small caves, snapping at passing prey."},
+    {id:405,name:"Gabite",         type:"dragon",   rarity:"common", icon:"🐉", img:"pix/gabite.jpg", price:16.00, desc:"Obsessed with collecting glittering gemstones."},
+    {id:406,name:"Garchomp",       type:"dragon",   rarity:"holo",   icon:"🐉", img:"pix/garchomp.jpg", price:88.00, desc:"Flies at sonic speed, hunting down helpless prey."},
+    {id:407,name:"Axew",           type:"dragon",   rarity:"common", icon:"🐉", img:"pix/axew.jpg", price:4.20, desc:"Tusks can chop down thick timber trees with ease."},
+    {id:408,name:"Fraxure",        type:"dragon",   rarity:"common", icon:"🐉", img:"pix/fraxure.jpg", price:13.50, desc:"Sharp tusks grow back stronger if chipped in battle."},
+    {id:409,name:"Haxorus",        type:"dragon",   rarity:"rare",   icon:"🐉", img:"pix/haxorus.jpg", price:54.00, desc:"Armor plating is jet-black and incredibly durable."},
+    {id:410,name:"Deino",          type:"dragon",   rarity:"common", icon:"🐉", img:"pix/deino.jpg", price:6.00, desc:"Bites anything moving since its eyesight is poor."},
+    {id:411,name:"Zweilous",       type:"dragon",   rarity:"common", icon:"🐉", img:"pic/zweilous.jpg", price:17.50, desc:"Two heads constantly fight over food and attention."},
+    {id:412,name:"Hydreigon",      type:"dragon",   rarity:"holo",   icon:"🐉", img:"pix/hydreigon.jpg", price:95.00, desc:"Brutal beast that instills terror across all regions."},
+    {id:413,name:"Goomy",          type:"dragon",   rarity:"common", icon:"🐉", img:"pix/goomy.jpg", price:3.50, desc: "Weakest dragon type covered in slimy mucus."},
+    {id:414,name:"Sliggoo",        type:"dragon",   rarity:"common", icon:"🐉", img:"pic/sliggoo.jpg", price:11.00, desc:"Dissolves anything with highly acidic slime secretions."},
+    {id:415,name:"Goodra",         type:"dragon",   rarity:"rare",   icon:"🐉", img:"pix/goodra.jpg", price:45.00, desc:"Affectionate dragon that hugs trainers with sticky goo."},
+
+    /* ============ ELECTRIC TYPE (19 cards) ============ */
+    {id:13, name:"Raikou",         type:"electric", rarity:"ultra",  icon:"⚡", img:"pic/raikou.jpg", price:89.99,  desc:"A living storm cloud with a mane of raw current."},
+    {id:14, name:"Pikachu",        type:"electric", rarity:"common", icon:"🐭", img:"pic/pikachu.jpg", price:2.99,   desc:"Tiny cheeks crackle when it gets excited."},
+    {id:15, name:"Luxray",         type:"electric", rarity:"rare",   icon:"🦁", img:"pic/luxray.jpg", price:27.99,  desc:"Its eyes spark faintly during a lightning storm."},
+    {id:29, name:"Electivire",     type:"electric", rarity:"holo",   icon:"⚡", img:"pix/electivire.jpg", price:64.99,  desc:"Punches hard enough to short out nearby wiring."},
+    {id:501,name:"Raichu",         type:"electric", rarity:"rare",   icon:"⚡", img:"pic/raichu.jpg", price:24.50, desc:"Long tail discharges electricity safely into the ground."},
+    {id:502,name:"Magnemite",      type:"electric", rarity:"common", icon:"⚙️", img:"pic/magnemite.jpg", price:3.00, desc:"Hovers in midair using powerful magnetic forces."},
+    {id:503,name:"Magneton",       type:"electric", rarity:"common", icon:"⚡", img:"pic/magneton.jpg", price:9.99, desc:"Linked units emit high-voltage magnetic pulses."},
+    {id:504,name:"Voltorb",        type:"electric", rarity:"common", icon:"⚡", img:"pic/voltorb.jpg", price:2.50, desc:"Looks identical to a Poké Ball; explodes easily."},
+    {id:505,name:"Electrode",      type:"electric", rarity:"common", icon:"⚡", img:"pix/electrode.jpg", price:8.50, desc:"Stores vast amounts of electrical energy internally."},
+    {id:506,name:"Jolteon",        type:"electric", rarity:"holo",   icon:"⚡", img:"pix/jolteon.jpg", price:46.00, desc:"Fur stands on end like sharp needles when charged."},
+    {id:507,name:"Chinchou",       type:"electric", rarity:"common", icon:"💡", img:"pix/chinchou.jpg", price:3.40, desc:"Generates positive and negative energy inside antennae."},
+    {id:508,name:"Lanturn",        type:"electric", rarity:"common", icon:"💡", img:"pix/lanturn.jpg", price:12.50, desc:"Illuminates pitch-black ocean depths with bright light."},
+    {id:509,name:"Mareep",         type:"electric", rarity:"common", icon:"🐑", img:"pic/mareep.jpg", price:4.00, desc:"Fluffy fleece stores static electricity effortlessly."},
+    {id:510,name:"Flaaffy",        type:"electric", rarity:"common", icon:"⚡", img:"pix/flaaffy.jpg", price:10.00, desc:"Quality rubbery skin prevents self-shocking."},
+    {id:511,name:"Ampharos",       type:"electric", rarity:"holo",   icon:"⚡", img:"pix/ampharos.jpg", price:53.00, desc:"Tail tip shines brightly enough to be seen from space."},
+    {id:512,name:"Shinx",          type:"electric", rarity:"common", icon:"⚡", img:"pic/shinx.jpg", price:4.50, desc:"Generates electricity by flexing muscle movements."},
+    {id:513,name:"Luxio",          type:"electric", rarity:"common", icon:"⚡", img:"pic/luxio.jpg", price:13.00, desc:"Hunts in packs, coordinating lightning strikes."},
+    {id:514,name:"Blitzle",        type:"electric", rarity:"common", icon:"⚡", img:"pix/blitzle.jpg", price:3.80, desc:"Runs faster when lightning flashes across the sky."},
+    {id:515,name:"Zebstrika",      type:"electric", rarity:"rare",   icon:"⚡", img:"pic/zebstrika.jpg", price:33.00, desc:"Stamping hooves sound like booming thunderclaps."},
+
+    /* ============ PSYCHIC TYPE (21 cards) ============ */
+    {id:16, name:"Alakazam",       type:"psychic",  rarity:"rare",   icon:"🥄", img:"pix/alakazam.jpg", price:34.99,  desc:"Sees three moves ahead — and yours too."},
+    {id:17, name:"Espeon",         type:"psychic",  rarity:"holo",   icon:"🐱", img:"pix/espeon.jpg", price:44.99,  desc:"Its psychic stare lingers in your memory long after."},
+    {id:18, name:"Ralts",          type:"psychic",  rarity:"common", icon:"✨", img:"pic/ralts.jpg", price:4.99,   desc:"Hums a faint tune only it can hear."},
+    {id:30, name:"Mew",            type:"psychic",  rarity:"ultra",  icon:"🔮", img:"pic/mew.jpg", price:109.99, desc:"Can vanish mid-step and reappear yards away."},
+    {id:40, name:"Mewtwo",         type:"psychic",  rarity:"ultra",  icon:"🧬", img:"pic/mewtwo.jpg", price:1850.00, desc:"Created from the DNA of Mew, it possesses incredible psychic power."},
+    {id:43, name:"Gengar",         type:"psychic",  rarity:"holo",   icon:"👻", img:"pix/gengar.jpg", price:85.50, desc:"Hiding in people's shadows at night, it absorbs their heat."},
+    {id:601,name:"Abra",           type:"psychic",  rarity:"common", icon:"🥄", img:"PIX/abra.jpg", price:5.00, desc:"Sleeps 18 hours a day while teleporting constantly."},
+    {id:602,name:"Kadabra",        type:"psychic",  rarity:"common", icon:"🥄", img:"pix/kadabra.jpg", price:14.00, desc:"Emits special alpha waves that cause severe headaches."},
+    {id:603,name:"Drowzee",        type:"psychic",  rarity:"common", icon:"🌀", img:"pix/drowzee.jpg", price:3.50, desc:"Eats pleasant dreams exclusively from sleeping people."},
+    {id:604,name:"Hypno",          type:"psychic",  rarity:"rare",   icon:"🌀", img:"pix/hypno.jpg", price:22.00, desc:"Swings a pendulum to lull enemies into deep trances."},
+    {id:605,name:"Exeggcute",      type:"psychic",  rarity:"common", icon:"🥚", img:"pix/exeggcute.jpg", price:3.00, desc:"Six eggs communicate via telepathic link bonds."},
+    {id:606,name:"Exeggutor",      type:"psychic",  rarity:"rare",   icon:"🌴", img:"pix/exeggutor.jpg", price:28.00, desc:"Known as the walking jungle of tropical coconut trees."},
+    {id:607,name:"Starmie",        type:"psychic",  rarity:"rare",   icon:"⭐", img:"pic/starmie.jpg", price:30.00, desc:"Geometric body glows with cosmic psychic energy."},
+    {id:609,name:"Jynx",           type:"psychic",  rarity:"rare",   icon:"❄️", img:"pix/jynx.jpg", price:21.50, desc:"Dances rhythmically to charm opponents effortlessly."},
+    {id:610,name:"Kirlia",         type:"psychic",  rarity:"common", icon:"✨", img:"pix/kirlia.jpg", price:12.00, desc:"Grows happier when surrounded by joyful trainers."},
+    {id:611,name:"Gardevoir",      type:"psychic",  rarity:"holo",   icon:"✨", img:"pix/gardevoir.jpg", price:89.00, desc:"Will risk its life to protect its cherished trainer."},
+    {id:612,name:"Spoink",         type:"psychic",  rarity:"common", icon:"🐷", img:"pic/spoink.jpg", price:3.10, desc:"Must bounce continuously or its heart stops beating."},
+    {id:613,name:"Grumpig",        type:"psychic",  rarity:"common", icon:"🐷", img:"pix/grumpig.jpg", price:11.50, desc:"Controls black pearls on head with psychic manipulation."},
+    {id:614,name:"Chimecho",       type:"psychic",  rarity:"common", icon:"🔔", img:"pix/chimecho.jpg", price:4.20, desc:"Rings soothing melodic cries using tail suction cups."},
+    {id:615,name:"Wobbuffet",      type:"psychic",  rarity:"common", icon:"🥊", img:"pic/wobbuffet.jpg", price:6.00, desc:"Conceals its black tail and endures attacks patiently."},
+
+    /* ============ DARK TYPE (19 cards) ============ */
+    {id:19, name:"Umbreon",        type:"dark",     rarity:"rare",   icon:"🌙", img:"pic/umbreon.jpg", price:29.99,  desc:"Moves without a sound; even shadows lose track of it."},
+    {id:20, name:"Murkrow",        type:"dark",     rarity:"common", icon:"🐦‍⬛", img:"pic/murkrow.jpg", price:3.99,   desc:"Prefers to work alone, after the sun goes down."},
+    {id:32, name:"Darkrai",        type:"dark",     rarity:"holo",   icon:"🌑", img:"pix/darkrai.jpg", price:52.99,  desc:"Nests in places light forgets to reach."},
+    {id:42, name:"Tyranitar",      type:"dark",     rarity:"rare",   icon:"🦖", img:"pic/tyranitar.jpg", price:75.99, desc:"Its body can't be harmed by any sort of attack. It is always eager to challenge foes."},
+    {id:701,name:"Sneasel",        type:"dark",     rarity:"common", icon:"🔪", img:"pic/sneasel.jpg", price:9.50, desc:"Uses retractable claws to sneak up on sleeping prey."},
+    {id:702,name:"Houndour",       type:"dark",     rarity:"common", icon:"🐕", img:"pix/houndour.jpg", price:4.50, desc:"Communicates with packmates using eerie howls."},
+    {id:703,name:"Houndoom",       type:"dark",     rarity:"rare",   icon:"🐕", img:"pix/houndoom.jpg", price:36.00, desc:"Breath smells of ash and causes intense pain."},
+    {id:704,name:"Poochyena",      type:"dark",     rarity:"common", icon:"🐺", img:"pic/poochyena.jpg", price:3.20, desc:"Chases moving objects relentlessly until they drop."},
+    {id:705,name:"Mightyena",      type:"dark",     rarity:"common", icon:"🐺", img:"pic/mightyena.jpg", price:12.00, desc:"Obeys experienced leaders without hesitation."},
+    {id:706,name:"Absol",          type:"dark",     rarity:"rare",   icon:"⚔️", img:"pix/absol.jpg", price:41.00, desc:"Appears before natural disasters to warn people."},
+    {id:707,name:"Honchkrow",      type:"dark",     rarity:"rare",   icon:"👑", img:"pix/honchkrow.jpg", price:34.50, desc:"Commands large flocks of Murkrow like a mob boss."},
+    {id:708,name:"Stunky",         type:"dark",     rarity:"common", icon:"🦨", img:"pic/stunky.jpg", price:3.00, desc:"Emits foul-smelling liquid from rear end defense."},
+    {id:709,name:"Skuntank",       type:"dark",     rarity:"common", icon:"🦨", img:"pic/skuntank.jpg", price:10.50, desc:"Spray smells worse the longer fluid is stored inside."},
+    {id:710,name:"Spiritomb",      type:"dark",     rarity:"holo",   icon:"👻", img:"pic/spiritomb.jpg", price:48.50, desc:"Bound inside an odd keystone for past wicked deeds."},
+    {id:711,name:"Sandile",        type:"dark",     rarity:"common", icon:"🐊", img:"pic/sandile.jpg", price:4.00, desc:"Swims through desert sands using dorsal fin smoothly."},
+    {id:712,name:"Krokorok",       type:"dark",     rarity:"common", icon:"🐊", img:"pix/krokorok.jpg", price:11.20, desc:"Hunts in pairs, surrounding targets with clever traps."},
+    {id:713,name:"Krookodile",     type:"dark",     rarity:"rare",   icon:"🐊", img:"pix/krookodile.jpg", price:46.00, desc:"Can spot prey miles away with excellent vision."},
+    {id:714,name:"Zorua",          type:"dark",     rarity:"common", icon:"🦊", img:"pic/zorua.jpg", price:6.50, desc:"Disguises itself as people or Pokémon for fun."},
+    {id:715,name:"Zoroark",        type:"dark",     rarity:"holo",   icon:"🦊", img:"pic/zoroark.jpg", price:62.00, desc:"Protects its pack with vivid illusory illusions."},
+
+    /* ============ FAIRY TYPE (18 cards) ============ */
+    {id:21, name:"Sylveon",        type:"fairy",    rarity:"holo",   icon:"🎀", img:"pic/sylveon.jpg", price:39.99,  desc:"Leaves a faint glitter trail wherever it drifts."},
+    {id:22, name:"Clefairy",       type:"fairy",    rarity:"common", icon:"⭐", img:"pix/clefairy.jpg", price:2.99,   desc:"Its footsteps make the faintest chime."},
+    {id:33, name:"Togekiss",       type:"fairy",    rarity:"rare",   icon:"🕊️", img:"pic/togekiss.jpg", price:28.99,  desc:"A symbol of blessings said to bring grace to the pure."},
+    {id:801,name:"Clefable",       type:"fairy",    rarity:"rare",   icon:"⭐", img:"pix/clefable.jpg", price:27.00, desc:"Can walk lightly on water surface tension easily."},
+    {id:802,name:"Jigglypuff",     type:"fairy",    rarity:"common", icon:"🎤", img:"pix/jigglypuff.jpg", price:3.50, desc:"Sings lullabies that put anyone nearby to sleep."},
+    {id:803,name:"Wigglytuff",     type:"fairy",    rarity:"common", icon:"🎈", img:"pic/wigglytuff.jpg", price:12.50, desc:"Body inflates hugely when taking deep breaths."},
+    {id:804,name:"Togepi",         type:"fairy",    rarity:"common", icon:"🥚", img:"pic/togepi.jpg", price:5.50, desc:"Shares positive energy stored inside its egg shell."},
+    {id:805,name:"Togetic",        type:"fairy",    rarity:"common", icon:"🕊️", img:"pic/togetic.jpg", price:14.00, desc:"Appears before kind-hearted people to grant joy."},
+    {id:806,name:"Marill",         type:"fairy",    rarity:"common", icon:"💧", img:"pic/marill.jpg", price:3.20, desc:"Tail acts as an efficient life preserver in rivers."},
+    {id:807,name:"Azumarill",      type:"fairy",    rarity:"rare",   icon:"💧", img:"pix/azumarill.jpg", price:24.00, desc:"Fills bubble patterns to match ocean current depths."},
+    {id:808,name:"Snubbull",       type:"fairy",    rarity:"common", icon:"🐶", img:"pic/snubbull.jpg", price:3.80, desc:"Looks fierce, but is actually timid and affectionate."},
+    {id:809,name:"Granbull",       type:"fairy",    rarity:"common", icon:"🐶", img:"pix/granbull.jpg", price:13.50, desc:"Heavy lower jaw makes its head tilt downward."},
+    {id:810,name:"Ralts",          type:"fairy",    rarity:"common", icon:"✨", img:"pic/ralts.jpg", price:4.99, desc:"Senses human emotions accurately with horns."},
+    {id:811,name:"Mawile",         type:"fairy",    rarity:"rare",   icon:"🦷", img:"pic/mawile.jpg", price:22.50, desc:"Deceives foes with docile looks before steel bite."},
+    {id:813,name:"Flabébé",        type:"fairy",    rarity:"common", icon:"🌸", img:"pix/flabébé.jpg", price:3.00, desc:"Lives while clinging tightly to a picked flower."},
+    {id:814,name:"Floette",        type:"fairy",    rarity:"common", icon:"🌸", img:"pix/floette.jpg", price:9.50, desc:"Cares for withered flowers using secret powers."},
+    {id:815,name:"Florges",        type:"fairy",    rarity:"holo",   icon:"🌸", img:"pix/florges.jpg", price:54.00, desc:"Creates magnificent gardens to draw floral energy."},
+
+    /* ============ STEEL TYPE (19 cards) ============ */
+    {id:23, name:"Aggron",         type:"steel",    rarity:"rare",   icon:"🛡️", img:"pix/aggron.jpg", price:32.99,  desc:"Forged, not born — nothing dents this armor twice."},
+    {id:24, name:"Klink",          type:"steel",    rarity:"common", icon:"⚙️", img:"pix/klink.jpg", price:3.99,   desc:"Small clockwork gears never seem to run down."},
+    {id:25, name:"Skarmory",       type:"steel",    rarity:"holo",   icon:"🦅", img:"pic/skarmory.jpg", price:58.99,  desc:"Feathers forged, not grown, yet somehow it still flies."},
+    {id:44, name:"Lucario",        type:"steel",    rarity:"holo",   icon:"🥊", img:"pic/lucario.jpg", price:55.99, desc:"It can read the thoughts and movements of its adversaries through their auras."},
+    {id:901,name:"Magnemite",      type:"steel",    rarity:"common", icon:"⚙️", img:"pic/magnemite.jpg", price:3.10, desc:"Magnetic fields allow it to float effortlessly."},
+    {id:902,name:"Steelix",        type:"steel",    rarity:"rare",   icon:"🐍", img:"pic/steelix.jpg", price:45.00, desc:"Body harder than diamond from digging deep strata."},
+    {id:903,name:"Scizor",         type:"steel",    rarity:"holo",   icon:"✂️", img:"pic/scizor.jpg", price:72.50, desc:"Claws bear eye-like patterns to intimidate rivals."},
+    {id:904,name:"Aron",           type:"steel",    rarity:"common", icon:"🛡️", img:"pix/aron.jpg", price:4.50, desc:"Eats iron ore to build sturdy armor plating."},
+    {id:905,name:"Lairon",         type:"steel",    rarity:"common", icon:"🛡️", img:"pix/lairon.jpg", price:15.00, desc:"Collides bodies with rivals to test armor strength."},
+    {id:906,name:"Beldum",         type:"steel",    rarity:"common", icon:"🔵", img:"pix/beldum.jpg", price:6.00, desc:"Communicates via magnetic waves with flockmates."},
+    {id:907,name:"Metang",         type:"steel",    rarity:"common", icon:"🔵", img:"pic/metang.jpg", price:18.00, desc:"Two Beldum linked together fly at supersonic speeds."},
+    {id:908,name:"Metagross",      type:"steel",    rarity:"holo",   icon:"🤖", img:"pic/metagross.jpg", price:115.00, desc:"Four brains calculate battle tactics simultaneously."},
+    {id:909,name:"Jirachi",        type:"steel",    rarity:"ultra",  icon:"⭐", img:"pix/jirachi.jpg", price:210.00, desc:"Grants wishes written on notes attached to head."},
+    {id:910,name:"Piplup",         type:"steel",    rarity:"common", icon:"🐧", img:"pic/piplup.jpg", price:3.50, desc:"Proud personality makes it stumble often."},
+    {id:911,name:"Empoleon",       type:"steel",    rarity:"rare",   icon:"🐧", img:"pix/empoleon.jpg", price:51.00, desc:"Edges of wings slice through ice floes easily."},
+    {id:912,name:"Shieldon",       type:"steel",    rarity:"common", icon:"🛡️", img:"pic/shieldon.jpg", price:5.00, desc:"Face shield is as hard as tempered steel."},
+    {id:913,name:"Bastiodon",      type:"steel",    rarity:"rare",   icon:"🛡️", img:"pix/bastiodon.jpg", price:34.00, desc:"Forms an impenetrable wall to protect young."},
+    {id:914,name:"Bronzor",        type:"steel",    rarity:"common", icon:"🛡️", img:"pix/bronzor.jpg", price:3.20, desc:"Ancient patterns remain etched onto its metal disk."},
+    {id:915,name:"Bronzong",       type:"steel",    rarity:"rare",   icon:"🔔", img:"pix/bronzong.jpg", price:29.00, desc:"Summons rain clouds to assist harvest seasons."},
+
+    /* ============ ICE TYPE (18 cards) ============ */
+    {id:34, name:"Articuno",       type:"ice",      rarity:"holo",   icon:"❄️", img:"pix/articuno.jpg", price:59.99,  desc:"Its wingbeats leave a thin layer of frost in the air."},
+    {id:35, name:"Cubchoo",        type:"ice",      rarity:"common", icon:"🐻‍❄️", img:"pix/cubchoo.jpg", price:3.99,  desc:"Loves napping in snowbanks even in warm weather."},
+    {id:36, name:"Mamoswine",      type:"ice",      rarity:"rare",   icon:"🐘", img:"pic/mamoswine.jpg", price:120.99,  desc:"Charges with tusks of ice sharp enough to crack stone."},
+    {id:1001,name:"Jynx",          type:"ice",      rarity:"rare",   icon:"❄️", img:"pix/jynx.jpg", price:23.00, desc:"Freezes opponents with sub-zero chilling kisses."},
+    {id:1002,name:"Lapras",        type:"ice",      rarity:"rare",   icon:"🦕", img:"pic/lapras.jpg", price:38.00, desc:"Carries passengers across freezing polar waters."},
+    {id:1003,name:"Sneasel",       type:"ice",      rarity:"common", icon:"❄️", img:"pic/sneasel.jpg", price:10.00, desc:"Claws carve ice to mark territory borders."},
+    {id:1004,name:"Swinub",        type:"ice",      rarity:"common", icon:"🐗", img:"pic/swinub.jpg", price:3.40, desc:"Sniffs out tasty mushrooms buried under snow."},
+    {id:1005,name:"Piloswine",     type:"ice",      rarity:"common", icon:"🐗", img:"pic/piloswine.jpg", price:11.50, desc:"Long hair protects its body from freezing gales."},
+    {id:1006,name:"Delibird",      type:"ice",      rarity:"common", icon:"🎁", img:"pix/delibird.jpg", price:4.50, desc:"Carries food packed inside its hollow tail."},
+    {id:1007,name:"Snorunt",       type:"ice",      rarity:"common", icon:"❄️", img:"pic/snorunt.jpg", price:3.10, desc:"Survives harsh winter nights without eating food."},
+    {id:1008,name:"Glalie",        type:"ice",      rarity:"rare",   icon:"❄️", img:"pix/glalie.jpg", price:27.50, desc:"Freezes moisture in air to armor its jaw."},
+    {id:1009,name:"Spheal",        type:"ice",      rarity:"common", icon:"🔵", img:"pic/spheal.jpg", price:3.80, desc:"Rolls around on ice floes like a bouncy ball."},
+    {id:1010,name:"Sealeo",        type:"ice",      rarity:"common", icon:"🔵", img:"pic/sealeo.jpg", price:12.00, desc:"Bounces objects on nose to test texture."},
+    {id:1011,name:"Walrein",       type:"ice",      rarity:"rare",   icon:"🌊", img:"pic/walrein.jpg", price:44.00, desc:"Thick blubber repels biting arctic temperatures."},
+    {id:1012,name:"Regice",        type:"ice",      rarity:"ultra",  icon:"🧊", img:"pic/regice.jpg", price:160.00, desc:"Body formed of ice from glacial ice ages."},
+    {id:1013,name:"Glaceon",       type:"ice",      rarity:"holo",   icon:"❄️", img:"pix/glaceon.jpg", price:48.00, desc:"Freezes surrounding air to create diamond dust."},
+    {id:1014,name:"Vanillite",     type:"ice",      rarity:"common", icon:"🍦", img:"pic/vanillite.jpg", price:3.00, desc:"Exhales sub-zero air to chill surrounding objects."},
+    {id:1015,name:"Vanillish",     type:"ice",      rarity:"common", icon:"🍦", img:"pic/vanillish.jpg", price:10.20, desc:"Hides inside snowy mountains to avoid summer heat."},
+
+    /* ============ GROUND TYPE (18 cards) ============ */
+    {id:37, name:"Sandslash",      type:"ground",   rarity:"rare",   icon:"🏜️", img:"pic/sandslash.jpg", price:35.99,  desc:"Tunnels faster than most things can dig."},
+    {id:38, name:"Trapinch",       type:"ground",   rarity:"common", icon:"🐛", img:"pic/trapinch.jpg", price:320.49,   desc:"Blends perfectly into dry, cracked earth."},
+    {id:39, name:"Groudon",        type:"ground",   rarity:"ultra",  icon:"🌋", img:"pix/groudon.jpg", price:35.99,  desc:"Its stampede can reshape a continent wall."},
+    {id:1101,name:"Sandshrew",     type:"ground",   rarity:"common", icon:"🏜️", img:"pic/sandshrew.jpg", price:3.50, desc:"Burrows deep underground in arid desert dunes."},
+    {id:1102,name:"Diglett",       type:"ground",   rarity:"common", icon:"🥔", img:"pix/diglett.jpg", price:2.99, desc:"Lives underground, tunneling through rich soil."},
+    {id:1103,name:"Dugtrio",       type:"ground",   rarity:"common", icon:"🌋", img:"pix/dugtrio.jpg", price:9.99, desc:"Triplets burrow simultaneously at high speeds."},
+    {id:1104,name:"Cubone",        type:"ground",   rarity:"common", icon:"💀", img:"pix/cubone.jpg", price:4.50, desc:"Wears its mother's skull while weeping at night."},
+    {id:1105,name:"Marowak",       type:"ground",   rarity:"rare",   icon:"🦴", img:"pic/marowak.jpg", price:28.00, desc:"Wields a bone club skillfully in fierce battles."},
+    {id:1106,name:"Rhyhorn",       type:"ground",   rarity:"common", icon:"🦏", img:"pic/rhyhorn.jpg", price:4.00, desc:"Charges continuously, smashing boulders to dust."},
+    {id:1107,name:"Rhydon",        type:"ground",   rarity:"rare",   icon:"🦏", img:"pic/rhydon.jpg", price:31.50, desc:"Drill horn can bore through solid granite rock."},
+    {id:1108,name:"Wooper",        type:"ground",   rarity:"common", icon:"💧", img:"pic/wooper.jpg", price:3.20, desc:"Lives in muddy riverbeds with protective film."},
+    {id:1109,name:"Quagsire",      type:"ground",   rarity:"rare",   icon:"💧", img:"pic/quagsire.jpg", price:24.00, desc:"Carefree swimmer unbothered by bumping rocks."},
+    {id:1110,name:"Gligar",        type:"ground",   rarity:"common", icon:"🦇", img:"pix/gligar.jpg", price:5.00, desc:"Glides smoothly across desert canyons effortlessly."},
+    {id:1111,name:"Phanpy",        type:"ground",   rarity:"common", icon:"🐘", img:"pic/phanpy.jpg", price:3.90, desc:"Swings heavy trunk playfully to greet trainers."},
+    {id:1112,name:"Donphan",       type:"ground",   rarity:"rare",   icon:"🐘", img:"pix/donphan.jpg", price:33.00, desc:"Known as the desert spirit wrapped in sandstorms."},
+    {id:1115,name:"Garchomp",      type:"ground",   rarity:"rare",   icon:"🦈", img:"pix/garchomp.jpg", price:79.00, desc:"Burrows underground to ambush passing prey."}];
+
+const RARITY_LABEL = {common:"Common", rare:"Rare", holo:"Holo Rare", ultra:"Ultra Rare"};
+
+let cart = [];
+let activeFilter = "all";
+
+function renderGrid(){
+    const grid = document.getElementById('cardGrid');
+    const list = CARDS.filter(c => activeFilter === "all" || c.type === activeFilter);
+    grid.innerHTML = list.map(c => `
+        <div class="card rarity-${c.rarity}">
+            <span class="card-badge badge-${c.rarity}">${RARITY_LABEL[c.rarity]}</span>
+            <div class="type-chip"><span class="type-dot dot-${c.type}"></span>${c.type}</div>
+            <div class="card-art">${c.img ? `<img src="${c.img}" alt="${c.name}">` : c.icon}</div>
+            <h3>${c.name}</h3>
+            <p class="flavor">${c.desc}</p>
+            <div class="card-footer">
+                <span class="price mono">$${c.price.toFixed(2)}</span>
+                <button class="add-btn" onclick="addToCart(${c.id})">+ Add to Cart</button>
+            </div>
+        </div>
+    `).join('');
+}
+
+document.getElementById('filters').addEventListener('click', (e)=>{
+    const btn = e.target.closest('.filter-btn');
+    if(!btn) return;
+    document.querySelectorAll('.filter-btn').forEach(b=>b.classList.remove('active'));
+    btn.classList.add('active');
+    activeFilter = btn.dataset.type;
+    renderGrid();
+});
+
+function addToCart(id){
+    const card = CARDS.find(c=>c.id===id);
+    const existing = cart.find(i=>i.id===id);
+    if(existing){ existing.qty++; } else { cart.push({...card, qty:1}); }
+    renderCart();
+    showToast(`Added ${card.name} to your cart`);
+}
+
+function changeQty(id, delta){
+    const item = cart.find(i=>i.id===id);
+    if(!item) return;
+    item.qty += delta;
+    if(item.qty <= 0){ cart = cart.filter(i=>i.id!==id); }
+    renderCart();
+}
+
+function removeItem(id){
+    cart = cart.filter(i=>i.id!==id);
+    renderCart();
+}
+
+function renderCart(){
+    const body = document.getElementById('drawerBody');
+    const count = cart.reduce((s,i)=>s+i.qty,0);
+    document.getElementById('cartCount').textContent = count;
+
+    if(cart.length === 0){
+        body.innerHTML = `<div class="empty-cart"><div class="big">🗃️</div>Your cart is empty.<br>Go pull something rare.</div>`;
+    } else {
+        body.innerHTML = cart.map(i => `
+            <div class="cart-row">
+                <div class="art">${i.img ? `<img src="${i.img}" alt="${i.name}">` : i.icon}</div>
+                <div class="info">
+                    <h4>${i.name}</h4>
+                    <div class="meta mono">$${i.price.toFixed(2)} each</div>
+                    <div class="qty-controls">
+                        <button onclick="changeQty(${i.id},-1)">−</button>
+                        <span>${i.qty}</span>
+                        <button onclick="changeQty(${i.id},1)">+</button>
+                    </div>
+                    <button class="remove-btn" onclick="removeItem(${i.id})">Remove</button>
+                </div>
+            </div>
+        `).join('');
+    }
+    const total = cart.reduce((s,i)=>s+i.price*i.qty,0);
+    document.getElementById('cartTotal').textContent = `$${total.toFixed(2)}`;
+}
+
+function toggleCart(open){
+    document.getElementById('drawer').classList.toggle('open', open);
+    document.getElementById('overlay').classList.toggle('show', open);
+}
+
+async function checkout(){
+    if(cart.length === 0){ showToast("Your cart is empty"); return; }
+    
+    const total = cart.reduce((s,i)=>s+i.price*i.qty,0);
+    const order = {
+        date: new Date().toLocaleDateString('en-US',{month:'short', day:'numeric', year:'numeric'}),
+        items: cart.map(i=>({id:i.id, name:i.name, icon:i.icon, img:i.img, qty:i.qty, price:i.price})),
+        total
+    };
+    try{
+        let orders = [];
+        try{
+            const existing = await window.storage.get('cardvault_orders', false);
+            orders = existing ? JSON.parse(existing.value) : [];
+        }catch(err){ orders = []; }
+        orders.push(order);
+        await window.storage.set('cardvault_orders', JSON.stringify(orders), false);
+    }catch(err){
+        console.error('Could not save order history', err);
+    }
+    showToast(`Order placed successfully! 🎉`);
+    cart = [];
+    renderCart();
+    toggleCart(false);
+}
+
+function toggleMobileMenu(){
+    const menu = document.getElementById('mobileMenu');
+    const btn = document.getElementById('hamburgerBtn');
+    const isOpen = menu.classList.toggle('open');
+    btn.textContent = isOpen ? '✕' : '☰';
+}
+function closeMobileMenu(){
+    document.getElementById('mobileMenu').classList.remove('open');
+    document.getElementById('hamburgerBtn').textContent = '☰';
+}
+
+let toastTimer;
+function showToast(msg){
+    const t = document.getElementById('toast');
+    t.textContent = msg;
+    t.classList.add('show');
+    clearTimeout(toastTimer);
+    toastTimer = setTimeout(()=>t.classList.remove('show'), 2600);
+}
+
+renderGrid();
+renderCart();
+</script>
+
+</body>
+</html>
