@@ -3,11 +3,11 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>ZEALLA VAULT</title>
+<title>ZEALLA</title>
 <link rel="icon" type="image/x-icon" href="pf/no game png-01.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bungee&family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Bungee&family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;700&family=Noto+Sans+Khmer:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
 
 /* ============ TOKENS (light theme) ============ */
@@ -47,21 +47,21 @@ html{scroll-behavior:smooth;}
 body{
     background: var(--bg);
     color:var(--text);
-    font-family:'Noto Sans Khmer', sans-serif;
+    font-family:'Noto Sans Khmer', 'Inter', sans-serif;
     overflow-x:hidden;
 }
-h1,h2,h3,.display{font-family:'Bungee',cursive;letter-spacing:.5px;}
-.mono{font-family:'JetBrains Mono',monospace;}
+h1,h2,h3,.display{font-family:'Noto Sans Khmer', 'Bungee', cursive;letter-spacing:.5px;}
+.mono{font-family:'JetBrains Mono', 'Noto Sans Khmer', monospace;}
 a{color:inherit;}
-button{font-family:inherit;cursor:pointer;border:none;}
+button{font-family:'Noto Sans Khmer', inherit;cursor:pointer;border:none;}
 img{max-width:100%;display:block;}
 ::selection{background:var(--water);color:#fff;}
 
 .wrap{width:88%;max-width:1240px;margin:0 auto;}
 .eyebrow{
     display:inline-flex;align-items:center;gap:8px;
-    font-family:'Noto Sans Khmer', sans-serif;
-    font-size:12px;letter-spacing:2px;text-transform:uppercase;
+    font-family:'Noto Sans Khmer', 'JetBrains Mono', monospace;
+    font-size:12px;letter-spacing:1px;text-transform:uppercase;
     color:var(--psychic);margin-bottom:14px;
 }
 .eyebrow::before{content:"◆";color:var(--gold);}
@@ -76,7 +76,7 @@ img{max-width:100%;display:block;}
     padding:16px 5%;
 }
 .logo{
-    font-family:'Bungee',cursive;
+    font-family:'Bungee', 'Noto Sans Khmer', cursive;
     font-size:22px;
     display:flex;align-items:center;gap:8px;
     text-decoration:none;
@@ -95,6 +95,7 @@ img{max-width:100%;display:block;}
 .menu a{
     text-decoration:none;color:var(--text-dim);font-weight:600;font-size:14px;
     padding:10px 16px;border-radius:999px;transition:.25s;
+    font-family:'Noto Sans Khmer', sans-serif;
 }
 .menu a:hover{background:var(--surface);color:var(--text);}
 
@@ -130,6 +131,7 @@ img{max-width:100%;display:block;}
 .mobile-menu a{
     text-decoration:none;color:var(--text-dim);font-weight:600;font-size:15px;
     padding:16px 8%;border-bottom:1px solid var(--border);transition:.2s;
+    font-family:'Noto Sans Khmer', sans-serif;
 }
 .mobile-menu a:hover,.mobile-menu a:active{background:var(--surface);color:var(--text);}
 
@@ -139,33 +141,34 @@ img{max-width:100%;display:block;}
     display:grid;grid-template-columns:1.1fr .9fr;
     gap:50px;align-items:center;
     padding:20px 0;
-    font-family:'Noto Sans Khmer', sans-serif;
 }
 .hero h1{
-    font-size:56px;line-height:1.05;margin-bottom:20px;
+    font-size:48px;line-height:1.2;margin-bottom:20px;
     font-family:'Noto Sans Khmer', sans-serif;
+    font-weight:800;
 }
 .hero h1 .accent{
-    font-family:'Noto Sans Khmer', sans-serif;
     color:var(--dragon);
 }
-.hero p{color:var(--text-dim);font-size:17px;line-height:1.7;margin-bottom:30px;max-width:480px;}
+.hero p{color:var(--text-dim);font-size:16px;line-height:1.7;margin-bottom:30px;max-width:480px;font-family:'Noto Sans Khmer', sans-serif;}
 .hero-ctas{display:flex;gap:14px;flex-wrap:wrap;}
 .btn-primary{
     background:var(--gold);color:#fff;font-weight:800;font-size:14px;
     padding:15px 26px;border-radius:12px;transition:.25s;
     box-shadow:0 10px 25px rgba(232,169,33,.28);
+    font-family:'Noto Sans Khmer', sans-serif;
 }
 .btn-primary:hover{transform:translateY(-3px);opacity:.9;}
 .btn-ghost{
     background:#fff;border:1px solid var(--border);color:var(--text);
     font-weight:700;font-size:14px;padding:15px 26px;border-radius:12px;transition:.25s;
+    font-family:'Noto Sans Khmer', sans-serif;
 }
 .btn-ghost:hover{border-color:var(--water);color:var(--water);}
 
 .hero-stats{display:flex;gap:30px;margin-top:36px;}
 .hero-stats .num{font-family:'JetBrains Mono',monospace;font-size:24px;font-weight:700;color:var(--dragon);}
-.hero-stats .lab{font-size:12px;color:var(--text-faint);text-transform:uppercase;letter-spacing:1px;}
+.hero-stats .lab{font-size:12px;color:var(--text-faint);text-transform:uppercase;letter-spacing:1px;font-family:'Noto Sans Khmer', sans-serif;}
 
 .hero-card-stage{display:flex;justify-content:center;}
 .hero-card{
@@ -181,8 +184,8 @@ img{max-width:100%;display:block;}
 }
 .hero-card .rarity-tag{
     position:relative;z-index:2;
-    display:inline-block;font-family:'JetBrains Mono',monospace;font-size:10px;font-weight:700;
-    letter-spacing:1.5px;background:var(--dragon);color:white;padding:4px 10px;border-radius:999px;
+    display:inline-block;font-family:'Noto Sans Khmer', 'JetBrains Mono', monospace;font-size:10px;font-weight:700;
+    letter-spacing:1px;background:var(--dragon);color:white;padding:4px 10px;border-radius:999px;
 }
 .hero-card .art{
     position:relative;z-index:2;
@@ -190,8 +193,8 @@ img{max-width:100%;display:block;}
     font-size:80px;margin:14px 0;
 }
 .hero-card .art img{width:100%;height:100%;object-fit:contain;border-radius:10px;}
-.hero-card h3{position:relative;z-index:2;font-size:20px;margin-bottom:6px;}
-.hero-card p{position:relative;z-index:2;font-size:12px;color:#c7c9dd;line-height:1.5;}
+.hero-card h3{position:relative;z-index:2;font-size:20px;margin-bottom:6px;font-family:'Noto Sans Khmer', sans-serif;}
+.hero-card p{position:relative;z-index:2;font-size:12px;color:#c7c9dd;line-height:1.5;font-family:'Noto Sans Khmer', sans-serif;}
 .hero-card .stat-row{
     position:relative;z-index:2;
     display:flex;justify-content:space-between;align-items:center;
@@ -202,15 +205,15 @@ img{max-width:100%;display:block;}
 /* ============ SECTION HEADERS ============ */
 section{width:88%;max-width:1240px;margin:90px auto;}
 .section-head{display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:36px;flex-wrap:wrap;gap:16px;}
-.section-head h2{font-size:34px;}
-.section-head p{color:var(--text-dim);max-width:440px;font-size:15px;}
+.section-head h2{font-size:32px;font-family:'Noto Sans Khmer', sans-serif;font-weight:800;}
+.section-head p{color:var(--text-dim);max-width:440px;font-size:15px;font-family:'Noto Sans Khmer', sans-serif;}
 
 /* ============ FILTERS ============ */
 .filters{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:32px;}
 .filter-btn{
     background:#fff;border:1px solid var(--border);color:var(--text-dim);
     font-size:13px;font-weight:700;padding:10px 18px;border-radius:999px;transition:.2s;
-    display:flex;align-items:center;gap:6px;
+    display:flex;align-items:center;gap:6px;font-family:'Noto Sans Khmer', sans-serif;
 }
 .filter-btn:hover{color:var(--text);border-color:var(--text-faint);}
 .filter-btn.active{background:var(--text);color:#fff;border-color:var(--text);}
@@ -235,7 +238,7 @@ section{width:88%;max-width:1240px;margin:90px auto;}
 
 .card-badge{
     position:absolute;top:14px;right:14px;z-index:2;
-    font-family:'JetBrains Mono',monospace;font-size:9px;font-weight:700;letter-spacing:1px;
+    font-family:'Noto Sans Khmer', 'JetBrains Mono', monospace;font-size:9px;font-weight:700;letter-spacing:1px;
     padding:4px 8px;border-radius:999px;text-transform:uppercase;
 }
 .badge-common{background:var(--surface-2);color:var(--text-dim);}
@@ -247,6 +250,7 @@ section{width:88%;max-width:1240px;margin:90px auto;}
     display:inline-flex;align-items:center;gap:5px;
     font-size:10px;font-weight:700;letter-spacing:1px;text-transform:uppercase;
     color:var(--text-faint);margin-bottom:10px;
+    font-family:'Noto Sans Khmer', sans-serif;
 }
 .type-dot{width:8px;height:8px;border-radius:50%;}
 .dot-fire{background:var(--fire);} .dot-water{background:var(--water);}
@@ -262,13 +266,14 @@ section{width:88%;max-width:1240px;margin:90px auto;}
     overflow:hidden;
 }
 .card-art img{width:100%;height:100%;object-fit:contain;border-radius:10px;}
-.card h3{font-size:17px;margin-bottom:6px;}
-.card .flavor{font-size:12.5px;color:var(--text-dim);line-height:1.5;min-height:38px;margin-bottom:14px;}
+.card h3{font-size:17px;margin-bottom:6px;font-family:'Noto Sans Khmer', sans-serif;}
+.card .flavor{font-size:12.5px;color:var(--text-dim);line-height:1.5;min-height:38px;margin-bottom:14px;font-family:'Noto Sans Khmer', sans-serif;}
 .card .card-footer{display:flex;justify-content:space-between;align-items:center;}
 .card .price{font-family:'JetBrains Mono',monospace;font-weight:700;color:var(--text);font-size:15px;}
 .add-btn{
     background:var(--surface);color:var(--text);font-size:12px;font-weight:700;
     padding:9px 14px;border-radius:9px;transition:.2s;border:1px solid var(--border);
+    font-family:'Noto Sans Khmer', sans-serif;
 }
 .add-btn:hover{background:var(--gold);color:#fff;border-color:var(--gold);}
 
@@ -292,11 +297,11 @@ section{width:88%;max-width:1240px;margin:90px auto;}
 .spotlight-card .art{font-size:90px;text-align:center;margin:16px 0;height:180px;display:flex;align-items:center;justify-content:center;}
 .spotlight-card .art img{width:100%;height:100%;object-fit:contain;border-radius:10px;}
 .spotlight-text{position:relative;z-index:2;}
-.spotlight-text h2{font-size:38px;margin-bottom:16px;}
-.spotlight-text p{color:#c7c9dd;line-height:1.8;margin-bottom:26px;font-size:15px;}
+.spotlight-text h2{font-size:36px;margin-bottom:16px;font-family:'Noto Sans Khmer', sans-serif;}
+.spotlight-text p{color:#c7c9dd;line-height:1.8;margin-bottom:26px;font-size:15px;font-family:'Noto Sans Khmer', sans-serif;}
 .spotlight-meta{display:flex;gap:26px;margin-bottom:26px;flex-wrap:wrap;}
 .spotlight-meta .num{font-family:'JetBrains Mono',monospace;font-size:20px;color:var(--gold);font-weight:700;}
-.spotlight-meta .lab{font-size:11px;color:#9295b5;text-transform:uppercase;letter-spacing:1px;}
+.spotlight-meta .lab{font-size:11px;color:#9295b5;text-transform:uppercase;letter-spacing:1px;font-family:'Noto Sans Khmer', sans-serif;}
 
 /* ============ REVIEWS ============ */
 .review-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:22px;}
@@ -306,14 +311,15 @@ section{width:88%;max-width:1240px;margin:90px auto;}
 }
 .review-card:hover{transform:translateY(-6px);border-color:var(--water);box-shadow:var(--shadow-soft);}
 .stars{color:var(--gold);letter-spacing:2px;margin-bottom:12px;font-size:14px;}
-.review-card p{color:var(--text-dim);font-size:14px;line-height:1.7;margin-bottom:18px;}
+.review-card p{color:var(--text-dim);font-size:14px;line-height:1.7;margin-bottom:18px;font-family:'Noto Sans Khmer', sans-serif;}
 .reviewer{display:flex;align-items:center;gap:10px;}
 .reviewer .avatar{
     width:34px;height:34px;border-radius:50%;
     display:flex;align-items:center;justify-content:center;font-weight:800;font-size:13px;color:#fff;
+    font-family:'Noto Sans Khmer', sans-serif;
 }
-.reviewer .name{font-weight:700;font-size:13px;}
-.reviewer .tag{font-size:11px;color:var(--text-faint);}
+.reviewer .name{font-weight:700;font-size:13px;font-family:'Noto Sans Khmer', sans-serif;}
+.reviewer .tag{font-size:11px;color:var(--text-faint);font-family:'Noto Sans Khmer', sans-serif;}
 
 /* ============ TEAM / CONTACT ============ */
 .team-banner{
@@ -321,13 +327,13 @@ section{width:88%;max-width:1240px;margin:90px auto;}
     border-radius:var(--radius-lg);padding:50px;text-align:center;margin-bottom:26px;
     border:1px solid var(--border);color:#fff;
 }
-.team-banner h2{font-size:32px;margin-bottom:30px;}
+.team-banner h2{font-size:32px;margin-bottom:30px;font-family:'Noto Sans Khmer', sans-serif;}
 .team-members{display:flex;justify-content:center;gap:30px;flex-wrap:wrap;}
 .member{width:230px;background:#1c2038;border:1px solid #2c3253;border-radius:var(--radius-md);overflow:hidden;text-align:center;transition:.3s;}
 .member:hover{transform:translateY(-8px);border-color:var(--water);}
 .member img{width:100%;height:220px;object-fit:cover;}
-.member h3{font-size:15px;margin:16px 0 4px;font-family:'Inter',sans-serif;font-weight:800;color:#fff;}
-.member p{font-size:12px;color:#9295b5;padding-bottom:18px;}
+.member h3{font-size:15px;margin:16px 0 4px;font-family:'Noto Sans Khmer', sans-serif;font-weight:800;color:#fff;}
+.member p{font-size:12px;color:#9295b5;padding-bottom:18px;font-family:'Noto Sans Khmer', sans-serif;}
 .logo-member{display:flex;align-items:center;justify-content:center;background:transparent;border:none;}
 .logo-member .mark-big{
     width:150px;height:150px;border-radius:26px;
@@ -339,22 +345,22 @@ section{width:88%;max-width:1240px;margin:90px auto;}
     background:var(--elevated);border:1px solid var(--border);
     border-radius:var(--radius-lg);padding:50px;text-align:center;box-shadow:var(--shadow-card);
 }
-.contact-box h2{font-size:32px;margin-bottom:14px;font-family: 'Noto Sans Khmer', sans-serif;}
-.contact-box>p{color:var(--text-dim);margin-bottom:36px;font-size:15px;}
+.contact-box h2{font-size:32px;margin-bottom:14px;font-family:'Noto Sans Khmer', sans-serif;}
+.contact-box>p{color:var(--text-dim);margin-bottom:36px;font-size:15px;font-family:'Noto Sans Khmer', sans-serif;}
 .contact-items{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:20px;}
 .contact-item{
     background:#15161f;border:1px solid #15161f;color:white;
     padding:30px;border-radius:16px;transition:.3s;
-    
 }
 .contact-item:hover{transform:translateY(-8px);border-color:var(--water);}
-.contact-item h3{color:var(--water);margin-bottom:10px;font-size:16px;}
-.contact-item a{color:white;text-decoration:none;font-size:15px;}
+.contact-item h3{color:var(--water);margin-bottom:10px;font-size:16px;font-family:'Noto Sans Khmer', sans-serif;}
+.contact-item a{color:white;text-decoration:none;font-size:15px;font-family:'Noto Sans Khmer', sans-serif;}
 .contact-item a:hover{color:var(--water);}
 
 /* ============ FOOTER ============ */
 footer{
     background:#0b0d17;color:white;text-align:center;padding:60px 20px 40px;margin-top:100px;
+    font-family:'Noto Sans Khmer', sans-serif;
 }
 footer .logo{justify-content:center;margin-bottom:10px;color:#fff;}
 footer p{color:#8d90ab;font-size:13px;margin-top:8px;}
@@ -378,29 +384,30 @@ footer p{color:#8d90ab;font-size:13px;margin-top:8px;}
     background:var(--elevated);border-left:1px solid var(--border);
     z-index:1999;transition:right .35s ease;display:flex;flex-direction:column;
     box-shadow:-10px 0 40px rgba(30,20,60,.12);
+    font-family:'Noto Sans Khmer', sans-serif;
 }
 .drawer.open{right:0;}
 .drawer-head{display:flex;justify-content:space-between;align-items:center;padding:22px 24px;border-bottom:1px solid var(--border);}
-.drawer-head h3{font-size:18px;}
-.icon-btn{background:var(--surface);color:var(--text);width:34px;height:34px;border-radius:9px;font-size:16px;}
+.drawer-head h3{font-size:18px;font-family:'Noto Sans Khmer', sans-serif;}
+.icon-btn{background:var(--surface);color:var(--text);width:34px;height:34px;border-radius:99px;font-size:16px;}
 .drawer-body{flex:1;overflow-y:auto;padding:20px 24px;}
 .cart-row{display:flex;gap:14px;align-items:center;padding:14px 0;border-bottom:1px solid var(--border);}
 .cart-row .art{width:52px;height:52px;border-radius:10px;background:var(--surface);display:flex;align-items:center;justify-content:center;font-size:26px;flex-shrink:0;overflow:hidden;}
 .cart-row .art img{width:100%;height:100%;object-fit:contain;}
 .cart-row .info{flex:1;}
-.cart-row .info h4{font-size:14px;margin-bottom:4px;}
+.cart-row .info h4{font-size:14px;margin-bottom:4px;font-family:'Noto Sans Khmer', sans-serif;}
 .cart-row .info .meta{font-size:12px;color:var(--text-faint);}
 .qty-controls{display:flex;align-items:center;gap:8px;margin-top:6px;}
 .qty-controls button{background:var(--surface-2);width:22px;height:22px;border-radius:6px;color:var(--text);font-size:13px;}
 .qty-controls span{font-family:'JetBrains Mono',monospace;font-size:13px;min-width:16px;text-align:center;}
-.remove-btn{color:var(--text-faint);font-size:12px;text-decoration:underline;background:none;margin-top:6px;}
+.remove-btn{color:var(--text-faint);font-size:12px;text-decoration:underline;background:none;margin-top:6px;font-family:'Noto Sans Khmer', sans-serif;}
 .remove-btn:hover{color:var(--fire);}
-.empty-cart{text-align:center;color:var(--text-faint);padding:60px 10px;font-size:14px;}
+.empty-cart{text-align:center;color:var(--text-faint);padding:60px 10px;font-size:14px;font-family:'Noto Sans Khmer', sans-serif;}
 .empty-cart .big{font-size:44px;margin-bottom:16px;}
 .drawer-foot{padding:22px 24px;border-top:1px solid var(--border);}
-.drawer-foot .row{display:flex;justify-content:space-between;margin-bottom:16px;font-size:15px;}
+.drawer-foot .row{display:flex;justify-content:space-between;margin-bottom:16px;font-size:15px;font-family:'Noto Sans Khmer', sans-serif;}
 .drawer-foot .row .total{font-family:'JetBrains Mono',monospace;color:var(--text);font-weight:700;font-size:19px;}
-.checkout-btn{width:100%;background:var(--gold);color:#fff;font-weight:800;padding:16px;border-radius:12px;font-size:14px;}
+.checkout-btn{width:100%;background:var(--gold);color:#fff;font-weight:800;padding:16px;border-radius:12px;font-size:14px;font-family:'Noto Sans Khmer', sans-serif;}
 .checkout-btn:hover{opacity:.9;}
 
 /* ============ TOAST ============ */
@@ -410,6 +417,7 @@ footer p{color:#8d90ab;font-size:13px;margin-top:8px;}
     padding:14px 22px;border-radius:12px;font-size:13px;font-weight:600;
     opacity:0;pointer-events:none;transition:.3s;z-index:3000;
     display:flex;align-items:center;gap:10px;box-shadow:0 15px 35px rgba(30,20,60,.3);
+    font-family:'Noto Sans Khmer', sans-serif;
 }
 .toast.show{opacity:1;transform:translateX(-50%) translateY(0);}
 
@@ -436,8 +444,8 @@ footer p{color:#8d90ab;font-size:13px;margin-top:8px;}
     <div class="menu">
         <a href="#home">ទំព័រដើម</a>
         <a href="#shop">ហាង</a>
-        <a href="#featured">ផលិតផលលេចធ្លោ</a>
-        <a href="#reviews">មតិយោបល់</a>
+        <a href="#featured">ការផ្សព្វផ្សាយ</a>
+        <a href="#reviews">ការវាយតម្លៃ</a>
         <a href="#contact">ទំនាក់ទំនង</a>
 
         <a href="index.html">EN</a>
@@ -446,39 +454,38 @@ footer p{color:#8d90ab;font-size:13px;margin-top:8px;}
         <button class="cart-btn" onclick="toggleCart(true)" aria-label="បើកកន្ត្រក">
             🛒<span class="cart-count" id="cartCount">0</span>
         </button>
-        <button class="hamburger" id="hamburgerBtn" onclick="toggleMobileMenu()" aria-label="បើកមីនុយ">☰</button>
+        <button class="hamburger" id="hamburgerBtn" onclick="toggleMobileMenu()" aria-label="បើកម៉ឺនុយ">☰</button>
     </div>
 </nav>
 <div class="mobile-menu" id="mobileMenu">
     <a href="#home" onclick="closeMobileMenu()">ទំព័រដើម</a>
     <a href="#shop" onclick="closeMobileMenu()">ហាង</a>
-    <a href="#featured" onclick="closeMobileMenu()">ផលិតផលលេចធ្លោ</a>
-    <a href="#reviews" onclick="closeMobileMenu()">មតិយោបល់</a>
+    <a href="#featured" onclick="closeMobileMenu()">ការផ្សព្វផ្សាយ</a>
+    <a href="#reviews" onclick="closeMobileMenu()">ការវាយតម្លៃ</a>
     <a href="#contact" onclick="closeMobileMenu()">ទំនាក់ទំនង</a>
-    
 </div>
 
 <section id="home" class="hero" style="margin-top:60px;">
     <div>
-        <div class="eyebrow">ការចេញផ្សាយថ្មីរៀងរាល់ថ្ងៃសុក្រ</div>
-        <h1>បើក <span class="accent">ឃ្លាំង។</span><br>ទាញយកកាតលំដាប់រឿងព្រេង។</h1>
-        <p>កាតជួញដូរដែលបានផ្ទៀងផ្ទាត់ដោយដៃឆ្លងកាត់ធាតុទាំងដប់ពីរ — ចាប់ពីកាតធម្មតារហូតដល់កាតកម្រហូឡូ។ កសាងបណ្តុំកាតរបស់អ្នកម្តងមួយកញ្ចប់។</p>
+        <div class="eyebrow">មានទំនិញថ្មីៗរៀងរាល់ថ្ងៃសុក្រ</div>
+        <h1>បើកទូសម្ងាត់ <span class="accent">Vault។</span><br>ស្វែងរកកាតដ៏អស្ចារ្យ។</h1>
+        <p>កាតលេងដែលបានវាយតម្លៃដោយដៃឆ្លងកាត់ធាតុទាំងដប់មួយ — ចាប់ពីកាតធម្មតាដំបូង រហូតដល់កាតផ្លេកៗដែលកម្របំផុត។ សាងសង់បណ្ដុំកាតរបស់អ្នកម្ដងមួយៗ។</p>
         <div class="hero-ctas">
-            <a href="#shop" class="btn-primary">រកមើលក្នុងឃ្លាំង →</a>
-            <a href="#featured" class="btn-ghost">មើលកាតពិសេសសប្តាហ៍នេះ</a>
+            <a href="#shop" class="btn-primary">មើលទូសម្ងាត់ →</a>
+            <a href="#featured" class="btn-ghost">មើលកាតប្រចាំសប្ដាហ៍</a>
         </div>
         <div class="hero-stats">
-            <div><div class="num">12.4K</div><div class="lab">កាតបានផ្ទៀងផ្ទាត់</div></div>
-            <div><div class="num">98%</div><div class="lab">ភាពពេញចិត្តក្នុងការជួញដូរ</div></div>
+            <div><div class="num">12.4K</div><div class="lab">កាតដែលបានវាយតម្លៃ</div></div>
+            <div><div class="num">98%</div><div class="lab">ការពេញចិត្តក្នុងការដោះដូរ</div></div>
             <div><div class="num">11</div><div class="lab">ប្រភេទធាតុ</div></div>
         </div>
     </div>
     <div class="hero-card-stage">
         <div class="hero-card">
             <span class="rarity-tag">កម្របំផុត</span>
-            <div class="art"><img src="pic/Rayquaza.jpg" alt=""></div>
+            <div class="art"><img src="pic/rayquaza.jpg" alt=""></div>
             <h3>Rayquaza</h3>
-            <p>បុរាណ ធំសម្បើម និងស្ទើរតែមិនអាចទាញបាន។</p>
+            <p>បុរាណ ធំសម្បើម និងស្ទើរតែមិនអាចរកបាន។</p>
             <div class="stat-row">
                 <span class="mono price">$2,500</span>
                 <span class="mono" style="color:#9295b5;font-size:11px;">#001/039</span>
@@ -490,10 +497,10 @@ footer p{color:#8d90ab;font-size:13px;margin-top:8px;}
 <section id="shop">
     <div class="section-head">
         <div>
-            <div class="eyebrow">បណ្តុំកាត</div>
-            <h2>ទិញកាតពីបណ្តុំ</h2>
+            <div class="eyebrow">កាតាឡុក</div>
+            <h2>ទិញទំនិញក្នុងបណ្ដុំ</h2>
         </div>
-        <p>ត្រងតាមធាតុដើម្បីស្វែងរកកាតដែលខ្វះក្នុងហ៊្សូរបស់អ្នក។</p>
+        <p>តម្រងតាមធាតុដើម្បីស្វែងរកកាតដែលឈុតរបស់អ្នកខ្វះ។</p>
     </div>
 
     <div class="filters" id="filters">
@@ -502,10 +509,10 @@ footer p{color:#8d90ab;font-size:13px;margin-top:8px;}
         <button class="filter-btn" data-type="water">💧 ទឹក</button>
         <button class="filter-btn" data-type="grass">🌿 ស្មៅ</button>
         <button class="filter-btn" data-type="electric">⚡ អគ្គិសនី</button>
-        <button class="filter-btn" data-type="psychic">🔮 ចិត្តសាស្ត្រ</button>
+        <button class="filter-btn" data-type="psychic">🔮 ផ្លូវចិត្ត</button>
         <button class="filter-btn" data-type="dragon">🐉 នាគ</button>
         <button class="filter-btn" data-type="dark">🌑 ងងឹត</button>
-        <button class="filter-btn" data-type="fairy">🧚 ហ្វេរី</button>
+        <button class="filter-btn" data-type="fairy">🧚 ទេពអប្សរ</button>
         <button class="filter-btn" data-type="steel">⚙️ ដែក</button>
         <button class="filter-btn" data-type="ice">❄️ ទឹកកក</button>
         <button class="filter-btn" data-type="ground">🏜️ ដី</button>
@@ -517,20 +524,20 @@ footer p{color:#8d90ab;font-size:13px;margin-top:8px;}
 <section id="featured">
     <div class="spotlight">
         <div class="spotlight-card">
-            <span class="rarity-tag" style="background:var(--dragon);color:white;font-family:'JetBrains Mono',monospace;font-size:10px;font-weight:700;padding:4px 10px;border-radius:999px;">កម្របំផុត · #001</span>
-            <div class="art"><img src="pic/Rayquaza.jpg" alt=""></div>
+            <span class="rarity-tag" style="background:var(--dragon);color:white;font-family:'Noto Sans Khmer', 'JetBrains Mono', monospace;font-size:10px;font-weight:700;padding:4px 10px;border-radius:999px;">កម្របំផុត · #001</span>
+            <div class="art"><img src="pic/rayquaza.jpg" alt=""></div>
             <h3 style="text-align:center;font-size:20px;color:#fff;">Rayquaza</h3>
         </div>
         <div class="spotlight-text">
-            <div class="eyebrow">ការទាញយកលេចធ្លោប្រចាំសប្តាហ៍</div>
-            <h2>Rayquaza មេឃខ្ពស់</h2>
-            <p>មានតែកាត Rayquaza ដប់ប៉ុណ្ណោះដែលត្រូវបានបោះពុម្ពក្នុងដំណើរការហ្វอย៍នេះ។ ជកស្មៅត្បូងមរកតរបស់វាប្តូរពណ៌ក្រោមពន្លឺ ហើយអ្នកប្រមូលទិញនិយាយថាលំនាំហូឡូមិនដែលដដែលៗទេ។ ប្រសិនបើបណ្តុំរបស់អ្នកមានកន្លែងទំនេរប្រភេទនាគ នេះគឺជាកាតដែលត្រូវតាមរក។</p>
+            <div class="eyebrow">កាតលេចធ្លោប្រចាំសប្ដាហ៍</div>
+            <h2>Rayquaza, ស្ដេចមេឃ</h2>
+            <p>មានតែកាត Rayquaza ដប់ប៉ុណ្ណោះដែលត្រូវបានបោះពុម្ពនៅក្នុងវគ្គនេះ។ ស្រកានាគបៃតងផ្លាស់ប្ដូរពណ៌ក្រោមពន្លឺ ហើយអ្នកសន្សំនិយាយថាលំនាំ holo មិនដែលច្រឡំគ្នានោះទេ។ ប្រសិនបើកាតាឡុករបស់អ្នកនៅទំនេរកាតប្រភេទនាគ នេះជាកាតដែលត្រូវតាមស្វែងរក។</p>
             <div class="spotlight-meta">
-                <div><div class="num">39</div><div class="lab">បានបោះពុម្ព</div></div>
+                <div><div class="num">39</div><div class="lab">ចំនួនបោះពុម្ព</div></div>
                 <div><div class="num">PSA 10</div><div class="lab">កម្រិត</div></div>
                 <div><div class="num">$2,500</div><div class="lab">តម្លៃបច្ចុប្បន្ន</div></div>
             </div>
-            <button class="btn-primary" onclick="addToCart(10)">បន្ថែម Rayquaza ទៅក្នុងកន្ត្រក</button>
+            <button class="btn-primary" onclick="addToCart(10)">បន្ថែម Rayquaza ទៅកន្ត្រក</button>
         </div>
     </div>
 </section>
@@ -538,41 +545,41 @@ footer p{color:#8d90ab;font-size:13px;margin-top:8px;}
 <section id="reviews">
     <div class="section-head">
         <div>
-            <div class="eyebrow">ទុកចិត្តដោយអ្នកប្រមូលទិញ</div>
-            <h2>មតិយោបល់ពីអ្នកជួញដូរក្នុងឃ្លាំង</h2>
+            <div class="eyebrow">ទទួលបានការទុកចិត្តពីអ្នកសន្សំកាត</div>
+            <h2>មតិរបស់អ្នកដោះដូរកាត</h2>
         </div>
     </div>
     <div class="review-grid">
         <div class="review-card">
             <div class="stars">★★★★★</div>
-            <p>"ទាញបាន Raikou ថ្ងៃនេះ ហើយវាស្អាតឥតខ្ចោះ កែងមុតស្រួច លំនាំហូឡូគឺអស្ចារ្យខ្លាំងណាស់ពេលឃើញផ្ទាល់។"</p>
+            <p>"បានកាត Raikou ថ្ងៃនេះ គុណភាពល្អឥតខ្ចោះ ជ្រុងមុតស្រួច លំនាំផ្លេកស្អាតខ្លាំងណាស់។"</p>
             <div class="reviewer">
                 <div class="avatar" style="background:var(--fire); color:#fff;">D</div>
-                <div><div class="name">D. Powel</div><div class="tag">អ្នកទិញបានផ្ទៀងផ្ទាត់</div></div>
+                <div><div class="name">D. Powel</div><div class="tag">អ្នកទិញស្របច្បាប់</div></div>
             </div>
         </div>
         <div class="review-card">
             <div class="stars">★★★★★</div>
-            <p>"ខ្ញុំបានឃើញបុរសម្នាក់ទាញកាតចេញពីហោប៉ៅថ្ងៃនេះ 10/10 សូមណែនាំ។"</p>
+            <p>"កាតប្រចាំថ្ងៃទទួលបានគុណភាពល្អ ១០/១០ សូមណែនាំហាងនេះ។"</p>
             <div class="reviewer">
                 <div class="avatar" style="background:var(--water); color:#fff;">O</div>
-                <div><div class="name">O. Veasna</div><div class="tag">អ្នកទិញបានផ្ទៀងផ្ទាត់</div></div>
+                <div><div class="name">O. Veasna</div><div class="tag">អ្នកទិញស្របច្បាប់</div></div>
             </div>
         </div>
         <div class="review-card">
             <div class="stars">★★★★☆</div>
-            <p>"តម្លៃរបស់ Alakazam គឺសមរម្យសម្រាប់កាតកម្រ ហើយការពិពណ៌នាត្រូវគ្នានឹងស្ថានភាពកាតពិតប្រាកដ។ នឹងបញ្ជាទិញម្តងទៀត។"</p>
+            <p>"តម្លៃ Alakazam សមរម្យសម្រាប់កាតកម្រ ហើយការពិពណ៌នាត្រូវគ្នានឹងស្ថានភាពកាតពិតប្រាកដ។ នឹងកុម្ម៉ង់ម្តងទៀត។"</p>
             <div class="reviewer">
                 <div class="avatar" style="background:var(--psychic); color:#fff;">P</div>
-                <div><div class="name">P. Both</div><div class="tag">អ្នកទិញបានផ្ទៀងផ្ទាត់</div></div>
+                <div><div class="name">P. Both</div><div class="tag">អ្នកទិញស្របច្បាប់</div></div>
             </div>
         </div>
         <div class="review-card">
             <div class="stars">★★★★★</div>
-            <p>"បានប្រើប្រាស់សេវាកម្មអស់ 8 ឆ្នាំហើយ ឥឡូវហាង ZeallaVault បានណែនាំខ្ញុំយ៉ាងល្អ។"</p>
+            <p>"សេវាកម្មហាង ZeallaVault គឺល្អប្រពៃ និងលឿនរហ័សទាន់ចិត្តខ្លាំងណាស់។"</p>
             <div class="reviewer">
                 <div class="avatar" style="background:var(--grass); color:#fff;">J</div>
-                <div><div class="name">J. Bart</div><div class="tag">អ្នកទិញបានផ្ទៀងផ្ទាត់</div></div>
+                <div><div class="name">J. Bart</div><div class="tag">អ្នកទិញស្របច្បាប់</div></div>
             </div>
         </div>
     </div>
@@ -580,40 +587,40 @@ footer p{color:#8d90ab;font-size:13px;margin-top:8px;}
 
 <section id="contact">
     <div class="team-banner">
-        <h2>វិទ្យាស្ថាន សេតិច (SETEC INSTITUTE)</h2>
+        <h2>វិទ្យាស្ថានសេថិច (SETEC INSTITUTE)</h2>
         <div class="team-members">
             <div class="member">
-                <img src="pf/teacher.jpg" alt="គ្រូបង្រៀន">
-                <h3>MR. RY VISAN</h3>
-                <p>គ្រូបង្រៀនផ្នែកអភិវឌ្ឍន៍គេហទំព័រ</p>
+                <img src="pf/teacher.jpg" alt="Teacher">
+                <h3>លោក រី វិសាន</h3>
+                <p>គ្រូបង្រៀនការអភិវឌ្ឍវេបសាយ</p>
             </div>
             <div class="member logo-member">
                 <div class="mark-big">
-                    <img src="pf/setec Logo.png" alt="ឡូហ្គោ" style="width:100%;height:100%;object-fit:cover;border-radius:inherit;">
+                    <img src="pf/setec Logo.png" alt="Logo" style="width:100%;height:100%;object-fit:cover;border-radius:inherit;">
                 </div>
             </div>
             <div class="member">
-                <img src="pf/me.jpg" alt="សិស្ស">
-                <h3>SAT KONGDANA</h3>
+                <img src="pf/me.jpg" alt="Student">
+                <h3>សាត់ កុងដាណា</h3>
                 <p>ក្រុម៖ SX7</p>
             </div>
         </div>
     </div>
 
     <div class="contact-box">
-        <h2>ទាក់ទងមកយើង</h2>
-        <p>អ្នកអាចទាក់ទងមកយើងតាមរយៈលេខទូរសព្ទ តេឡេក្រាម ឬអ៊ីមែល។</p>
+        <h2>ទំនាក់ទំនងយើងខ្ញុំ</h2>
+        <p>អ្នកអាចទំនាក់ទំនងយើងខ្ញុំតាមរយៈលេខទូរស័ព្ទ តេឡេក្រាម ឬអ៊ីមែល។</p>
         <div class="contact-items">
             <div class="contact-item">
-                <h3>Phone Number</h3>
+                <h3>លេខទូរស័ព្ទ</h3>
                 <p><a href="tel:+85598494948">+855 98 4949 48</a></p>
             </div>
             <div class="contact-item">
-                <h3>(Telegram)</h3>
+                <h3>តេឡេក្រាម</h3>
                 <p><a href="https://t.me/KonGDaaN" target="_blank">@KonGDaaN</a></p>
             </div>
             <div class="contact-item">
-                <h3>(Email)</h3>
+                <h3>អ៊ីមែល</h3>
                 <p><a href="mailto:sathkongdana537@gmail.com">sathkongdana537@gmail.com</a></p>
             </div>
         </div>
@@ -622,13 +629,13 @@ footer p{color:#8d90ab;font-size:13px;margin-top:8px;}
 
 <footer>
     <a href="#home" class="logo"><span class="mark"><img src="pf/no game png-01.png" alt=""></span>ZEALLA<span>VAULT</span></a>
-    <p>ប្រមូលកាតរឿងព្រេងនិទាន • ជួញដូរកាតកម្រ • 2026</p>
+    <p>ប្រមូលកាតវីរបុរស • ដោះដូរកាតកម្រ • ២០២៦</p>
     
     <!-- Final Exam & Academic Info -->
     <div style="margin-top: 24px; border-top: 1px solid #2c3253; padding-top: 20px; font-size: 13px; color: #9295b5;">
-        <p style="font-weight: 700; color: #fff; letter-spacing: 1px;">វិទ្យាស្ថាន ស៊ីតិក — FINAL SEMESTER 2</p>
-        <p style="margin-top: 6px;">សិស្ស៖ <strong style="color: #fff;">សាត គង់ដាណា</strong> | ក្រុម៖ <strong style="color: #fff;">SX7</strong></p>
-        <p style="margin-top: 4px;">គ្រូបង្រៀន៖ <strong style="color: #fff;">រី វិសាន</strong> (គ្រូបង្រៀនផ្នែកអភិវឌ្ឍន៍គេហទំព័រ)</p>
+        <p style="font-weight: 700; color: #fff; letter-spacing: 1px;">វិទ្យាស្ថានសេថិច — គម្រោងប្រឡងបញ្ចប់វគ្គ</p>
+        <p style="margin-top: 6px;">និស្សិត៖ <strong style="color: #fff;">សាត់ កុងដាណា</strong> | ក្រុម៖ <strong style="color: #fff;">SX7</strong></p>
+        <p style="margin-top: 4px;">គ្រូបង្រៀន៖ <strong style="color: #fff;">លោក រី វិសាន</strong> (គ្រូបង្រៀនការអភិវឌ្ឍវេបសាយ)</p>
     </div>
 </footer>
 
@@ -637,12 +644,12 @@ footer p{color:#8d90ab;font-size:13px;margin-top:8px;}
 <div class="overlay" id="overlay" onclick="toggleCart(false);"></div>
 <div class="drawer" id="drawer">
     <div class="drawer-head">
-        <h3>កន្ត្រកឃ្លាំងរបស់អ្នក</h3>
+        <h3>កន្ត្រកទំនិញរបស់អ្នក</h3>
         <button class="icon-btn" onclick="toggleCart(false)">✕</button>
     </div>
     <div class="drawer-body" id="drawerBody"></div>
     <div class="drawer-foot">
-        <div class="row"><span>សរុបបណ្តោះអាសន្ន</span><span class="total mono" id="cartTotal">$0.00</span></div>
+        <div class="row"><span>សរុប</span><span class="total mono" id="cartTotal">$0.00</span></div>
         <button class="checkout-btn" onclick="checkout()">ទូទាត់ប្រាក់</button>
     </div>
 </div>
@@ -652,239 +659,237 @@ footer p{color:#8d90ab;font-size:13px;margin-top:8px;}
 <script>
 const CARDS = [
     /* ============ FIRE TYPE (19 cards) ============ */
-    {id:1,  name:"Charizard",      type:"fire",     rarity:"rare",   icon:"🔥", img:"pic/Charizard.jpg", price:35.99,  desc:"សត្វមំសាសីលឿនរហ័សដែលព័ទ្ធជុំវិញដោយអណ្តាតភ្លើង."},
-    {id:2,  name:"Arcanine",       type:"fire",     rarity:"common", icon:"🐕", img:"pic/arcanine.jpg", price:15.99,   desc:"តូចតែខ្លាំង ក្រញ៉ាំរបស់វាមានកំដៅគំរាមកំហែង."},
-    {id:3,  name:"Ninetales",      type:"fire",     rarity:"holo",   icon:"🦊", img:"pic/ninetales.jpg", price:54.99,  desc:"ការរត់បន្សល់ទុកនូវស្នាមជើងឆេះនៅលើដី."},
-    {id:26, name:"Moltres",        type:"fire",     rarity:"ultra",  icon:"🔥", img:"pic/moltres.jpg", price:129.99, desc:"ស្លាបរបស់វាភ្លឺចែងចាំងពណ៌សមុនពេលវាហោះហើរ."},
-    {id:45, name:"Blaziken",       type:"fire",     rarity:"rare",   icon:"🦅", img:"pic/blaziken.jpg", price:45.00, desc:"អណ្តាតភ្លើងចេញពីកដៃរបស់វា ព័ទ្ធជុំវិញកណ្តាប់ដៃដោយកំដៅ."},
-    {id:101,name:"Charmander",     type:"fire",     rarity:"common", icon:"🔥", img:"pic/charmander.jpg", price:4.99, desc:"អណ្តាតភ្លើងកន្ទុយរបស់វាចាំងភ្លឺតាមអារម្មណ៍."},
-    {id:102,name:"Charmeleon",     type:"fire",     rarity:"common", icon:"🔥", img:"pic/charmeleon.jpg", price:9.99, desc:"កាប់សត្រូវដោយក្រញ៉ាំមុតស្រួចក្នុងកំហឹងភ្លើង."},
-    {id:103,name:"Cyndaquil",      type:"fire",     rarity:"common", icon:"🔥", img:"pic/cyndaquil.jpg", price:3.99, desc:"មានការភ័យខ្លាចដោយធម្មជាតិ ភ្លើងខាងក្រោយរបស់វាឆាបឆេះពេលตกใจ."},
-    {id:104,name:"Quilava",        type:"fire",     rarity:"common", icon:"🔥", img:"pic/quilava.jpg", price:12.50, desc:"គំរាមកំហែងគូប្រកួតด้วยខ្យល់ក្តៅរលាក."},
-    {id:105,name:"Typhlosion",     type:"fire",     rarity:"holo",   icon:"🔥", img:"pic/typhlosion.jpg", price:42.00, desc:"បង្កើតការផ្ទុះកំដៅខ្លាំងដើម្បីកម្ទេចសត្រូវ."},
-    {id:106,name:"Torchic",        type:"fire",     rarity:"common", icon:"🔥", img:"pic/torchic.jpg", price:4.50, desc:"រក្សាភ្លើងតូចមួយឆេះក្នុងពោះជាប្រចាំ."},
-    {id:107,name:"Combusken",      type:"fire",     rarity:"common", icon:"🔥", img:"pic/combusken.jpg", price:11.00, desc:"វាយលុកលឿនដូចផ្លេកបន្ទោរជាមួយសិល្បៈគុនភ្លើង."},
-    {id:108,name:"Chimchar",       type:"fire",     rarity:"common", icon:"🔥", img:"pic/chimchar.jpg", price:5.00, desc:"ឡើងភ្នំชันដោយប្រើការដើររហ័សរហួននិងភ្លើង."},
-    {id:109,name:"Monferno",       type:"fire",     rarity:"common", icon:"🔥", img:"pic/monferno.jpg", price:14.00, desc:"ប្រើเพดานនិងជញ្ជាំងដើម្បីបើកការវាយប្រហារភ្លើងពីលើអាកាស."},
-    {id:110,name:"Infernape",      type:"fire",     rarity:"holo",   icon:"🔥", img:"pic/infernape.jpg", price:68.00, desc:"ប្រយុទ្ធជាមួយមកុដភ្លើងដ៏ត្រហឹងនៅលើក្បាល."},
-    {id:111,name:"Tepig",          type:"fire",     rarity:"common", icon:"🔥", img:"pic/tepig.jpg", price:3.50, desc:"ផ្លុំបាល់ភ្លើងចេញពីច្រមុះពេលរំភើប."},
-    {id:112,name:"Pignite",        type:"fire",     rarity:"common", icon:"🔥", img:"pic/pignite.jpg", price:10.50, desc:"ភ្លើងខាងក្នុងរោទ៍ខ្លាំងជាងមុនពេលវាមានថាមពល."},
-    {id:113,name:"Emboar",         type:"fire",     rarity:"rare",   icon:"🔥", img:"pic/emboar.jpg", price:38.00, desc:"បាញ់កំដៅខ្លាំងពីចង្ការបស់វា."},
-    {id:114,name:"Magmortar",      type:"fire",     rarity:"rare",   icon:"🔥", img:"pic/magmortar.jpg", price:29.99, desc:"បាញ់គ្រាប់បាល់ភ្លើងក្តៅជាង 3,600 ដឺក្រេ Fahrenheit."},
+    {id:1,  name:"Charizard",      type:"fire",     rarity:"rare",   icon:"🔥", img:"pix/Charizard.jpg", price:35.99,  desc:"សត្វប្រមាញ់ដ៏ឆាប់រហ័សដែលរុំព័ទ្ធដោយអណ្តាតភ្លើងរស់រវើក។"},
+    {id:2,  name:"Arcanine",       type:"fire",     rarity:"common", icon:"🐕", img:"pix/arcanine.jpg", price:15.99,   desc:"តូចតែកាចសាហាវ ក្រញ៉ាំរបស់វាឆេះសន្ធោសន្ធៅដោយកំដៅ។"},
+    {id:3,  name:"Ninetales",      type:"fire",     rarity:"holo",   icon:"🦊", img:"pic/ninetales.jpg", price:54.99,  desc:"ការវាយប្រហារបន្សល់ទុកស្នាមក្រញាំឆេះខ្លោចនៅពីក្រោយ។"},
+    {id:26, name:"Moltres",        type:"fire",     rarity:"ultra",  icon:"🔥", img:"pic/moltres.jpg", price:129.99, desc:"ស្លាបរបស់វាបញ្ចេញពន្លឺក្តៅក្រហាយមុនពេលហោះហើរ។"},
+    {id:45, name:"Blaziken",       type:"fire",     rarity:"rare",   icon:"🦅", img:"pix/blaziken.jpg", price:45.00, desc:"អណ្តាតភ្លើងបាញ់ចេញពីកដៃ រុំព័ទ្ធកណ្តាប់ដៃដោយកំដៅ។"},
+    {id:101,name:"Charmander",     type:"fire",     rarity:"common", icon:"🔥", img:"pix/charmander.jpg", price:4.99, desc:"អណ្តាតភ្លើងកន្ទុយរបស់វាផ្លាតទៅតាមអារម្មណ៍។"},
+    {id:102,name:"Charmeleon",     type:"fire",     rarity:"common", icon:"🔥", img:"pix/charmeleon.jpg", price:9.99, desc:"កាប់សត្រូវដោយក្រញ៉ាំស្រួចៗក្នុងកំហឹងភ្លើង។"},
+    {id:103,name:"Cyndaquil",      type:"fire",     rarity:"common", icon:"🔥", img:"pix/cyndaquil.jpg", price:3.99, desc:"មានអៀនខ្មាស់ដោយធម្មជាតិ អណ្តាតភ្លើងក្នុងខ្នងកើនឡើងពេលភ្ញាក់ផ្អើល។"},
+    {id:104,name:"Quilava",        type:"fire",     rarity:"common", icon:"🔥", img:"pic/quilava.jpg", price:12.50, desc:"បំភ័យគូប្រកួតដោយខ្យល់ក្តៅក្រហាយ។"},
+    {id:105,name:"Typhlosion",     type:"fire",     rarity:"holo",   icon:"🔥", img:"pic/typhlosion.jpg", price:42.00, desc:"បង្កើតការផ្ទុះកំដៅដើម្បីកាត់បន្ថយសត្រូវទៅជាផេះ។"},
+    {id:106,name:"Torchic",        type:"fire",     rarity:"common", icon:"🔥", img:"pic/torchic.jpg", price:4.50, desc:"រក្សាអណ្តាតភ្លើងតូចមួយឆេះក្នុងពោះជានិច្ច។"},
+    {id:107,name:"Combusken",      type:"fire",     rarity:"common", icon:"🔥", img:"pix/combusken.jpg", price:11.00, desc:"ដាល់ក្នុងល្បឿនលឿនដូចផ្លេកបន្ទោរជាមួយក្បាច់គុនភ្លើង។"},
+    {id:108,name:"Chimchar",       type:"fire",     rarity:"common", icon:"🔥", img:"pix/chimchar.jpg", price:5.00, desc:"ឡើងច្រាំងថ្មចោតដោយប្រើជំហានរហ័សរហួន និងភ្លើង។"},
+    {id:109,name:"Monferno",       type:"fire",     rarity:"common", icon:"🔥", img:"pic/monferno.jpg", price:14.00, desc:"ប្រើពិដាន និងជញ្ជាំងដើម្បីបើកការវាយប្រហារដោយភ្លើងពីលើអាកាស។"},
+    {id:110,name:"Infernape",      type:"fire",     rarity:"holo",   icon:"🔥", img:"pix/infernape.jpg", price:68.00, desc:"ប្រយុទ្ធជាមួយមកុដភ្លើងដែលឆេះយ៉ាងត្រចះត្រចង់នៅលើក្បាល។"},
+    {id:111,name:"Tepig",          type:"fire",     rarity:"common", icon:"🔥", img:"pic/tepig.jpg", price:3.50, desc:"បាញ់គ្រាប់ភ្លើងចេញពីច្រមុះពេលរំភើប។"},
+    {id:112,name:"Pignite",        type:"fire",     rarity:"common", icon:"🔥", img:"pic/pignite.jpg", price:10.50, desc:"ភ្លើងខាងក្នុងគ្រហឹមខ្លាំងជាងមុននៅពេលវាស៊ូ។"},
+    {id:113,name:"Emboar",         type:"fire",     rarity:"rare",   icon:"🔥", img:"pix/emboar.jpg", price:38.00, desc:"បាញ់កំដៅយ៉ាងសន្ធោសន្ធៅចេញពីចង្ការបស់វា។"},
+    {id:114,name:"Magmortar",      type:"fire",     rarity:"rare",   icon:"🔥", img:"pic/magmortar.jpg", price:29.99, desc:"បាញ់គ្រាប់ភ្លើងក្តៅជាង ៣៦០០ ដឺក្រេហ្វារិនហៃ។"},
 
     /* ============ WATER TYPE (19 cards) ============ */
-    {id:4,  name:"Gyarados",       type:"water",    rarity:"holo",   icon:"🌊", img:"pic/gyarados.jpg", price:49.99,  desc:"ជិះចរន្តទឹកជ្រៅ ខ្នាតភ្លឺចាំងដូចកញ្ចក់."},
-    {id:5,  name:"Squirtle",       type:"water",    rarity:"common", icon:"💧", img:"pic/squirtle.jpg", price:2.99,   desc:"សត្វលេងសើចដែលចូលចិត្តអាងទឹក shallower."},
-    {id:6,  name:"Lapras",         type:"water",    rarity:"rare",   icon:"🦕", img:"pic/lapras.jpg", price:22.99,  desc:"ដកដង្ហើមខ្យល់ត្រជាក់ល្មមធ្វើឱ្យកកគែមស្រះ."},
-    {id:27, name:"Magikarp",       type:"water",    rarity:"common", icon:"🐟", img:"pic/magikarp.jpg", price:3.49,   desc:"បាញ់ទឹកជុំវិញ រង់ចាំថាមពលពិតរបស់វាตื่นขึ้น."},
-    {id:41, name:"Lugia",          type:"water",    rarity:"ultra",  icon:"🌪️", img:"pic/lugia.jpg", price:1200.00, desc:"អាណាព្យាបាលសមុទ្រ ស្លាបរបស់វាអាចបង្កព្យុះ ៤០ ថ្ងៃ."},
-    {id:201,name:"Wartortle",      type:"water",    rarity:"common", icon:"💧", img:"pic/wartortle.jpg", price:8.99, desc:"កន្ទុយវែងនិងរោមគឺជាសញ្ញានៃអាយុវែងបុរាណ."},
-    {id:202,name:"Blastoise",      type:"water",    rarity:"rare",   icon:"💧", img:"pic/blastoise.jpg", price:48.00, desc:"ទឹកហូរចេញពីកាណុងដែកធ្ងន់នៅលើសំបករបស់វា."},
-    {id:203,name:"Totodile",       type:"water",    rarity:"common", icon:"💧", img:"pic/totodile.jpg", price:5.50, desc:"នឹងខាំអ្វីក៏ដោយដែលធ្វើចលនាដោយថ្គាមដ៏មានឥទ្ធិពល."},
-    {id:204,name:"Feraligatr",     type:"water",    rarity:"rare",   icon:"💧", img:"pic/feraligatr.jpg", price:41.00, desc:"គំរាមកំហែងសត្រូវដោយបើកមាត់ធំនិងមានធ្មេញ."},
-    {id:205,name:"Psyduck",        type:"water",    rarity:"common", icon:"💧", img:"pic/psyduck.jpg", price:3.25, desc:"តែងតែឈឺក្បាលដែលដោះសោថាមពលចិត្តសាស្ត្រលាក់កំបាំង."},
-    {id:206,name:"Golduck",        type:"water",    rarity:"common", icon:"💧", img:"pic/golduck.jpg", price:12.00, desc:"ហែលទឹកយ៉ាងរលូនតាមទន្លេដែលមានចលាចលយ៉ាងងាយស្រួល."},
-    {id:207,name:"Horsea",         type:"water",    rarity:"common", icon:"💧", img:"pic/horsea.jpg", price:3.00, desc:"បាញ់ទឹកថ្នាំដើម្បីគេចពីសត្វមំសាសីសមុទ្រលឿន."},
-    {id:208,name:"Seadra",         type:"water",    rarity:"common", icon:"💧", img:"pic/seadra.jpg", price:9.50, desc:"បន្លាពុលគ្របដណ្តប់រាងកាយដែលមានរាងសំប៉ែតរបស់វា."},
-    {id:209,name:"Kingdra",        type:"water",    rarity:"holo",   icon:"💧", img:"pic/kingdra.jpg", price:55.00, desc:"ដេកលក់ជ្រៅនៅបាតមើសមុទ្រ បង្កើតវូហ្វុល (whirlpools)."},
-    {id:210,name:"Staryu",         type:"water",    rarity:"common", icon:"⭐", img:"pic/staryu.jpg", price:3.75, desc:"ស្នូលកណ្តាលភ្លឺដោយពន្លឺពណ៌ក្រហមអាថ៌កំបាំង."},
-    {id:211,name:"Starmie",        type:"water",    rarity:"rare",   icon:"⭐", img:"pic/starmie.jpg", price:26.50, desc:"បញ្ចេញរលកវិទ្យុទៅក្នុងលំហអាកាសជ្រៅពីស្នូលរបស់វា."},
-    {id:212,name:"Vaporeon",       type:"water",    rarity:"holo",   icon:"💧", img:"pic/vaporeon.jpg", price:49.00, desc:"អាចរំលាយទៅក្នុងទឹកដើម្បីបាត់ខ្លួនទាំងស្រុងពីការមើលឃើញ."},
-    {id:213,name:"Milotic",        type:"water",    rarity:"holo",   icon:"💧", img:"pic/milotic.jpg", price:75.00, desc:"ត្រូវបានគេស្គាល់ថាជា Pokémon ដ៏ស្រស់ស្អាតបំផុតដែលមាន."},
-    {id:214,name:"Kyogre",         type:"ultra",    type:"water",    rarity:"ultra", icon:"🌊", img:"pic/kyogre.jpg", price:1100.00, desc:"បានពង្រីកសមុទ្រនៃរឿងព្រេងបុរាណដោយនាំមកនូវភ្លៀងធ្លាក់ខ្លាំង."},
+    {id:4,  name:"Gyarados",       type:"water",    rarity:"holo",   icon:"🌊", img:"pix/gyarados.jpg", price:49.99,  desc:"ជិះរលកទឹកជ្រៅ ស្រការបស់វាភ្លឺចាំងដូចកញ្ចក់។"},
+    {id:5,  name:"Squirtle",       type:"water",    rarity:"common", icon:"💧", img:"pic/squirtle.jpg", price:2.99,   desc:"សត្វដែលស្រឡាញ់ការលេងនៅក្នុងអាងទឹកទឹករាក់។"},
+    {id:6,  name:"Lapras",         type:"water",    rarity:"rare",   icon:"🦕", img:"pic/lapras.jpg", price:22.99,  desc:"ដកដង្ហើមចេញខ្យល់ត្រជាក់ល្មមនឹងធ្វើឱ្យស្រះទឹកកក។"},
+    {id:27, name:"Magikarp",       type:"water",    rarity:"common", icon:"🐟", img:"pic/magikarp.jpg", price:3.49,   desc:"រវើករវាយក្នុងទឹក រង់ចាំថាមពលពិតប្រាកដរបស់វាភ្ញាក់ឡើង។"},
+    {id:41, name:"Lugia",          type:"water",    rarity:"ultra",  icon:"🌪️", img:"pic/lugia.jpg", price:1200.00, desc:"អ្នកការពារសមុទ្រ ស្លាបរបស់វាអាចបង្កឱ្យមានព្យុះរយៈពេល ៤០ ថ្ងៃ។"},
+    {id:201,name:"Wartortle",      type:"water",    rarity:"common", icon:"💧", img:"pic/wartortle.jpg", price:8.99, desc:"កន្ទុយវែងគ្របដណ្តប់ដោយរោមជាសញ្ញានៃអាយុវែង។"},
+    {id:202,name:"Blastoise",      type:"water",    rarity:"rare",   icon:"💧", img:"pix/blastoise.jpg", price:48.00, desc:"ទឹកបាញ់ចេញពីកាណុងដែកដ៏ធ្ងន់នៅលើស្នូករបស់វា។"},
+    {id:203,name:"Totodile",       type:"water",    rarity:"common", icon:"💧", img:"pic/totodile.jpg", price:5.50, desc:"នឹងខាំអ្វីៗទាំងអស់ដែលផ្លាស់ទីដោយប្រើចង្កូមដ៏មានថាមពល។"},
+    {id:204,name:"Feraligatr",     type:"water",    rarity:"rare",   icon:"💧", img:"pix/feraligatr.jpg", price:41.00, desc:"បំភ័យសត្រូវដោយបើកមាត់ធំៗដែលមានធ្មេញស្រួច។"},
+    {id:205,name:"Psyduck",        type:"water",    rarity:"common", icon:"💧", img:"pic/psyduck.jpg", price:3.25, desc:"តែងតែឈឺក្បាល ដែលបើកថាមពលផ្លូវចិត្តដែលលាក់កំបាំង។"},
+    {id:206,name:"Golduck",        type:"water",    rarity:"common", icon:"💧", img:"pix/golduck.jpg", price:12.00, desc:"ហែលទឹកយ៉ាងរលូនតាមទន្លេដែលមានរលកខ្លាំង។"},
+    {id:207,name:"Horsea",         type:"water",    rarity:"common", icon:"💧", img:"pix/horsea.jpg", price:3.00, desc:"បាញ់ទឹកខ្មៅដើម្បីគេចចេញពីសត្វប្រមាញ់ក្នុងសមុទ្រ។"},
+    {id:208,name:"Seadra",         type:"water",    rarity:"common", icon:"💧", img:"pic/seadra.jpg", price:9.50, desc:"បន្លាមានពិសគ្របដណ្តប់លើរាងកាយទាំងមូល។"},
+    {id:209,name:"Kingdra",        type:"water",    rarity:"holo",   icon:"💧", img:"pix/kingdra.jpg", price:55.00, desc:"ដេកលក់យ៉ាងជ្រៅនៅលើបាតសមុទ្រ បង្កើតជាកួចទឹក។"},
+    {id:210,name:"Staryu",         type:"water",    rarity:"common", icon:"⭐", img:"pic/staryu.jpg", price:3.75, desc:"ស្នូលកណ្តាលបញ្ចេញពន្លឺពណ៌ក្រហមដ៏អាថ៌កំបាំង។"},
+    {id:211,name:"Starmie",        type:"water",    rarity:"rare",   icon:"⭐", img:"pic/starmie.jpg", price:26.50, desc:"បញ្ចេញរលកវិទ្យុទៅក្នុងអវកាសជ្រៅចេញពីស្នូលរបស់វា។"},
+    {id:212,name:"Vaporeon",       type:"water",    rarity:"holo",   icon:"💧", img:"pic/vaporeon.jpg", price:49.00, desc:"អាចរលាយចូលទៅក្នុងទឹកដើម្បីបាត់ខ្លួនទាំងស្រុង។"},
+    {id:213,name:"Milotic",        type:"water",    rarity:"holo",   icon:"💧", img:"pic/milotic.jpg", price:75.00, desc:"ត្រូវបានគេស្គាល់ថាជា Pokémon ស្អាតបំផុតក្នុងលោក។"},
+    {id:214,name:"Kyogre",         type:"ultra",    type:"water",    rarity:"ultra", icon:"🌊", img:"pix/kyogre.jpg", price:1100.00, desc:"ពង្រីកសមុទ្រក្នុងព្រេងនិទានបុរាណដោយនាំមកនូវភ្លៀងធ្លាក់ខ្លាំង។"},
 
     /* ============ GRASS TYPE (19 cards) ============ */
-    {id:7,  name:"Venusaur",       type:"grass",    rarity:"rare",   icon:"🌿", img:"pic/venusaur.jpg", price:19.99,  desc:"ផ្ការបស់វាធំជាងមុននិងមានក្លិនក្រអូបជាងរដូវនីមួយៗ."},
-    {id:8,  name:"Bulbasaur",      type:"grass",    rarity:"common", icon:"🌱", img:"pic/bulbasaur.jpg", price:2.99,   desc:"ទើបតែចាប់ផ្តើមចេញផ្កា - ពោរពេញដោយសក្តានុពល."},
-    {id:9,  name:"Turtwig",        type:"grass",    rarity:"common", icon:"🐢", img:"pic/turtwig.jpg", price:3.99,   desc:"ផ្លាស់ទីយឺតៗ; គុម្ពោតនៅលើក្បាលរបស់វាមានអាយុកាលរាប់សតវត្សរ៍."},
-    {id:28, name:"Roserade",       type:"grass",    rarity:"holo",   icon:"🌹", img:"pic/roserade.jpg", price:47.99,  desc:"វាយលុកលឿន ព័ទ្ធជុំវិញដោយវល្លិមានក្លិនក្រអូបផ្អែម."},
-    {id:301,name:"Ivysaur",        type:"grass",    rarity:"common", icon:"🌿", img:"pic/ivysaur.jpg", price:9.49, desc:"ទងផ្កានៅលើខ្នងទាញថាមពលព្រះអាទិត្យដើម្បីរីក."},
-    {id:302,name:"Oddish",         type:"grass",    rarity:"common", icon:"🌱", img:"pic/oddish.jpg", price:2.49, desc:"ដើរជុំវិញជើងឫសទាំងពីររបស់វាក្រោមពន្លឺព្រះច័ន្ទ."},
-    {id:303,name:"Gloom",          type:"grass",    rarity:"common", icon:"🌿", img:"pic/gloom.jpg", price:7.50, desc:"សារធាតុរាវស្អុយពី pistil របស់វាមានក្លិនដូចសំរាមเน่าเปื่อย."},
-    {id:304,name:"Vileplume",      type:"grass",    rarity:"rare",   icon:"🌸", img:"pic/vileplume.jpg", price:31.00, desc:"បាចលំអងពុលធ្ងន់ៗពីក្លែបផ្កាពណ៌ក្រហមយក្ស."},
-    {id:305,name:"Chikorita",      type:"grass",    rarity:"common", icon:"🌱", img:"pic/chikorita.jpg", price:4.20, desc:"យោលអាយ៉ងស្លឹករបស់វាដើម្បីពិនិត្យមើលភាពកក់ក្តៅជុំវិញ."},
-    {id:306,name:"Bayleef",        type:"grass",    rarity:"common", icon:"🌿", img:"pic/bayleef.jpg", price:11.50, desc:"ក្លិនក្រអូបពីស្លឹកករបស់វាស្ងប់ចិត្តអារម្មណ៍ឈ្លានពាន."},
-    {id:307,name:"Meganium",       type:"grass",    rarity:"holo",   icon:"🌿", img:"pic/meganium.jpg", price:52.00, desc:"ដង្ហើមធ្វើឱ្យរុក្ខជាតិងាប់និងផ្កាស្រពោនងើបឡើងវិញ."},
-    {id:308,name:"Treecko",        type:"grass",    rarity:"common", icon:"🦎", img:"pic/treecko.jpg", price:4.80, desc:"ឡើងជញ្ជាំងកញ្ចក់រលោងយ៉ាងងាយស្រួលដោយម្រាមជើងកោង."},
-    {id:309,name:"Grovyle",        type:"grass",    rarity:"common", icon:"🌿", img:"pic/grovyle.jpg", price:13.20, desc:"លោតយ៉ាងលឿនតាមស្លឹកព្រៃក្រាស់."},
-    {id:310,name:"Sceptile",       type:"grass",    rarity:"holo",   icon:"🌿", img:"pic/sceptile.jpg", price:65.00, desc:"ស្លឹកកាំបិតនៅលើដៃរបស់វាអាចកាត់ដើមឈើក្រាស់ៗ."},
-    {id:311,name:"Roselia",        type:"grass",    rarity:"common", icon:"🌹", img:"pic/roselia.jpg", price:6.00, desc:"ផឹកទឹកនិទាឃរដូវសម្បូរសារធាតុចិញ្ចឹមដើម្បីរក្សាផ្កាឱ្យភ្លឺ."},
-    {id:312,name:"Budew",          type:"grass",    rarity:"common", icon:"🌱", img:"pic/budew.jpg", price:3.10, desc:"បិទជិតយ៉ាងតឹងរឹងក្នុងអំឡុងពេលយប់រដូវរងាត្រជាក់."},
-    {id:313,name:"Leafeon",        type:"grass",    rarity:"holo",   icon:"🌿", img:"pic/leafeon.jpg", price:44.00, desc:"កោសិកាគឺស្រដៀងនឹងរុក្ខជាតិធ្វើការរស្មីសំយោគស្អាត."},
-    {id:314,name:"Snivy",          type:"grass",    rarity:"common", icon:"🐍", img:"pic/snivy.jpg", price:4.00, desc:"បញ្ចេញកន្ទុយទៅពន្លឺព្រះអាទិត្យដើម្បីស្រូបយកថាមពលពន្លឺព្រះអាទិត្យ."},
-    {id:315,name:"Serperior",      type:"grass",    rarity:"rare",   icon:"🌿", img:"pic/serperior.jpg", price:39.50, desc:"ភ្ញាក់ផ្អើលគូប្រកួតด้วยការសម្លឹងមើលដ៏អស្ចារ្យ."},
+    {id:7,  name:"Venusaur",       type:"grass",    rarity:"rare",   icon:"🌿", img:"pic/venusaur.jpg", price:19.99,  desc:"ផ្កានៅលើខ្នងរបស់វាលូតលាស់កាន់តែធំ និងមានក្លិនក្រអូបជារៀងរាល់រដូវ។"},
+    {id:8,  name:"Bulbasaur",      type:"grass",    rarity:"common", icon:"🌱", img:"pix/bulbasaur.jpg", price:2.99,   desc:"ទើបតែចាប់ផ្តើមដុះពន្លក — ពេញដោយសក្តានុពល។"},
+    {id:9,  name:"Turtwig",        type:"grass",    rarity:"common", icon:"🐢", img:"pic/turtwig.jpg", price:3.99,   desc:"ផ្លាស់ទីយឺតៗ; ដើមឈើនៅលើក្បាលរបស់វាមានអាយុកាលរាប់សតវត្សរ៍មកហើយ។"},
+    {id:28, name:"Roserade",       type:"grass",    rarity:"holo",   icon:"🌹", img:"pic/roserade.jpg", price:47.99,  desc:"វាយប្រហារយ៉ាងរហ័ស រុំដោយវល្លិដែលមានក្លិនក្រអូបផ្អែម។"},
+    {id:301,name:"Ivysaur",        type:"grass",    rarity:"common", icon:"🌿", img:"pix/ivysaur.jpg", price:9.49, desc:"ពន្លកនៅលើខ្នងរបស់វាស្រូបយកថាមពលព្រះអាទិត្យដើម្បីរីកដុះដាល។"},
+    {id:302,name:"Oddish",         type:"grass",    rarity:"common", icon:"🌱", img:"pic/oddish.jpg", price:2.49, desc:"ដើរនៅលើជើងឬស្សីពីរនៅក្រោមពន្លឺព្រះច័ន្ទ។"},
+    {id:303,name:"Gloom",          type:"grass",    rarity:"common", icon:"🌿", img:"pix/gloom.jpg", price:7.50, desc:"រាវក្លិនស្អុយចេញពីផ្ការបស់វាមានក្លិនដូចសំរាមរលួយ។"},
+    {id:304,name:"Vileplume",      type:"grass",    rarity:"rare",   icon:"🌸", img:"pic/vileplume.jpg", price:31.00, desc:"បាចលំអងពុលធ្ងន់ៗចេញពីត្របកផ្កាពណ៌ក្រហមដ៏ធំ។"},
+    {id:305,name:"Chikorita",      type:"grass",    rarity:"common", icon:"🌱", img:"pix/chikorita.jpg", price:4.20, desc:"បក់អង់តែនស្លឹករបស់វាដើម្បីពិនិត្យមើលកំដៅជុំវិញ។"},
+    {id:306,name:"Bayleef",        type:"grass",    rarity:"common", icon:"🌿", img:"pix/bayleef.jpg", price:11.50, desc:"ក្លិនហឹរចេញពីស្លឹកករបស់វាធ្វើឱ្យអារម្មណ៍កាចសាហាវស្ងប់ស្ងាត់។"},
+    {id:307,name:"Meganium",       type:"grass",    rarity:"holo",   icon:"🌿", img:"pic/meganium.jpg", price:52.00, desc:"ខ្យល់ដង្ហើមរស់ឡើងវិញនូវរុក្ខជាតិដែលស្វិតស្រពោន។"},
+    {id:308,name:"Treecko",        type:"grass",    rarity:"common", icon:"🦎", img:"pic/treecko.jpg", price:4.80, desc:"ឡើងលើជញ្ជាំងកញ្ចក់រលោងយ៉ាងងាយស្រួល។"},
+    {id:309,name:"Grovyle",        type:"grass",    rarity:"common", icon:"🌿", img:"pix/grovyle.jpg", price:13.20, desc:"លោតយ៉ាងលឿនតាមព្រៃក្រាស់។"},
+    {id:310,name:"Sceptile",       type:"grass",    rarity:"holo",   icon:"🌿", img:"pic/sceptile.jpg", price:65.00, desc:"មុខកាំបិតស្លឹកនៅលើដៃរបស់វាអាចកាប់ដើមឈើធំៗបាន។"},
+    {id:311,name:"Roselia",        type:"grass",    rarity:"common", icon:"🌹", img:"pic/roselia.jpg", price:6.00, desc:"ផឹកទឹកផ្ទុករ៉ែដើម្បីរក្សាផ្កាឱ្យភ្លឺថ្លា។"},
+    {id:312,name:"Budew",          type:"grass",    rarity:"common", icon:"🌱", img:"pix/budew.jpg", price:3.10, desc:"បិទជិតយ៉ាងតឹងរ៉ឹងក្នុងអំឡុងពេលយប់រដូវរងាត្រជាក់។"},
+    {id:313,name:"Leafeon",        type:"grass",    rarity:"holo",   icon:"🌿", img:"pic/leafeon.jpg", price:44.00, desc:"កោសិកាស្រដៀងនឹងរុក្ខជាតិ ធ្វើរស្មីសំយោគយ៉ាងស្អាត។"},
+    {id:314,name:"Snivy",          type:"grass",    rarity:"common", icon:"🐍", img:"pic/snivy.jpg", price:4.00, desc:"បើកកន្ទុយទៅកាន់ពន្លឺព្រះអាទិត្យដើម្បីស្រូបយកថាមពល។"},
+    {id:315,name:"Serperior",      type:"grass",    rarity:"rare",   icon:"🌿", img:"pic/serperior.jpg", price:39.50, desc:"ធ្វើឱ្យគូប្រកួតកោតខ្លាចដោយសារកែវភ្នែកដ៏អស្ចារ្យ។"},
 
     /* ============ DRAGON TYPE (19 cards) ============ */
-    {id:10, name:"Rayquaza",       type:"dragon",   rarity:"ultra",  icon:"🐉", img:"pic/rayquaza.jpg", price:2500.00, desc:"បុរាណ ធំសម្បើម និងស្ទើរតែមិនអាចទាញបាន."},
-    {id:11, name:"Dragonite",      type:"dragon",   rarity:"holo",   icon:"🐲", img:"pic/dragonite.jpg", price:119.99, desc:"វិលជុំវិញព្យុះខ្ពស់ រង់ចាំវាយប្រហារ."},
-    {id:12, name:"Dratini",        type:"dragon",   rarity:"common", icon:"🐍", img:"pic/dratini.jpg", price:6.99,   desc:"នៅតែប្តូរស្បែកចាស់របស់វាខណៈទឹកស្ងប់ស្ងាត់."},
-    {id:31, name:"Salamence",      type:"dragon",   rarity:"rare",   icon:"🐉", img:"pic/salamence.jpg", price:69.99,  desc:"ដកដង្ហើមអណ្តាតភ្លើងក្តៅល្មមអាចរំលាយខ្សាច់ទៅជាកញ្ចក់."},
-    {id:401,name:"Dragonair",      type:"dragon",   rarity:"common", icon:"🐉", img:"pic/dragonair.jpg", price:18.00, desc:"รัศមីនៃការស្ងប់ស្ងាត់អាថ៌កំបាំងព័ទ្ធជុំវិញខ្លួនវែងរបស់វា."},
-    {id:402,name:"Bagon",          type:"dragon",   rarity:"common", icon:"🐉", img:"pic/bagon.jpg", price:5.00, desc:"លោតចុះពីច្រាំងថ្មចោទជារៀងរាល់ថ្ងៃ សុបិនចង់ហោះហើរខ្ពស់."},
-    {id:403,name:"Shelgon",        type:"dragon",   rarity:"common", icon:"🐉", img:"pic/shelgon.jpg", price:14.50, desc:"សំបកខាងក្រៅរឹងការពារកាំបិតដែកនិងភ្លើង."},
-    {id:404,name:"Gible",          type:"dragon",   rarity:"common", icon:"🦈", img:"pic/gible.jpg", price:4.50, desc:"សំបុកក្នុងរូងភ្នំតូចៗ ចាប់ចំណីដែលឆ្លងកាត់."},
-    {id:405,name:"Gabite",         type:"dragon",   rarity:"common", icon:"🐉", img:"pic/gabite.jpg", price:16.00, desc:"ងប់ងល់នឹងការប្រមូលត្បូងមានតម្លៃភ្លឺចាំង."},
-    {id:406,name:"Garchomp",       type:"dragon",   rarity:"holo",   icon:"🐉", img:"pic/garchomp.jpg", price:88.00, desc:"ហោះក្នុងល្បឿនសូនិក តាមล่าចំណីគ្មានទីពឹង."},
-    {id:407,name:"Axew",           type:"dragon",   rarity:"common", icon:"🐉", img:"pic/axew.jpg", price:4.20, desc:"ធ្មេញអាចកាត់ដើមឈើក្រាស់បានយ៉ាងងាយស្រួល."},
-    {id:408,name:"Fraxure",        type:"dragon",   rarity:"common", icon:"🐉", img:"pic/fraxure.jpg", price:13.50, desc:"ធ្មេញមុតស្រួចដុះឡើងវិញរឹងមាំប្រសិនបើបាក់ក្នុងការប្រយុទ្ធ."},
-    {id:409,name:"Haxorus",        type:"dragon",   rarity:"rare",   icon:"🐉", img:"pic/haxorus.jpg", price:54.00, desc:"គ្រឿងសឹកពណ៌ខ្មៅស្រអាប់និងប្រើប្រាស់បានយូរអង្វែង."},
-    {id:410,name:"Deino",          type:"dragon",   rarity:"common", icon:"🐉", img:"pic/deino.jpg", price:6.00, desc:"ខាំអ្វីក៏ដោយដែលធ្វើចលនាព្រោះភ្នែករបស់វាខ្សោយ."},
-    {id:411,name:"Zweilous",       type:"dragon",   rarity:"common", icon:"🐉", img:"pic/zweilous.jpg", price:17.50, desc:"ក្បាលពីរទាស់ទែងគ្នាយ៉ាងខ្លាំងលើម្ហូបអាហារនិងចំណាប់អារម្មណ៍."},
-    {id:412,name:"Hydreigon",      type:"dragon",   rarity:"holo",   icon:"🐉", img:"pic/hydreigon.jpg", price:95.00, desc:"សត្វព្រៃឃោរឃៅដែលបង្កភាពភ័យខ្លាចទូទាំងតំបន់."},
-    {id:413,name:"Goomy",          type:"dragon",   rarity:"common", icon:"🐉", img:"pic/goomy.jpg", price:3.50, desc: "ប្រភេទនាគខ្សោយបំផុតដែលគ្របដណ្តប់ដោយទឹករំអិល."},
-    {id:414,name:"Sliggoo",        type:"dragon",   rarity:"common", icon:"🐉", img:"pic/sliggoo.jpg", price:11.00, desc:"រំលាយអ្វីៗគ្រប់យ៉ាងដោយសារធាតុរំអិលអាស៊ីតខ្ពស់."},
-    {id:415,name:
-"Goodra",         type:
-"dragon",   rarity:
-"rare",   icon:
-"🐉", img:
-"pic/goodra.jpg", price:
-45.00, desc:
-"នាគស្រលាញ់ដែលឱបគ្រូបណ្តុះបណ្តាលដោយកាវស្អិត."},
+    {id:10, name:"Rayquaza",       type:"dragon",   rarity:"ultra",  icon:"🐉", img:"pic/rayquaza.jpg", price:2500.00, desc:"បុរាណ ធំសម្បើម និងស្ទើរតែមិនអាចរកបាន។"},
+    {id:11, name:"Dragonite",      type:"dragon",   rarity:"holo",   icon:"🐲", img:"pix/dragonite.jpg", price:119.99, desc:"ហោះហើរយ៉ាងខ្ពស់លើព្យុះ រង់ចាំវាយប្រហារ។"},
+    {id:12, name:"Dratini",        type:"dragon",   rarity:"common", icon:"🐍", img:"pix/dratini.jpg", price:6.99,   desc:"នៅតែផ្លាស់ប្តូរស្បែកចាស់នៅក្នុងទឹកស្ងប់ស្ងាត់។"},
+    {id:31, name:"Salamence",      type:"dragon",   rarity:"rare",   icon:"🐉", img:"pic/salamence.jpg", price:69.99,  desc:"បកដង្ហើមចេញកំដៅក្តៅល្មមនឹងរលាយខ្សាច់ទៅជាកញ្ចក់។"},
+    {id:401,name:"Dragonair",      type:"dragon",   rarity:"common", icon:"🐉", img:"pix/dragonair.jpg", price:18.00, desc:"បរិយាកាសនៃភាពស្ងប់ស្ងាត់អាថ៌កំបាំងរុំព័ទ្ធរាងកាយវែងរបស់វា។"},
+    {id:402,name:"Bagon",          type:"dragon",   rarity:"common", icon:"🐉", img:"pix/bagon.jpg", price:5.00, desc:"លោតចុះពីច្រាំងថ្មចោតជារៀងរាល់ថ្ងៃ ស្រមៃចង់ហោះហើរខ្ពស់។"},
+    {id:403,name:"Shelgon",        type:"dragon",   rarity:"common", icon:"🐉", img:"pic/shelgon.jpg", price:14.50, desc:"ស្នូកខាងក្រៅរឹងមាំការពារមុខកាំបិតដែក និងភ្លើង។"},
+    {id:404,name:"Gible",          type:"dragon",   rarity:"common", icon:"🦈", img:"pix/gible.jpg", price:4.50, desc:"ធ្វើសំបុកនៅក្នុងរូងភ្នំតូចៗ ខាំរាល់សត្វដែលឆ្លងកាត់។"},
+    {id:405,name:"Gabite",         type:"dragon",   rarity:"common", icon:"🐉", img:"pix/gabite.jpg", price:16.00, desc:"ចូលចិត្តប្រមូលផ្តុំត្បូងដែលមានពន្លឺចែងចាំង។"},
+    {id:406,name:"Garchomp",       type:"dragon",   rarity:"holo",   icon:"🐉", img:"pix/garchomp.jpg", price:88.00, desc:"ហោះហើរក្នុងល្បឿនលឿន ប្រមាញ់សត្វដែលគ្មានទីពឹង។"},
+    {id:407,name:"Axew",           type:"dragon",   rarity:"common", icon:"🐉", img:"pix/axew.jpg", price:4.20, desc:"ចង្កូមអាចកាប់ដើមឈើធំៗបានយ៉ាងងាយស្រួល។"},
+    {id:408,name:"Fraxure",        type:"dragon",   rarity:"common", icon:"🐉", img:"pix/fraxure.jpg", price:13.50, desc:"ចង្កូមស្រួចដុះមកវិញខ្លាំងជាងមុន ប្រសិនបើបាក់ក្នុងការប្រយុទ្ធ។"},
+    {id:409,name:"Haxorus",        type:"dragon",   rarity:"rare",   icon:"🐉", img:"pix/haxorus.jpg", price:54.00, desc:"អាវក្រោះការពារមានពណ៌ខ្មៅ និងមានភាពធន់មិនគួរឱ្យជឿ។"},
+    {id:410,name:"Deino",          type:"dragon",   rarity:"common", icon:"🐉", img:"pix/deino.jpg", price:6.00, desc:"ខាំអ្វីៗដែលផ្លាស់ទីដោយសារតែភ្នែកមើលមិនសូវច្បាស់។"},
+    {id:411,name:"Zweilous",       type:"dragon",   rarity:"common", icon:"🐉", img:"pic/zweilous.jpg", price:17.50, desc:"ក្បាលពីរតែងតែឈ្លោះគ្នាដណ្តើមអាហារ និងការយកចិត្តទុកដាក់។"},
+    {id:412,name:"Hydreigon",      type:"dragon",   rarity:"holo",   icon:"🐉", img:"pix/hydreigon.jpg", price:95.00, desc:"សត្វឃោរឃៅដែលបង្កការភ័យខ្លាចដល់គ្រប់តំបន់។"},
+    {id:413,name:"Goomy",          type:"dragon",   rarity:"common", icon:"🐉", img:"pix/goomy.jpg", price:3.50, desc: "ប្រភេទនាគដែលខ្សោយជាងគេ គ្របដណ្តប់ដោយរទិសរអិល។"},
+    {id:414,name:"Sliggoo",        type:"dragon",   rarity:"common", icon:"🐉", img:"pic/sliggoo.jpg", price:11.00, desc:"រលាយអ្វីៗគ្រប់យ៉ាងដោយការបកទឹកអាស៊ីតខ្លាំង។"},
+    {id:415,name:"Goodra",         type:"dragon",   rarity:"rare",   icon:"🐉", img:"pix/goodra.jpg", price:45.00, desc:"នាគដែលមានចិត្តស្រឡាញ់ដែលឱបគ្រូបង្វឹកដោយភាពស្និទ្ធស្នាល។"},
 
     /* ============ ELECTRIC TYPE (19 cards) ============ */
-    {id:13, name:"Raikou",         type:"electric", rarity:"ultra",  icon:"⚡", img:"pic/raikou.jpg", price:89.99,  desc:"ពពកព្យុះមានជីវិតដែលមានរោមចិញ្ចើមចរន្តឆៅ."},
-    {id:14, name:"Pikachu",        type:"electric", rarity:"common", icon:"🐭", img:"pic/pikachu.jpg", price:2.99,   desc:"ថ្ពាល់តូចៗបន្លឺសំឡេងគ្រវីនៅពេលវាตื่นเต้น."},
-    {id:15, name:"Luxray",         type:"electric", rarity:"rare",   icon:"🦁", img:"pic/luxray.jpg", price:27.99,  desc:"ភ្នែករបស់វាបញ្ចេញពន្លឺតិចៗក្នុងពេលមានព្យុះផ្គររន្ទះ."},
-    {id:29, name:"Electivire",     type:"electric", rarity:"holo",   icon:"⚡", img:"pic/electivire.jpg", price:64.99,  desc:"វាយលុកខ្លាំងល្មមធ្វើឱ្យខ្សែភ្លើងនៅក្បែរនោះដាច់ភ្លើង."},
-    {id:501,name:"Raichu",         type:"electric", rarity:"rare",   icon:"⚡", img:"pic/raichu.jpg", price:24.50, desc:"កន្ទុយវែងបញ្ចេញអគ្គិសនីដោយសុវត្ថិភាពចូលទៅក្នុងដី."},
-    {id:502,name:"Magnemite",      type:"electric", rarity:"common", icon:"⚙️", img:"pic/magnemite.jpg", price:3.00, desc:"អណ្តែតលើអាកាសដោយប្រើកម្លាំងម៉ាញេទិកដ៏មានឥទ្ធិពល."},
-    {id:503,name:"Magneton",       type:"electric", rarity:"common", icon:"⚡", img:"pic/magneton.jpg", price:9.99, desc:"គ្រឿងតភ្ជាប់បញ្ចេញជីពចរម៉ាញេទិកតង់ស្យុងខ្ពស់."},
-    {id:504,name:"Voltorb",        type:"electric", rarity:"common", icon:"⚡", img:"pic/voltorb.jpg", price:2.50, desc:"មើលទៅដូច Poké Ball ផ្លុំផ្ទុះយ៉ាងងាយស្រួល."},
-    {id:505,name:"Electrode",      type:"electric", rarity:"common", icon:"⚡", img:"pic/electrode.jpg", price:8.50, desc:"ស្តុកថាមពលអគ្គិសនីចំនួនច្រើននៅខាងក្នុង."},
-    {id:506,name:"Jolteon",        type:"electric", rarity:"holo",   icon:"⚡", img:"pic/jolteon.jpg", price:46.00, desc:"រោមឈរដូចម្ជុលស្រួចនៅពេលសាកថ្ម."},
-    {id:507,name:"Chinchou",       type:"electric", rarity:"common", icon:"💡", img:"pic/chinchou.jpg", price:3.40, desc:"បង្កើតថាមពលវិជ្ជមាន និងអវិជ្ជមាននៅខាងក្នុងអង់តែន."},
-    {id:508,name:"Lanturn",        type:"electric", rarity:"common", icon:"💡", img:"pic/lanturn.jpg", price:12.50, desc:"បំភ្លឺជម្រៅមហាសមុទ្រងងឹតដោយពន្លឺភ្លឺចាំង."},
-    {id:509,name:"Mareep",         type:"electric", rarity:"common", icon:"🐑", img:"pic/mareep.jpg", price:4.00, desc:"រោមចៀមទន់ស្តុកអគ្គិសនី στατικό ដោយងាយស្រួល."},
-    {id:510,name:"Flaaffy",        type:"electric", rarity:"common", icon:"⚡", img:"pic/flaaffy.jpg", price:10.00, desc:"ស្បែកកៅស៊ូគុណភាពការពារការឆក់ខ្លួនឯង."},
-    {id:511,name:"Ampharos",       type:"electric", rarity:"holo",   icon:"⚡", img:"pic/ampharos.jpg", price:53.00, desc:"ចុងកន្ទុយភ្លឺចែងចាំងល្មមអាចមើលឃើញពីលំហអាកាស."},
-    {id:512,name:"Shinx",          type:"electric", rarity:"common", icon:"⚡", img:"pic/shinx.jpg", price:4.50, desc:"បង្កើតអគ្គិសនីដោយបត់បែនចលនាសាច់ដុំ."},
-    {id:513,name:"Luxio",          type:"electric", rarity:"common", icon:"⚡", img:"pic/luxio.jpg", price:13.00, desc:"បរបាញ់ជាហ្វូង សម្របសម្រួលការវាយប្រហារដោយផ្លេកបន្ទោរ."},
-    {id:514,name:"Blitzle",        type:"electric", rarity:"common", icon:"⚡", img:"pic/blitzle.jpg", price:3.80, desc:"រត់លឿនជាងមុនពេលមានផ្លេកបន្ទោរឆ្លងកាត់មេឃ."},
-    {id:515,name:"Zebstrika",      type:"electric", rarity:"rare",   icon:"⚡", img:"pic/zebstrika.jpg", price:33.00, desc:"ជើងសេះបន្លឺសំឡេងដូចផ្គរលាន់."},
+    {id:13, name:"Raikou",         type:"electric", rarity:"ultra",  icon:"⚡", img:"pic/raikou.jpg", price:89.99,  desc:"ពពកព្យុះរស់រវើកដែលមានប្រពាំងថាមពលអគ្គិសនី។"},
+    {id:14, name:"Pikachu",        type:"electric", rarity:"common", icon:"🐭", img:"pic/pikachu.jpg", price:2.99,   desc:"ថ្ពាល់តូចៗបញ្ចេញផ្លេកបន្ទោរនៅពេលវារំភើប។"},
+    {id:15, name:"Luxray",         type:"electric", rarity:"rare",   icon:"🦁", img:"pic/luxray.jpg", price:27.99,  desc:"ភ្នែករបស់វាបញ្ចេញពន្លឺតិចៗក្នុងអំឡុងពេលមានព្យុះរន្ទះ។"},
+    {id:29, name:"Electivire",     type:"electric", rarity:"holo",   icon:"⚡", img:"pix/electivire.jpg", price:64.99,  desc:"ដាល់ខ្លាំងល្មមនឹងធ្វើឱ្យឆ្លងខ្សែភ្លើងនៅជិតនោះ។"},
+    {id:501,name:"Raichu",         type:"electric", rarity:"rare",   icon:"⚡", img:"pic/raichu.jpg", price:24.50, desc:"កន្ទុយវែងបញ្ចេញអគ្គិសនីដោយសុវត្ថិភាពទៅក្នុងដី។"},
+    {id:502,name:"Magnemite",      type:"electric", rarity:"common", icon:"⚙️", img:"pic/magnemite.jpg", price:3.00, desc:"អណ្តែតលើអាកាសដោយប្រើកម្លាំងម៉ាញ៉េទិចខ្លាំង។"},
+    {id:503,name:"Magneton",       type:"electric", rarity:"common", icon:"⚡", img:"pic/magneton.jpg", price:9.99, desc:"បញ្ចេញរលកម៉ាញ៉េទិចតង់ស្យុងខ្ពស់។"},
+    {id:504,name:"Voltorb",        type:"electric", rarity:"common", icon:"⚡", img:"pic/voltorb.jpg", price:2.50, desc:"មើលទៅដូចបាល់ Poké Ball បេះបិទ; ផ្ទុះយ៉ាងងាយស្រួល។"},
+    {id:505,name:"Electrode",      type:"electric", rarity:"common", icon:"⚡", img:"pix/electrode.jpg", price:8.50, desc:"រក្សាទុកថាមពលអគ្គិសនីយ៉ាងច្រើននៅខាងក្នុង។"},
+    {id:506,name:"Jolteon",        type:"electric", rarity:"holo",   icon:"⚡", img:"pix/jolteon.jpg", price:46.00, desc:"រោមឈរត្រង់ដូចម្ជុលស្រួចពេលបញ្ចូលថាមពល។"},
+    {id:507,name:"Chinchou",       type:"electric", rarity:"common", icon:"💡", img:"pix/chinchou.jpg", price:3.40, desc:"បង្កើតថាមពលវិជ្ជមាន និងអវិជ្ជមាននៅក្នុងអង់តែន។"},
+    {id:508,name:"Lanturn",        type:"electric", rarity:"common", icon:"💡", img:"pix/lanturn.jpg", price:12.50, desc:"បញ្ចេញពន្លឺភ្លឺច្បាស់នៅក្នុងជម្រៅសមុទ្រដ៏ងងឹត។"},
+    {id:509,name:"Mareep",         type:"electric", rarity:"common", icon:"🐑", img:"pic/mareep.jpg", price:4.00, desc:"រោមចៀមទន់ៗរក្សាទុកអគ្គិសនីយ៉ាងងាយស្រួល។"},
+    {id:510,name:"Flaaffy",        type:"electric", rarity:"common", icon:"⚡", img:"pix/flaaffy.jpg", price:10.00, desc:"ស្បែកកៅស៊ូគុណភាពខ្ពស់ការពារការឆក់ខ្លួនឯង។"},
+    {id:511,name:"Ampharos",       type:"electric", rarity:"holo",   icon:"⚡", img:"pix/ampharos.jpg", price:53.00, desc:"ចុងកន្ទុយបញ្ចេញពន្លឺភ្លឺល្មមអាចមើលឃើញពីអវកាស។"},
+    {id:512,name:"Shinx",          type:"electric", rarity:"common", icon:"⚡", img:"pic/shinx.jpg", price:4.50, desc:"បង្កើតអគ្គិសនីដោយការពត់សាច់ដុំ។"},
+    {id:513,name:"Luxio",          type:"electric", rarity:"common", icon:"⚡", img:"pic/luxio.jpg", price:13.00, desc:"ប្រមាញ់ជាក្រុម សម្របសម្រួលការវាយប្រហារដោយរន្ទះ។"},
+    {id:514,name:"Blitzle",        type:"electric", rarity:"common", icon:"⚡", img:"pix/blitzle.jpg", price:3.80, desc:"រត់លឿនជាងមុននៅពេលមានរន្ទះបាញ់កាត់មេឃ។"},
+    {id:515,name:"Zebstrika",      type:"electric", rarity:"rare",   icon:"⚡", img:"pic/zebstrika.jpg", price:33.00, desc:"ស្នូរជើងលាន់ដូចផ្គរលាន់។"},
 
     /* ============ PSYCHIC TYPE (21 cards) ============ */
-    {id:16, name:"Alakazam",       type:"psychic",  rarity:"rare",   icon:"🥄", img:"pic/alakazam.jpg", price:34.99,  desc:"មើលឃើញការផ្លាស់ទីបីជំហានមុន - និងរបស់អ្នកផងដែរ."},
-    {id:17, name:"Espeon",         type:"psychic",  rarity:"holo",   icon:"🐱", img:"pic/espeon.jpg", price:44.99,  desc:"ការសម្លឹងមើលចិត្តសាស្ត្ររបស់វានៅជាប់ក្នុងចងចាំរបស់អ្នកយូរ."},
-    {id:18, name:"Ralts",          type:"psychic",  rarity:"common", icon:"✨", img:"pic/ralts.jpg", price:4.99,   desc:"ច្រៀងបទភ្លេងខ្សោយៗដែលមានតែវាប៉ុណ្ណោះដែលអាចស្តាប់ឮ."},
-    {id:30, name:"Mew",            type:"psychic",  rarity:"ultra",  icon:"🔮", img:"pic/mew.jpg", price:109.99, desc:"អាចបាត់ខ្លួនពាក់កណ្តាលជំហាននិងលេចឡើងវិញ."},
-    {id:40, name:"Mewtwo",         type:"psychic",  rarity:"ultra",  icon:"🧬", img:"pic/mewtwo.jpg", price:1850.00, desc:"បង្កើតឡើងពី DNA របស់ Mew វាមានអំណាចចិត្តសាស្ត្រមិនគួរឱ្យជឿ."},
-    {id:43, name:"Gengar",         type:"psychic",  rarity:"holo",   icon:"👻", img:"pic/gengar.jpg", price:85.50, desc:"លាក់ខ្លួនក្នុងស្រមោលមនុស្សពេលយប់ វាស្រូបយកកំដៅរបស់ពួកគេ."},
-    {id:601,name:"Abra",           type:"psychic",  rarity:"common", icon:"🥄", img:"pic/abra.jpg", price:5.00, desc:"ដេកលក់ 18 ម៉ោងក្នុងមួយថ្ងៃខណៈពេល teleporting ឥតឈប់ឈរ."},
-    {id:602,name:"Kadabra",        type:"psychic",  rarity:"common", icon:"🥄", img:"pic/kadabra.jpg", price:14.00, desc:"បញ្ចេញរលកអាល់ហ្វាពិសេសដែលបណ្តាលឱ្យឈឺក្បាលធ្ងន់ធ្ងរ."},
-    {id:603,name:"Drowzee",        type:"psychic",  rarity:"common", icon:"🌀", img:"pic/drowzee.jpg", price:3.50, desc:"ញ៉ាំសុបិនល្អផ្តាច់មុខពីមនុស្សគេង."},
-    {id:604,name:"Hypno",          type:"psychic",  rarity:"rare",   icon:"🌀", img:"pic/hypno.jpg", price:22.00, desc:"យោលប៉ោករងំដើម្បីបំបិទសត្រូវចូលទៅក្នុងការងងុយគេងជ្រៅ."},
-    {id:605,name:"Exeggcute",      type:"psychic",  rarity:"common", icon:"🥚", img:"pic/exeggcute.jpg", price:3.00, desc:"ពងប្រាំមួយទាក់ទងគ្នាតាមរយៈតំណភ្ជាប់ ടെលេޕାသิก."},
-    {id:606,name:"Exeggutor",      type:"psychic",  rarity:"rare",   icon:"🌴", img:"pic/exeggutor.jpg", price:28.00, desc:"គេស្គាល់ថាជាព្រៃដើរនៃដើមដូងត្រូពិច."},
-    {id:607,name:"Starmie",        type:"psychic",  rarity:"rare",   icon:"⭐", img:"pic/starmie.jpg", price:30.00, desc:"រាងកាយធរណីមាត្រភ្លឺដោយថាមពលចិត្តសាស្ត្រលោហធាតុ."},
-    {id:609,name:"Jynx",           type:"psychic",  rarity:"rare",   icon:"❄️", img:"pic/jynx.jpg", price:21.50, desc:"រាំតាមចង្វាក់ដើម្បីទាក់ទាញគូប្រជែងយ៉ាងងាយស្រួល."},
-    {id:610,name:"Kirlia",         type:"psychic",  rarity:"common", icon:"✨", img:"pic/kirlia.jpg", price:12.00, desc:"រីករាយជាងមុននៅពេលព័ទ្ធជុំវិញដោយគ្រូបណ្តុះបណ្តាលរីករាយ."},
-    {id:611,name:"Gardevoir",      type:"psychic",  rarity:"holo",   icon:"✨", img:"pic/gardevoir.jpg", price:89.00, desc:"នឹងប្រថុយជីវិតដើម្បីការពារគ្រូបណ្តុះបណ្តាលដ៏ស្រឡាញ់របស់ខ្លួន."},
-    {id:612,name:"Spoink",         type:"psychic",  rarity:"common", icon:"🐷", img:"pic/spoink.jpg", price:3.10, desc:"ត្រូវតែលោតជាបន្តបន្ទាប់ নଚែលបេះដូងរបស់វាឈប់เต้น."},
-    {id:613,name:"Grumpig",        type:"psychic",  rarity:"common", icon:"🐷", img:"pic/grumpig.jpg", price:11.50, desc:"គ្រប់គ្រង μαργារីតខ្មៅលើក្បាលດ້ວຍការរៀបចំចិត្តសាស្ត្រ."},
-    {id:614,name:"Chimecho",       type:"psychic",  rarity:"common", icon:"🔔", img:"pic/chimecho.jpg", price:4.20, desc:"រោទ៍សំឡេងមន្តស្នេហ៍បន្ធូរអារម្មណ៍ដោយប្រើបំពង់បឺតកន្ទុយ."},
-    {id:615,name:"Wobbuffet",      type:"psychic",  rarity:"common", icon:"🥊", img:"pic/wobbuffet.jpg", price:6.00, desc:"លាក់កន្ទុយពណ៌ខ្មៅនិងទ្រាំទ្រការវាយប្រហារដោយអត់ធ្មត់."},
+    {id:16, name:"Alakazam",       type:"psychic",  rarity:"rare",   icon:"🥄", img:"pix/alakazam.jpg", price:34.99,  desc:"មើលឃើញ ៣ ជំហានទៅមុខ — និងជំហានរបស់អ្នកផងដែរ។"},
+    {id:17, name:"Espeon",         type:"psychic",  rarity:"holo",   icon:"🐱", img:"pix/espeon.jpg", price:44.99,  desc:"ការសម្លឹងមើលផ្លូវចិត្តរបស់វាស្ថិតនៅក្នុងការចងចាំរបស់អ្នកយ៉ាងយូរ។"},
+    {id:18, name:"Ralts",          type:"psychic",  rarity:"common", icon:"✨", img:"pic/ralts.jpg", price:4.99,   desc:"ច្រៀងបទភ្លេងតិចៗដែលមានតែវាប៉ុណ្ណោះអាចឮ។"},
+    {id:30, name:"Mew",            type:"psychic",  rarity:"ultra",  icon:"🔮", img:"pic/mew.jpg", price:109.99, desc:"អាចបាត់ខ្លួនភ្លាមៗ ហើយលេចឡើងវិញនៅចម្ងាយឆ្ងាយ។"},
+    {id:40, name:"Mewtwo",         type:"psychic",  rarity:"ultra",  icon:"🧬", img:"pic/mewtwo.jpg", price:1850.00, desc:"បង្កើតចេញពី DNA របស់ Mew វាមានថាមពលផ្លូវចិត្តមិនគួរឱ្យជឿ។"},
+    {id:43, name:"Gengar",         type:"psychic",  rarity:"holo",   icon:"👻", img:"pix/gengar.jpg", price:85.50, desc:"លាក់ខ្លួននៅក្នុងស្រមោលមនុស្សនៅពេលយប់ និងស្រូបយកកំដៅ។"},
+    {id:601,name:"Abra",           type:"psychic",  rarity:"common", icon:"🥄", img:"PIX/abra.jpg", price:5.00, desc:"ដេក ១៨ ម៉ោងក្នុងមួយថ្ងៃ ខណៈពេលបញ្ជូនខ្លួនឯងជានិច្ច។"},
+    {id:602,name:"Kadabra",        type:"psychic",  rarity:"common", icon:"🥄", img:"pix/kadabra.jpg", price:14.00, desc:"បញ្ចេញរលកពិសេសដែលបង្កឱ្យមានការឈឺក្បាលធ្ងន់ធ្ងរ។"},
+    {id:603,name:"Drowzee",        type:"psychic",  rarity:"common", icon:"🌀", img:"pix/drowzee.jpg", price:3.50, desc:"ស៊ីសុបិនល្អៗពីមនុស្សកំពុងដេកលក់។"},
+    {id:604,name:"Hypno",          type:"psychic",  rarity:"rare",   icon:"🌀", img:"pix/hypno.jpg", price:22.00, desc:"ប្រើប្រាស់ឧបករណ៍ដើម្បីធ្វើឱ្យសត្រូវលក់លង់។"},
+    {id:605,name:"Exeggcute",      type:"psychic",  rarity:"common", icon:"🥚", img:"pix/exeggcute.jpg", price:3.00, desc:"ពងប្រាំមួយទាក់ទងគ្នាតាមរយៈតំណភ្ជាប់ផ្លូវចិត្ត។"},
+    {id:606,name:"Exeggutor",      type:"psychic",  rarity:"rare",   icon:"🌴", img:"pix/exeggutor.jpg", price:28.00, desc:"ត្រូវបានគេស្គាល់ថាជាព្រៃដើរបាននៃដើមដូងតំបន់ក្តៅ។"},
+    {id:607,name:"Starmie",        type:"psychic",  rarity:"rare",   icon:"⭐", img:"pic/starmie.jpg", price:30.00, desc:"រាងកាយបញ្ចេញពន្លឺថាមពលផ្លូវចិត្ត។"},
+    {id:609,name:"Jynx",           type:"psychic",  rarity:"rare",   icon:"❄️", img:"pix/jynx.jpg", price:21.50, desc:"រាំតាមចង្វាក់ដើម្បីទាក់ទាញគូប្រកួតយ៉ាងងាយស្រួល។"},
+    {id:610,name:"Kirlia",         type:"psychic",  rarity:"common", icon:"✨", img:"pix/kirlia.jpg", price:12.00, desc:"សប្បាយចិត្តជាងមុននៅពេលរុំព័ទ្ធដោយគ្រូបង្វឹកដែលរីករាយ។"},
+    {id:611,name:"Gardevoir",      type:"psychic",  rarity:"holo",   icon:"✨", img:"pix/gardevoir.jpg", price:89.00, desc:"នឹងប្រថុយជីវិតដើម្បីការពារគ្រូបង្វឹកជាទីស្រឡាញ់។"},
+    {id:612,name:"Spoink",         type:"psychic",  rarity:"common", icon:"🐷", img:"pic/spoink.jpg", price:3.10, desc:"ត្រូវតែលោតជាបន្តបន្ទាប់ បើមិនដូច្នេះទេបេះដូងនឹងឈប់លោត។"},
+    {id:613,name:"Grumpig",        type:"psychic",  rarity:"common", icon:"🐷", img:"pix/grumpig.jpg", price:11.50, desc:"គ្រប់គ្រងគជ់ខ្យងខ្មៅនៅលើក្បាលដោយប្រើថាមពលផ្លូវចិត្ត។"},
+    {id:614,name:"Chimecho",       type:"psychic",  rarity:"common", icon:"🔔", img:"pix/chimecho.jpg", price:4.20, desc:"បញ្ចេញសំឡេងពីរោះដោយប្រើកន្ទុយបឺត។"},
+    {id:615,name:"Wobbuffet",      type:"psychic",  rarity:"common", icon:"🥊", img:"pic/wobbuffet.jpg", price:6.00, desc:"លាក់កន្ទុយខ្មៅរបស់វា ហើយអត់ធ្មត់ទ្រាំទ្រការវាយប្រហារ។"},
 
     /* ============ DARK TYPE (19 cards) ============ */
-    {id:19, name:"Umbreon",        type:"dark",     rarity:"rare",   icon:"🌙", img:"pic/umbreon.jpg", price:29.99,  desc:"ផ្លាស់ទីដោយគ្មានសំឡេង; សូម្បីតែស្រមោលក៏បាត់ដានដែរ."},
-    {id:20, name:"Murkrow",        type:"dark",     rarity:"common", icon:"🐦‍⬛", img:"pic/murkrow.jpg", price:3.99,   desc:"ចូលចិត្តធ្វើការម្នាក់ឯង ក្រោយពេលថ្ងៃលិច."},
-    {id:32, name:"Darkrai",        type:"dark",     rarity:"holo",   icon:"🌑", img:"pic/darkrai.jpg", price:52.99,  desc:"សំបុកកន្លែងដែលពន្លឺភ្លេចទៅដល់."},
-    {id:42, name:"Tyranitar",      type:"dark",     rarity:"rare",   icon:"🦖", img:"pic/tyranitar.jpg", price:75.99, desc:"រាងកាយរបស់វាមិនអាចត្រូវរបួសដោយការវាយប្រហារណាមួយឡើយ ត្រៀមខ្លួនជាស្រេចដើម្បីប្រកួតប្រជែង."},
-    {id:701,name:"Sneasel",        type:"dark",     rarity:"common", icon:"🔪", img:"pic/sneasel.jpg", price:9.50, desc:"ប្រើក្រញ៉ាំអាចដកថយដើម្បីលួចចូលទៅជិតចំណីកំពុងគេង."},
-    {id:702,name:"Houndour",       type:"dark",     rarity:"common", icon:"🐕", img:"pic/houndour.jpg", price:4.50, desc:"ទំនាក់ទំនងជាមួយមិត្តភក្តិហ្វូងដោយប្រើសម្លេងស្រែក."},
-    {id:703,name:"Houndoom",       type:"dark",     rarity:"rare",   icon:"🐕", img:"pic/houndoom.jpg", price:36.00, desc:"ដង្ហើមមានក្លិនផេះនិងបង្កការឈឺចាប់ខ្លាំង."},
-    {id:704,name:"Poochyena",      type:"dark",     rarity:"common", icon:"🐺", img:"pic/poochyena.jpg", price:3.20, desc:"តាមដានវត្ថុផ្លាស់ទីដោយមិននឿយហត់រហូតដល់ធ្លាក់ចុះ."},
-    {id:705,name:"Mightyena",      type:"dark",     rarity:"common", icon:"🐺", img:"pic/mightyena.jpg", price:12.00, desc:"ស្តាប់បង្គាប់មេដឹកនាំដែលមានបទពិសោធន៍ដោយមិនស្ទាក់ស្ទើរ."},
-    {id:706,name:"Absol",          type:"dark",     rarity:"rare",   icon:"⚔️", img:"pic/absol.jpg", price:41.00, desc:"លេចឡើងមុនពេលមានគ្រោះមហន្តរាយធម្មជាតិដើម្បីព្រមានប្រជាជន."},
-    {id:707,name:"Honchkrow",      type:"dark",     rarity:"rare",   icon:"👑", img:"pic/honchkrow.jpg", price:34.50, desc:"បញ្ជាហ្វូងសត្វ Murkrow ធំៗដូចមេ mafiap."},
-    {id:708,name:"Stunky",         type:"dark",     rarity:"common", icon:"🦨", img:"pic/stunky.jpg", price:3.00, desc:"បញ្ចេញសារធាតុរាវមានក្លិនស្អុយពីផ្នែកខាងក្រោយការពារ."},
-    {id:709,name:"Skuntank",       type:"dark",     rarity:"common", icon:"🦨", img:"pic/skuntank.jpg", price:10.50, desc:"ស្ព្រាយមានក្លិនស្អុយជាងមុនយូរតាមសារធាតុរាវត្រូវបានរក្សាទុកនៅខាងក្នុង."},
-    {id:710,name:"Spiritomb",      type:"dark",     rarity:"holo",   icon:"👻", img:"pic/spiritomb.jpg", price:48.50, desc:"ចងភ្ជាប់ក្នុងថ្មចម្លែកសម្រាប់អំពើអាក្រក់កន្លងមក."},
-    {id:711,name:"Sandile",        type:"dark",     rarity:"common", icon:"🐊", img:"pic/sandile.jpg", price:4.00, desc:"ហែលកាត់ខ្សាច់វាលខ្សាច់ដោយប្រើព្រុយខ្នងយ៉ាងរលូន."},
-    {id:712,name:"Krokorok",       type:"dark",     rarity:"common", icon:"🐊", img:"pic/krokorok.jpg", price:11.20, desc:"បរបាញ់ជាគូ ព័ទ្ធជុំវិញគោលដៅដោយអន្ទាក់ឆ្លាតវៃ."},
-    {id:713,name:"Krookodile",     type:"dark",     rarity:"rare",   icon:"🐊", img:"pic/krookodile.jpg", price:46.00, desc:"អាចមើលឃើញចំណីចម្ងាយរាប់ម៉ាយល៍ដោយចក្ខុវិស័យល្អឥតខ្ចោះ."},
-    {id:714,name:"Zorua",          type:"dark",     rarity:"common", icon:"🦊", img:"pic/zorua.jpg", price:6.50, desc:"បន្លំខ្លួនជាមនុស្ស ឬ Pokémon ដើម្បីភាពសប្បាយរីករាយ."},
-    {id:715,name:"Zoroark",        type:"dark",     rarity:"holo",   icon:"🦊", img:"pic/zoroark.jpg", price:62.00, desc:"ការពារហ្វូងរបស់វាដោយរូបភាពลวงตา."},
+    {id:19, name:"Umbreon",        type:"dark",     rarity:"rare",   icon:"🌙", img:"pic/umbreon.jpg", price:29.99,  desc:"ផ្លាស់ទីដោយគ្មានសំឡេង; សូម្បីតែស្រមោលក៏បាត់ដានវាដែរ។"},
+    {id:20, name:"Murkrow",        type:"dark",     rarity:"common", icon:"🐦‍⬛", img:"pic/murkrow.jpg", price:3.99,   desc:"ចូលចិត្តធ្វើការតែម្នាក់ឯង បន្ទាប់ពីព្រះអាទិត្យលិច។"},
+    {id:32, name:"Darkrai",        type:"dark",     rarity:"holo",   icon:"🌑", img:"pix/darkrai.jpg", price:52.99,  desc:"ធ្វើសំបុកនៅក្នុងទីកន្លែងដែលពន្លឺភ្លេចទៅដល់។"},
+    {id:42, name:"Tyranitar",      type:"dark",     rarity:"rare",   icon:"🦖", img:"pic/tyranitar.jpg", price:75.99, desc:"រាងកាយមិនអាចរងគ្រោះថ្នាក់ពីការវាយប្រហារណាមួយឡើយ។ តែងតែចង់ប្រកួតប្រជែង។"},
+    {id:701,name:"Sneasel",        type:"dark",     rarity:"common", icon:"🔪", img:"pic/sneasel.jpg", price:9.50, desc:"ប្រើក្រញ៉ាំដើម្បីលួចចូលទៅជិតសត្វដែលកំពុងដេក។"},
+    {id:702,name:"Houndour",       type:"dark",     rarity:"common", icon:"🐕", img:"pix/houndour.jpg", price:4.50, desc:"ទាក់ទងជាមួយមិត្តរួមក្រុមដោយប្រើសំឡេងលូ។"},
+    {id:703,name:"Houndoom",       type:"dark",     rarity:"rare",   icon:"🐕", img:"pix/houndoom.jpg", price:36.00, desc:"ខ្យល់ដង្ហើមមានក្លិនផេះ និងបង្កការឈឺចាប់យ៉ាងខ្លាំង។"},
+    {id:704,name:"Poochyena",      type:"dark",     rarity:"common", icon:"🐺", img:"pic/poochyena.jpg", price:3.20, desc:"ដេញតាមវត្ថុដែលផ្លាស់ទីយ៉ាងសកម្មរហូតដល់វាទម្លាក់ចុះ។"},
+    {id:705,name:"Mightyena",      type:"dark",     rarity:"common", icon:"🐺", img:"pic/mightyena.jpg", price:12.00, desc:"ស្តាប់បង្គាប់អ្នកដឹកនាំដែលមានបទពិសោធន៍ដោយមិនស្ទាក់ស្ទើរ។"},
+    {id:706,name:"Absol",          type:"dark",     rarity:"rare",   icon:"⚔️", img:"pix/absol.jpg", price:41.00, desc:"លេចឡើងមុនពេលមានគ្រោះមហន្តរាយធម្មជាតិដើម្បីព្រមានមនុស្ស។"},
+    {id:707,name:"Honchkrow",      type:"dark",     rarity:"rare",   icon:"👑", img:"pix/honchkrow.jpg", price:34.50, desc:"បញ្ជាផ្លូវ Murkrow ហ្វូងធំៗដូចជាចៅហ្វាយនាយ។"},
+    {id:708,name:"Stunky",         type:"dark",     rarity:"common", icon:"🦨", img:"pic/stunky.jpg", price:3.00, desc:"បញ្ចេញរាវក្លិនស្អុយពីផ្នែកខាងក្រោយដើម្បីការពារខ្លួន។"},
+    {id:709,name:"Skuntank",       type:"dark",     rarity:"common", icon:"🦨", img:"pic/skuntank.jpg", price:10.50, desc:"រាវមានក្លិនស្អុយខ្លាំងពេលរក្សាទុកកាន់តែយូរ។"},
+    {id:710,name:"Spiritomb",      type:"dark",     rarity:"holo",   icon:"👻", img:"pic/spiritomb.jpg", price:48.50, desc:"ជាប់ឃុំនៅក្នុងថ្មចម្លែកដោយសារតែអំពើអាក្រក់កាលពីអតីតកាល។"},
+    {id:711,name:"Sandile",        type:"dark",     rarity:"common", icon:"🐊", img:"pic/sandile.jpg", price:4.00, desc:"ហែលតាមខ្សាច់វាលខ្សាច់ដោយប្រើព្រុយខ្នងយ៉ាងរលូន។"},
+    {id:712,name:"Krokorok",       type:"dark",     rarity:"common", icon:"🐊", img:"pix/krokorok.jpg", price:11.20, desc:"ប្រមាញ់ជាគូ រុំព័ទ្ធគោលដៅដោយអន្ទាក់ឆ្លាតវៃ។"},
+    {id:713,name:"Krookodile",     type:"dark",     rarity:"rare",   icon:"🐊", img:"pix/krookodile.jpg", price:46.00, desc:"អាចមើលឃើញសត្វរាប់ម៉ាយល៍ឆ្ងាយដោយភ្នែកដ៏ល្អ។"},
+    {id:714,name:"Zorua",          type:"dark",     rarity:"common", icon:"🦊", img:"pic/zorua.jpg", price:6.50, desc:"បន្លំខ្លួនជាមនុស្ស ឬ Pokémon ដើម្បីភាពសប្បាយរីករាយ។"},
+    {id:715,name:"Zoroark",        type:"dark",     rarity:"holo",   icon:"🦊", img:"pic/zoroark.jpg", price:62.00, desc:"ការពារហ្វូងរបស់វាដោយរូបភាពបំភាន់ភ្នែក។"},
 
     /* ============ FAIRY TYPE (18 cards) ============ */
-    {id:21, name:"Sylveon",        type:"fairy",    rarity:"holo",   icon:"🎀", img:"pic/sylveon.jpg", price:39.99,  desc:"បន្សល់ទុកនូវដានផ្កាភ្លើងស្រអាប់គ្រប់ទីកន្លែងដែលវាអណ្តែត."},
-    {id:22, name:"Clefairy",       type:"fairy",    rarity:"common", icon:"⭐", img:"pic/clefairy.jpg", price:2.99,   desc:"ជំហានរបស់វាធ្វើឱ្យមានសំឡេងរោទ៍ខ្សោយបំផុត."},
-    {id:33, name:"Togekiss",       type:"fairy",    rarity:"rare",   icon:"🕊️", img:"pic/togekiss.jpg", price:28.99,  desc:"និមិត្តសញ្ញានៃពរជ័យដែលបាននិយាយថានាំមកនូវព្រះគុណដល់ភាពបរិសុទ្ធ."},
-    {id:801,name:"Clefable",       type:"fairy",    rarity:"rare",   icon:"⭐", img:"pic/clefable.jpg", price:27.00, desc:"អាចដើរស្រាលលើផ្ទៃទឹកដោយងាយស្រួល."},
-    {id:802,name:"Jigglypuff",     type:"fairy",    rarity:"common", icon:"🎤", img:"pic/jigglypuff.jpg", price:3.50, desc:"ច្រៀងបទបំពេរដែលធ្វើឱ្យអ្នកណាម្នាក់នៅក្បែរនោះងងុយគេង."},
-    {id:803,name:"Wigglytuff",     type:"fairy",    rarity:"common", icon:"🎈", img:"pic/wigglytuff.jpg", price:12.50, desc:"រាងកាយរីកធំពេលដកដង្ហើមធំ."},
-    {id:804,name:"Togepi",         type:"fairy",    rarity:"common", icon:"🥚", img:"pic/togepi.jpg", price:5.50, desc:"ចែករំលែកថាមពលវិជ្ជមានស្តុកទុកក្នុងសំបកពងរបស់វា."},
-    {id:805,name:"Togetic",        type:"fairy",    rarity:"common", icon:"🕊️", img:"pic/togetic.jpg", price:14.00, desc:"លេចមុខមុនមនុស្សចិត្តល្អដើម្បីផ្តល់ភាពរីករាយ."},
-    {id:806,name:"Marill",         type:"fairy",    rarity:"common", icon:"💧", img:"pic/marill.jpg", price:3.20, desc:"កន្ទុយដើរតួជាឧបករណ៍សង្គ្រោះជីវិតប្រកបដោយប្រសិទ្ធភាពក្នុងទន្លេ."},
-    {id:807,name:"Azumarill",      type:"fairy",    rarity:"rare",   icon:"💧", img:"pic/azumarill.jpg", price:24.00, desc:"បំពេញគំរូពពុះដើម្បីផ្គូផ្គងជម្រៅចរន្តមហាសមុទ្រ."},
-    {id:808,name:"Snubbull",       type:"fairy",    rarity:"common", icon:"🐶", img:"pic/snubbull.jpg", price:3.80, desc:"មើលទៅឃោរឃៅ ប៉ុន្តែតាមពិតទៅគឺកំសាកនិងស្រលាញ់."},
-    {id:809,name:"Granbull",       type:"fairy",    rarity:"common", icon:"🐶", img:"pic/granbull.jpg", price:13.50, desc:"ថ្គាមក្រោមធ្ងន់ធ្វើឱ្យក្បាលរបស់វាផ្អៀងចុះក្រោម."},
-    {id:810,name:"Ralts",          type:"fairy",    rarity:"common", icon:"✨", img:"pic/ralts.jpg", price:4.99, desc:"មានអារម្មណ៍ថាអារម្មណ៍មនុស្សយ៉ាងត្រឹមត្រូវដោយស្នែង."},
-    {id:811,name:"Mawile",         type:"fairy",    rarity:"rare",   icon:"🦷", img:"pic/mawile.jpg", price:22.50, desc:"បោកបញ្ឆោតគូប្រជែងດ້ວຍរូបរាងទន់ភ្លន់មុនពេលខាំដែក."},
-    {id:813,name:"Flabébé",        type:"fairy",    rarity:"common", icon:"🌸", img:"pic/flabébé.jpg", price:3.00, desc:"រស់នៅខណៈពេលដែលតោងជាប់នឹងផ្កាដែលបានរើសយ៉ាងតឹង."},
-    {id:814,name:"Floette",        type:"fairy",    rarity:"common", icon:"🌸", img:"pic/floette.jpg", price:9.50, desc:"ថែរក្សាផ្កាស្រពោនដោយប្រើថាមពលសម្ងាត់."},
-    {id:815,name:"Florges",        type:"fairy",    rarity:"holo",   icon:"🌸", img:"pic/florges.jpg", price:54.00, desc:"បង្កើតសួនច្បារដ៏អស្ចារ្យដើម្បីទាក់ទាញថាមពលផ្កា."},
+    {id:21, name:"Sylveon",        type:"fairy",    rarity:"holo",   icon:"🎀", img:"pic/sylveon.jpg", price:39.99,  desc:"បន្សល់ទុកនូវពន្លឺផ្លេកៗនៅគ្រប់ទីកន្លែងដែលវាអណ្តែតទៅ។"},
+    {id:22, name:"Clefairy",       type:"fairy",    rarity:"common", icon:"⭐", img:"pix/clefairy.jpg", price:2.99,   desc:"ស្នាមជើងរបស់វាបង្កើតជាសំឡេងយ៉ាងពីរោះ។"},
+    {id:33, name:"Togekiss",       type:"fairy",    rarity:"rare",   icon:"🕊️", img:"pic/togekiss.jpg", price:28.99,  desc:"និមិត្តរូបនៃពរជ័យដែលនិយាយថានាំមកនូវភាពទន់ភ្លន់ដល់អ្នកបរិសុទ្ធ។"},
+    {id:801,name:"Clefable",       type:"fairy",    rarity:"rare",   icon:"⭐", img:"pix/clefable.jpg", price:27.00, desc:"អាចដើរស្រាលៗលើផ្ទៃទឹកយ៉ាងងាយស្រួល។"},
+    {id:802,name:"Jigglypuff",     type:"fairy",    rarity:"common", icon:"🎤", img:"pix/jigglypuff.jpg", price:3.50, desc:"ច្រៀងបទបំពេរដែលធ្វើឱ្យអ្នកនៅជិតនោះលក់លង់។"},
+    {id:803,name:"Wigglytuff",     type:"fairy",    rarity:"common", icon:"🎈", img:"pic/wigglytuff.jpg", price:12.50, desc:"រាងកាយប៉ោងឡើងយ៉ាងខ្លាំងនៅពេលដកដង្ហើមជ្រៅ។"},
+    {id:804,name:"Togepi",         type:"fairy",    rarity:"common", icon:"🥚", img:"pic/togepi.jpg", price:5.50, desc:"ចែករំលែកថាមពលវិជ្ជមានដែលរក្សាទុកក្នុងសំបកពង។"},
+    {id:805,name:"Togetic",        type:"fairy",    rarity:"common", icon:"🕊️", img:"pic/togetic.jpg", price:14.00, desc:"លេចឡើងនៅចំពោះមុខមនុស្សដែលមានចិត្តល្អដើម្បីផ្តល់ភាពរីករាយ។"},
+    {id:806,name:"Marill",         type:"fairy",    rarity:"common", icon:"💧", img:"pic/marill.jpg", price:3.20, desc:"កន្ទុយធ្វើសកម្មភាពជាពោងសុវត្ថិភាពនៅក្នុងទន្លេ។"},
+    {id:807,name:"Azumarill",      type:"fairy",    rarity:"rare",   icon:"💧", img:"pix/azumarill.jpg", price:24.00, desc:"បង្កើតលំនាំពពុះទឹកដើម្បីតម្រូវតាមជម្រៅសមុទ្រ។"},
+    {id:808,name:"Snubbull",       type:"fairy",    rarity:"common", icon:"🐶", img:"pic/snubbull.jpg", price:3.80, desc:"មើលទៅកាចសាហាវ ប៉ុន្តែតាមពិតអៀនប្រៀន និងស្រឡាញ់រាប់អាន។"},
+    {id:809,name:"Granbull",       type:"fairy",    rarity:"common", icon:"🐶", img:"pix/granbull.jpg", price:13.50, desc:"ចង្កាខាងក្រោមធ្ងន់ធ្វើឱ្យក្បាលរបស់វាផ្អៀងចុះក្រោម។"},
+    {id:810,name:"Ralts",          type:"fairy",    rarity:"common", icon:"✨", img:"pic/ralts.jpg", price:4.99, desc:"ដឹងពីអារម្មណ៍របស់មនុស្សយ៉ាងច្បាស់លាស់ជាមួយស្នែង។"},
+    {id:811,name:"Mawile",         type:"fairy",    rarity:"rare",   icon:"🦷", img:"pic/mawile.jpg", price:22.50, desc:"បោកប្រាស់សត្រូវដោយរូបរាងទន់ភ្លន់មុនពេលខាំដោយធ្មេញដែក។"},
+    {id:813,name:"Flabébé",        type:"fairy",    rarity:"common", icon:"🌸", img:"pix/flabébé.jpg", price:3.00, desc:"រស់នៅដោយតោងជាប់យ៉ាងតឹងរ៉ឹងទៅនឹងផ្កាដែលបេះបាន។"},
+    {id:814,name:"Floette",        type:"fairy",    rarity:"common", icon:"🌸", img:"pix/floette.jpg", price:9.50, desc:"ថែរក្សាផ្កាដែលស្វិតស្រពោនដោយប្រើថាមពលសម្ងាត់។"},
+    {id:815,name:"Florges",        type:"fairy",    rarity:"holo",   icon:"🌸", img:"pix/florges.jpg", price:54.00, desc:"បង្កើតសួនច្បារដ៏អស្ចារ្យដើម្បីទាញយកថាមពលផ្កា។"},
 
     /* ============ STEEL TYPE (19 cards) ============ */
-    {id:23, name:"Aggron",         type:"steel",    rarity:"rare",   icon:"🛡️", img:"pic/aggron.jpg", price:32.99,  desc:"បង្កើតឡើង មិនមែនកើតមកទេ - គ្មានអ្វីខូចខាតគ្រឿងសឹកនេះពីរដងទេ."},
-    {id:24, name:"Klink",          type:"steel",    rarity:"common", icon:"⚙️", img:"pic/klink.jpg", price:3.99,   desc:"ប្រដាប់ប្រដាបំពេញម៉ោងតូចៗហាក់ដូចជាមិនដែលអស់កម្លាំង."},
-    {id:25, name:"Skarmory",       type:"steel",    rarity:"holo",   icon:"🦅", img:"pic/skarmory.jpg", price:58.99,  desc:"រោមបង្កើតឡើង មិនមែនដុះទេ ប៉ុន្តែទោះបីជាយ៉ាងណាក៏ដោយវានៅតែហោះហើរ."},
-    {id:44, name:"Lucario",        type:"steel",    rarity:"holo",   icon:"🥊", img:"pic/lucario.jpg", price:55.99, desc:"វាអាចអានគំនិត និងចលនារបស់គូប្រជែងតាមរយៈ auras របស់ពួកគេ."},
-    {id:901,name:"Magnemite",      type:"steel",    rarity:"common", icon:"⚙️", img:"pic/magnemite.jpg", price:3.10, desc:"វាលម៉ាញេទិកអនុញ្ញាតឱ្យវាអណ្តែតដោយងាយស្រួល."},
-    {id:902,name:"Steelix",        type:"steel",    rarity:"rare",   icon:"🐍", img:"pic/steelix.jpg", price:45.00, desc:"រាងកាយរឹងជាងពេជ្រពីការជីកស្រទាប់ជ្រៅ."},
-    {id:903,name:"Scizor",         type:"steel",    rarity:"holo",   icon:"✂️", img:"pic/scizor.jpg", price:72.50, desc:"ក្រញ៉ាំមានលំនាំដូចភ្នែកដើម្បីគំរាមកំហែងដល់ដៃគូប្រកួតប្រជែង."},
-    {id:904,name:"Aron",           type:"steel",    rarity:"common", icon:"🛡️", img:"pic/aron.jpg", price:4.50, desc:"ញ៉ាំរ៉ែដែកដើម្បីสร้างបន្ទះគ្រឿងសឹកដ៏រឹងមាំ."},
-    {id:905,name:"Lairon",         type:"steel",    rarity:"common", icon:"🛡️", img:"pic/lairon.jpg", price:15.00, desc:"ប៉ះទង្គិចរាងកាយជាមួយគូប្រជែងដើម្បីសាកល្បងកម្លាំងគ្រឿងសឹក."},
-    {id:906,name:"Beldum",         type:"steel",    rarity:"common", icon:"🔵", img:"pic/beldum.jpg", price:6.00, desc:"ទំនាក់ទំនងតាមរយៈរលកម៉ាញេទិកជាមួយមិត្តភក្តិហ្វូង."},
-    {id:907,name:"Metang",         type:"steel",    rarity:"common", icon:"🔵", img:"pic/metang.jpg", price:18.00, desc:"Beldum ពីរតភ្ជាប់គ្នាហោះក្នុងល្បឿន supersonic."},
-    {id:908,name:"Metagross",      type:"steel",    rarity:"holo",   icon:"🤖", img:"pic/metagross.jpg", price:115.00, desc:"ខួរក្បាលបួនគណនាយុទ្ធសាស្ត្រប្រយុទ្ធក្នុងពេលដំណាលគ្នា."},
-    {id:909,name:"Jirachi",        type:"steel",    rarity:"ultra",  icon:"⭐", img:"pic/jirachi.jpg", price:210.00, desc:"ផ្តល់បំណងប្រាថ្នាសរសេរនៅលើកំណត់ចំណាំដែលភ្ជាប់ទៅនឹងក្បាល."},
-    {id:910,name:"Piplup",         type:"steel",    rarity:"common", icon:"🐧", img:"pic/piplup.jpg", price:3.50, desc:"បុគ្គលិកលក្ខណៈមោទនភាពធ្វើឱ្យវាជំពប់ដួលញឹកញាប់."},
-    {id:911,name:"Empoleon",       type:"steel",    rarity:"rare",   icon:"🐧", img:"pic/empoleon.jpg", price:51.00, desc:"គែមស្លាបកាត់កំអែលទឹកកកយ៉ាងងាយស្រួល."},
-    {id:912,name:"Shieldon",       type:"steel",    rarity:"common", icon:"🛡️", img:"pic/shieldon.jpg", price:5.00, desc:"ខែលមុខរឹងដូចដែកថែប tempered."},
-    {id:913,name:"Bastiodon",      type:"steel",    rarity:"rare",   icon:"🛡️", img:"pic/bastiodon.jpg", price:34.00, desc:"បង្កើតជញ្ជាំង בלתיចូលចិត្តដើម្បីការពារក្មេង."},
-    {id:914,name:"Bronzor",        type:"steel",    rarity:"common", icon:"🛡️", img:"pic/bronzor.jpg", price:3.20, desc:"លំនាំបុរាណនៅតែឆ្លាក់លើឌីសដែករបស់វា."},
-    {id:915,name:"Bronzong",       type:"steel",    rarity:"rare",   icon:"🔔", img:"pic/bronzong.jpg", price:29.00, desc:"កោះហៅពពកភ្លៀងដើម្បីជួយរដូវប្រមូលផល."},
+    {id:23, name:"Aggron",         type:"steel",    rarity:"rare",   icon:"🛡️", img:"pix/aggron.jpg", price:32.99,  desc:"អាវក្រោះរឹងមាំដែលគ្មានអ្វីអាចធ្វើឱ្យកំពិតបានឡើយ។"},
+    {id:24, name:"Klink",          type:"steel",    rarity:"common", icon:"⚙️", img:"pix/klink.jpg", price:3.99,   desc:"ប្រពន្ធបង្វិលតូចៗដែលមិនដែលឈប់ដំណើរការ។"},
+    {id:25, name:"Skarmory",       type:"steel",    rarity:"holo",   icon:"🦅", img:"pic/skarmory.jpg", price:58.99,  desc:"ស្លាបធ្វើពីដែក ប៉ុន្តែវានៅតែអាចហោះហើរបានយ៉ាងស្អាត។"},
+    {id:44, name:"Lucario",        type:"steel",    rarity:"holo",   icon:"🥊", img:"pic/lucario.jpg", price:55.99, desc:"វាអាចអានគំនិត និងការផ្លាស់ទីរបស់សត្រូវតាមរយៈពន្លឺអូរ៉ារបស់ពួកគេ។"},
+    {id:901,name:"Magnemite",      type:"steel",    rarity:"common", icon:"⚙️", img:"pic/magnemite.jpg", price:3.10, desc:"វាលម៉ាញ៉េទិចអនុញ្ញាតឱ្យវាអណ្តែតបានយ៉ាងងាយស្រួល។"},
+    {id:902,name:"Steelix",        type:"steel",    rarity:"rare",   icon:"🐍", img:"pic/steelix.jpg", price:45.00, desc:"រាងកាយរឹងជាងពេជ្រដោយសារការជីកដីជ្រៅ។"},
+    {id:903,name:"Scizor",         type:"steel",    rarity:"holo",   icon:"✂️", img:"pic/scizor.jpg", price:72.50, desc:"ក្រញ៉ាំមានលំនាំដូចភ្នែកដើម្បីបំភ័យគូប្រកួត។"},
+    {id:904,name:"Aron",           type:"steel",    rarity:"common", icon:"🛡️", img:"pix/aron.jpg", price:4.50, desc:"ស៊ីរ៉ែដែកដើម្បីសាងសង់អាវក្រោះការពារដ៏រឹងមាំ។"},
+    {id:905,name:"Lairon",         type:"steel",    rarity:"common", icon:"🛡️", img:"pix/lairon.jpg", price:15.00, desc:"បុកខ្លួនជាមួយគូប្រជែងដើម្បីសាកល្បងកម្លាំងអាវក្រោះ។"},
+    {id:906,name:"Beldum",         type:"steel",    rarity:"common", icon:"🔵", img:"pix/beldum.jpg", price:6.00, desc:"ទាក់ទងតាមរលកម៉ាញ៉េទិចជាមួយមិត្តរួមក្រុម។"},
+    {id:907,name:"Metang",         type:"steel",    rarity:"common", icon:"🔵", img:"pic/metang.jpg", price:18.00, desc:"Beldum ពីរភ្ជាប់គ្នាហោះហើរក្នុងល្បឿនលឿនខ្លាំង។"},
+    {id:908,name:"Metagross",      type:"steel",    rarity:"holo",   icon:"🤖", img:"pic/metagross.jpg", price:115.00, desc:"ខួរក្បាលបួនគណនាយុទ្ធសាស្ត្រប្រយុទ្ធក្នុងពេលដំណាលគ្នា។"},
+    {id:909,name:"Jirachi",        type:"steel",    rarity:"ultra",  icon:"⭐", img:"pix/jirachi.jpg", price:210.00, desc:"ផ្តល់បំណងប្រាថ្នាដែលបានសរសេរលើក្រដាសដែលភ្ជាប់នៅលើក្បាល។"},
+    {id:910,name:"Piplup",         type:"steel",    rarity:"common", icon:"🐧", img:"pic/piplup.jpg", price:3.50, desc:"បុគ្គលិកលក្ខណៈមានមោទនភាពធ្វើឱ្យវាជំពប់ជើងជាញឹកញាប់។"},
+    {id:911,name:"Empoleon",       type:"steel",    rarity:"rare",   icon:"🐧", img:"pix/empoleon.jpg", price:51.00, desc:"ចុងស្លាបកាត់ផ្ទាំងទឹកកកបានយ៉ាងងាយស្រួល។"},
+    {id:912,name:"Shieldon",       type:"steel",    rarity:"common", icon:"🛡️", img:"pic/shieldon.jpg", price:5.00, desc:"ខែលមុខរឹងដូចដែកថែប។"},
+    {id:913,name:"Bastiodon",      type:"steel",    rarity:"rare",   icon:"🛡️", img:"pix/bastiodon.jpg", price:34.00, desc:"បង្កើតជញ្ជាំងដែលមិនអាចជ្រាបចូលបានដើម្បីការពារកូនៗ។"},
+    {id:914,name:"Bronzor",        type:"steel",    rarity:"common", icon:"🛡️", img:"pix/bronzor.jpg", price:3.20, desc:"លំនាំបុរាណនៅតែមាននៅលើថាសលោហៈរបស់វា។"},
+    {id:915,name:"Bronzong",       type:"steel",    rarity:"rare",   icon:"🔔", img:"pix/bronzong.jpg", price:29.00, desc:"ហៅពពកភ្លៀងដើម្បីជួយរដូវប្រមូលផល។"},
 
     /* ============ ICE TYPE (18 cards) ============ */
-    {id:34, name:"Articuno",       type:"ice",      rarity:"holo",   icon:"❄️", img:"pic/articuno.jpg", price:59.99,  desc:"ការវាយស្លាបរបស់វាបន្សល់ទុកនូវស្រទាប់ទឹកកកស្តើងនៅលើអាកាស."},
-    {id:35, name:"Cubchoo",        type:"ice",      rarity:"common", icon:"🐻‍❄️", img:"pic/cubchoo.jpg", price:3.99,  desc:"ចូលចិត្តងុយគេងក្នុងគំនរព្រិលទោះបីជាអាកាសធាតុក្តៅក៏ដោយ."},
-    {id:36, name:"Mamoswine",      type:"ice",      rarity:"rare",   icon:"🐘", img:"pic/mamoswine.jpg", price:120.99,  desc:"វាយលុកដោយភ្លុកទឹកកកមុតស្រួចល្មមអាចបំបែកថ្មបាន."},
-    {id:1001,name:"Jynx",          type:"ice",      rarity:"rare",   icon:"❄️", img:"pic/jynx.jpg", price:23.00, desc:"កកគូប្រកួតด้วยការថើបត្រជាក់ក្រោមសូន្យ."},
-    {id:1002,name:"Lapras",        type:"ice",      rarity:"rare",   icon:"🦕", img:"pic/lapras.jpg", price:38.00, desc:"ផ្ទុកអ្នកដំណើរឆ្លងកាត់ទឹកប៉ូលខាងជើងត្រជាក់."},
-    {id:1003,name:"Sneasel",       type:"ice",      rarity:"common", icon:"❄️", img:"pic/sneasel.jpg", price:10.00, desc:"ក្រញ៉ាំកាត់ទឹកកកដើម្បីសម្គាល់ព្រំដែនទឹកដី."},
-    {id:1004,name:"Swinub",        type:"ice",      rarity:"common", icon:"🐗", img:"pic/swinub.jpg", price:3.40, desc:"ហិតក្លិនផ្សិតឆ្ងាញ់កប់ក្រោមព្រិល."},
-    {id:1005,name:"Piloswine",     type:"ice",      rarity:"common", icon:"🐗", img:"pic/piloswine.jpg", price:11.50, desc:"រោមវែងការពាររាងកាយរបស់វាពីខ្យល់ព្យុះត្រជាក់."},
-    {id:1006,name:"Delibird",      type:"ice",      rarity:"common", icon:"🎁", img:"pic/delibird.jpg", price:4.50, desc:"ផ្ទុកអាហារដែលដាក់នៅខាងក្នុងកន្ទុយប្រហោងរបស់វា."},
-    {id:1007,name:"Snorunt",       type:"ice",      rarity:"common", icon:"❄️", img:"pic/snorunt.jpg", price:3.10, desc:"រស់រានមានជីវិតក្នុងយប់រដូវរងាដ៏អាក្រក់ដោយមិនញ៉ាំអាហារ."},
-    {id:1008,name:"Glalie",        type:"ice",      rarity:"rare",   icon:"❄️", img:"pic/glalie.jpg", price:27.50, desc:"កកសំណើមក្នុងខ្យល់ដើម្បីបំពាក់គ្រឿងសឹកថ្គាមរបស់វា."},
-    {id:1009,name:"Spheal",        type:"ice",      rarity:"common", icon:"🔵", img:"pic/spheal.jpg", price:3.80, desc:"រំកិលខ្លួនជុំវិញកំអែលទឹកកកដូចបាល់លោត."},
-    {id:1010,name:"Sealeo",        type:"ice",      rarity:"common", icon:"🔵", img:"pic/sealeo.jpg", price:12.00, desc:"លោតវត្ថុលើច្រមុះដើម្បីសាកល្បងវាយនភាព."},
-    {id:1011,name:"Walrein",       type:"ice",      rarity:"rare",   icon:"🌊", img:"pic/walrein.jpg", price:44.00, desc:"ខ្លាញ់ក្រាស់បណ្តេញសីតុណ្ហភាពអាកទិកខាំ."},
-    {id:1012,name:"Regice",        type:"ice",      rarity:"ultra",  icon:"🧊", img:"pic/regice.jpg", price:160.00, desc:"រាងកាយបង្កើតឡើងដោយទឹកកកពីយុគសម័យទឹកកកផ្ទាំងទឹកកក."},
-    {id:1013,name:"Glaceon",       type:"ice",      rarity:"holo",   icon:"❄️", img:"pic/glaceon.jpg", price:48.00, desc:"កកខ្យល់ជុំវិញដើម្បីបង្កើតធូលីពេជ្រ."},
-    {id:1014,name:"Vanillite",     type:"ice",      rarity:"common", icon:"🍦", img:"pic/vanillite.jpg", price:3.00, desc:"ដកដង្ហើមខ្យល់ក្រោមសូន្យដើម្បីធ្វើឱ្យវត្ថុជុំវិញត្រជាក់."},
-    {id:1015,name:"Vanillish",     type:"ice",      rarity:"common", icon:"🍦", img:"pic/vanillish.jpg", price:10.20, desc:"លាក់ខ្លួនក្នុងភ្នំព្រិលដើម្បីជៀសវាងកំដៅរដូវក្តៅ."},
+    {id:34, name:"Articuno",       type:"ice",      rarity:"holo",   icon:"❄️", img:"pix/articuno.jpg", price:59.99,  desc:"ការបក់ស្លាបរបស់វាបន្សល់ទុកនូវស្រទាប់ទឹកកកស្តើងៗនៅលើអាកាស។"},
+    {id:35, name:"Cubchoo",        type:"ice",      rarity:"common", icon:"🐻‍❄️", img:"pix/cubchoo.jpg", price:3.99,  desc:"ចូលចិត្តដេកលក់ក្នុងគំនរព្រិលសូម្បីតែក្នុងអាកាសធាតុក្តៅ។"},
+    {id:36, name:"Mamoswine",      type:"ice",      rarity:"rare",   icon:"🐘", img:"pic/mamoswine.jpg", price:120.99,  desc:"វាយប្រហារដោយប្រើភ្លុកទឹកកកស្រួចល្មមនឹងបំបែកថ្មបាន។"},
+    {id:1001,name:"Jynx",          type:"ice",      rarity:"rare",   icon:"❄️", img:"pix/jynx.jpg", price:23.00, desc:"ធ្វើឱ្យគូប្រកួតកកដោយការថើបត្រជាក់ខ្លាំង។"},
+    {id:1002,name:"Lapras",        type:"ice",      rarity:"rare",   icon:"🦕", img:"pic/lapras.jpg", price:38.00, desc:"ដឹកអ្នកដំណើរឆ្លងកាត់ផ្ទៃទឹកប៉ូលជើងដ៏ត្រជាក់។"},
+    {id:1003,name:"Sneasel",       type:"ice",      rarity:"common", icon:"❄️", img:"pic/sneasel.jpg", price:10.00, desc:"ក្រញ៉ាំដកទឹកកកដើម្បីសម្គាល់ព្រំដែនដែនដី។"},
+    {id:1004,name:"Swinub",        type:"ice",      rarity:"common", icon:"🐗", img:"pic/swinub.jpg", price:3.40, desc:"ហិតក្លិនផ្សិតឆ្ងាញ់ៗដែលកប់ក្រោមព្រិល។"},
+    {id:1005,name:"Piloswine",     type:"ice",      rarity:"common", icon:"🐗", img:"pic/piloswine.jpg", price:11.50, desc:"រោមវែងការពាររាងកាយរបស់វាពីខ្យល់ត្រជាក់។"},
+    {id:1006,name:"Delibird",      type:"ice",      rarity:"common", icon:"🎁", img:"pix/delibird.jpg", price:4.50, desc:"ដឹកជញ្ជូនអាហារដែលច្រកក្នុងកន្ទុយប្រហោងរបស់វា។"},
+    {id:1007,name:"Snorunt",       type:"ice",      rarity:"common", icon:"❄️", img:"pic/snorunt.jpg", price:3.10, desc:"រស់រានមានជីវិតក្នុងយប់រដូវរងាដ៏អាក្រក់ដោយមិនបាច់ញ៉ាំអាហារ។"},
+    {id:1008,name:"Glalie",        type:"ice",      rarity:"rare",   icon:"❄️", img:"pix/glalie.jpg", price:27.50, desc:"ធ្វើឱ្យសំណើមក្នុងខ្យល់កកដើម្បីការពារចង្ការបស់វា។"},
+    {id:1009,name:"Spheal",        type:"ice",      rarity:"common", icon:"🔵", img:"pic/spheal.jpg", price:3.80, desc:"ប្រឡាក់ជុំវិញផ្ទាំងទឹកកកដូចជាបាល់លោត។"},
+    {id:1010,name:"Sealeo",        type:"ice",      rarity:"common", icon:"🔵", img:"pic/sealeo.jpg", price:12.00, desc:"លោតវត្ថុនៅលើច្រមុះដើម្បីសាកល្បងភាពរលោង។"},
+    {id:1011,name:"Walrein",       type:"ice",      rarity:"rare",   icon:"🌊", img:"pic/walrein.jpg", price:44.00, desc:"ខ្លាញ់ក្រាស់ការពារសីតុណ្ហភាពអាកាសធាតុត្រជាក់។"},
+    {id:1012,name:"Regice",        type:"ice",      rarity:"ultra",  icon:"🧊", img:"pic/regice.jpg", price:160.00, desc:"រាងកាយបង្កើតឡើងពីទឹកកកនៃយុគសម័យទឹកកកបុរាណ។"},
+    {id:1013,name:"Glaceon",       type:"ice",      rarity:"holo",   icon:"❄️", img:"pix/glaceon.jpg", price:48.00, desc:"ធ្វើឱ្យខ្យល់ជុំវិញកកដើម្បីបង្កើតធូលីពេជ្រ។"},
+    {id:1014,name:"Vanillite",     type:"ice",      rarity:"common", icon:"🍦", img:"pic/vanillite.jpg", price:3.00, desc:"បញ្ចេញខ្យល់ត្រជាក់ខ្លាំងដើម្បីធ្វើឱ្យវត្ថុជុំវិញត្រជាក់។"},
+    {id:1015,name:"Vanillish",     type:"ice",      rarity:"common", icon:"🍦", img:"pic/vanillish.jpg", price:10.20, desc:"លាក់ខ្លួននៅក្នុងភ្នំជិះព្រិលដើម្បីចៀសវាងកំដៅរដូវក្តៅ។"},
 
     /* ============ GROUND TYPE (18 cards) ============ */
-    {id:37, name:"Sandslash",      type:"ground",   rarity:"rare",   icon:"🏜️", img:"pic/sandslash.jpg", price:35.99,  desc:"រូងលឿនជាងអ្វីផ្សេងទៀតអាចជីកបាន."},
-    {id:38, name:"Trapinch",       type:"ground",   rarity:"common", icon:"🐛", img:"pic/trapinch.jpg", price:320.49,   desc:"លាយបញ្ចូលគ្នាយ่างល្អឥតខ្ចោះទៅក្នុងផែនដីស្ងួតនិងប្រេះ."},
-    {id:39, name:"Groudon",        type:"ground",   rarity:"ultra",  icon:"🌋", img:"pic/groudon.jpg", price:35.99,  desc:"ការជាន់ឈ្លីរបស់វាអាចបង្កើតទ្វីបឡើងវិញ."},
-    {id:1101,name:"Sandshrew",     type:"ground",   rarity:"common", icon:"🏜️", img:"pic/sandshrew.jpg", price:3.50, desc:"រូងជ្រៅក្រោមដីក្នុង dunes វាលខ្សាច់ស្ងួត."},
-    {id:1102,name:"Diglett",       type:"ground",   rarity:"common", icon:"🥔", img:"pic/diglett.jpg", price:2.99, desc:"រស់នៅក្រោមដី ទម្លុះដីសម្បូរបែប."},
-    {id:1103,name:"Dugtrio",       type:"ground",   rarity:"common", icon:"🌋", img:"pic/dugtrio.jpg", price:9.99, desc:"កូនបីនាក់រូងដំណាលគ្នាក្នុងល្បឿនលឿន."},
-    {id:1104,name:"Cubone",        type:"ground",   rarity:"common", icon:"💀", img:"pic/cubone.jpg", price:4.50, desc:"ពាក់លលាដ៍ក្បាលម្តាយរបស់វាខណៈពេលយំពេលយប់."},
-    {id:1105,name:"Marowak",       type:"ground",   rarity:"rare",   icon:"🦴", img:"pic/marowak.jpg", price:28.00, desc:"កាន់ដំបងឆ្អឹងយ៉ាងជំនាញក្នុងការប្រយុទ្ធដ៏ខ្លាំងក្លា."},
-    {id:1106,name:"Rhyhorn",       type:"ground",   rarity:"common", icon:"🦏", img:"pic/rhyhorn.jpg", price:4.00, desc:"សាកថ្មជាបន្តបន្ទាប់ បំបែកផ្ទាំងថ្មទៅជាធូលី."},
-    {id:1107,name:"Rhydon",        type:"ground",   rarity:"rare",   icon:"🦏", img:"pic/rhydon.jpg", price:31.50, desc:"ស្នែងខួងអាចເຈາະຜ່ານថ្មក្រានីតរឹង."},
-    {id:1108,name:"Wooper",        type:"ground",   rarity:"common", icon:"💧", img:"pic/wooper.jpg", price:3.20, desc:"រស់នៅក្នុងបាតទន្លេភក់ដែលមានខ្សែភាពយន្តការពារ."},
-    {id:1109,name:"Quagsire",      type:"ground",   rarity:"rare",   icon:"💧", img:"pic/quagsire.jpg", price:24.00, desc:"អ្នកហែលទឹកគ្មានកង្វល់ មិនខ្វល់ខ្វាយពីការបុកថ្មឡើយ."},
-    {id:1110,name:"Gligar",        type:"ground",   rarity:"common", icon:"🦇", img:"pic/gligar.jpg", price:5.00, desc:"រអិលយ៉ាងរលូនឆ្លងកាត់ជ្រលងភ្នំវាលខ្សាច់យ៉ាងងាយស្រួល."},
-    {id:1111,name:"Phanpy",        type:"ground",   rarity:"common", icon:"🐘", img:"pic/phanpy.jpg", price:3.90, desc:"យោលប្រម៉ោយធ្ងន់ដោយលេងសើចដើម្បីស្វាគមន៍គ្រូបណ្តុះបណ្តាល."},
-    {id:1112,name:"Donphan",       type:"ground",   rarity:"rare",   icon:"🐘", img:"pic/donphan.jpg", price:33.00, desc:"គេស្គាល់ថាជាវិញ្ញាណវាលខ្សាច់ដែលព័ទ្ធជុំវិញដោយព្យុះខ្សាច់."},
-    {id:1115,name:"Garchomp",      type:"ground",   rarity:"rare",   icon:"🦈", img:"pic/garchomp.jpg", price:79.00, desc:"រូងក្រោមដីដើម្បីស្ទាក់ចាប់ចំណីដែលឆ្លងកាត់."}];
+    {id:37, name:"Sandslash",      type:"ground",   rarity:"rare",   icon:"🏜️", img:"pic/sandslash.jpg", price:35.99,  desc:"ជីករូងក្រោមដីលឿនជាងសត្វភាគច្រើន។"},
+    {id:38, name:"Trapinch",       type:"ground",   rarity:"common", icon:"🐛", img:"pic/trapinch.jpg", price:320.49,   desc:"លាយឡំយ៉ាងល្អឥតខ្ចោះទៅក្នុងដីស្ងួត និងប្រេះស្រាំ។"},
+    {id:39, name:"Groudon",        type:"ground",   rarity:"ultra",  icon:"🌋", img:"pix/groudon.jpg", price:35.99,  desc:"ការដើរជាន់របស់វាអាចផ្លាស់ប្តូររូបរាងទ្វីបបាន។"},
+    {id:1101,name:"Sandshrew",     type:"ground",   rarity:"common", icon:"🏜️", img:"pic/sandshrew.jpg", price:3.50, desc:"ជីករូងជ្រៅក្រោមដីក្នុងវាលខ្សាច់ស្ងួត។"},
+    {id:1102,name:"Diglett",       type:"ground",   rarity:"common", icon:"🥔", img:"pix/diglett.jpg", price:2.99, desc:"រស់នៅក្រោមដី ជីករូងតាមដីដែលមានជីជាតិ។"},
+    {id:1103,name:"Dugtrio",       type:"ground",   rarity:"common", icon:"🌋", img:"pix/dugtrio.jpg", price:9.99, desc:"បងប្អូនបីនាក់ជីករូងក្នុងពេលដំណាលគ្នាក្នុងល្បឿនលឿន។"},
+    {id:1104,name:"Cubone",        type:"ground",   rarity:"common", icon:"💀", img:"pix/cubone.jpg", price:4.50, desc:"ពាក់លលាដ៍ក្បាលម្តាយរបស់វា ខណៈពេលយំនៅពេលយប់។"},
+    {id:1105,name:"Marowak",       type:"ground",   rarity:"rare",   icon:"🦴", img:"pic/marowak.jpg", price:28.00, desc:"កាន់ដំបងឆ្អឹងយ៉ាងស្ទាត់ជំនាញក្នុងការប្រយុទ្ធដ៏ខ្លាំងក្លា។"},
+    {id:1106,name:"Rhyhorn",       type:"ground",   rarity:"common", icon:"🦏", img:"pic/rhyhorn.jpg", price:4.00, desc:"រត់បុកជាបន្តបន្ទាប់ កិនថ្មធំៗឱ្យទៅជាធូលី។"},
+    {id:1107,name:"Rhydon",        type:"ground",   rarity:"rare",   icon:"🦏", img:"pic/rhydon.jpg", price:31.50, desc:"ស្នែងខួងអាចខួងកាត់ថ្មក្រានីតរឹងបាន។"},
+    {id:1108,name:"Wooper",        type:"ground",   rarity:"common", icon:"💧", img:"pic/wooper.jpg", price:3.20, desc:"រស់នៅក្នុងបាតទន្លេភក់ដែលមានស្រទាប់ការពារ។"},
+    {id:1109,name:"Quagsire",      type:"ground",   rarity:"rare",   icon:"💧", img:"pic/quagsire.jpg", price:24.00, desc:"អ្នកហែលទឹកដែលមិនខ្វល់ខ្វាយពីការបុកថ្មឡើយ។"},
+    {id:1110,name:"Gligar",        type:"ground",   rarity:"common", icon:"🦇", img:"pix/gligar.jpg", price:5.00, desc:"រំលកខ្លួនយ៉ាងរលូនឆ្លងកាត់ជ្រលងភ្នំវាលខ្សាច់យ៉ាងងាយស្រួល។"},
+    {id:1111,name:"Phanpy",        type:"ground",   rarity:"common", icon:"🐘", img:"pic/phanpy.jpg", price:3.90, desc:"បក់ប្រពាយធ្ងន់ៗលេងដើម្បីស្វាគមន៍គ្រូបង្វឹក។"},
+    {id:1112,name:"Donphan",       type:"ground",   rarity:"rare",   icon:"🐘", img:"pix/donphan.jpg", price:33.00, desc:"ត្រូវបានគេស្គាល់ថាជាព្រលឹងវាលខ្សាច់ដែលរុំព័ទ្ធដោយព្យុះខ្សាច់។"},
+    {id:1115,name:"Garchomp",      type:"ground",   rarity:"rare",   icon:"🦈", img:"pix/garchomp.jpg", price:79.00, desc:"ជីករូងក្រោមដីដើម្បីស្ទាក់ចាប់សត្វដែលឆ្លងកាត់។"}];
 
-const RARITY_LABEL = {common:"common", rare:"rare", holo:"holo", ultra:"ultra"};
+const RARITY_LABEL = {common:"ធម្មតា (Common)", rare:"កម្រ (Rare)", holo:"កម្រផ្លេក (Holo Rare)", ultra:"កម្របំផុត (Ultra Rare)"};
+const TYPE_LABEL = {
+    fire: "ភ្លើង", water: "ទឹក", grass: "ស្មៅ", electric: "អគ្គិសនី",
+    psychic: "ផ្លូវចិត្ត", dragon: "នាគ", dark: "ងងឹត", fairy: "ទេពអប្សរ",
+    steel: "ដែក", ice: "ទឹកកក", ground: "ដី"
+};
 
 let cart = [];
 let activeFilter = "all";
@@ -895,7 +900,7 @@ function renderGrid(){
     grid.innerHTML = list.map(c => `
         <div class="card rarity-${c.rarity}">
             <span class="card-badge badge-${c.rarity}">${RARITY_LABEL[c.rarity]}</span>
-            <div class="type-chip"><span class="type-dot dot-${c.type}"></span>${c.type}</div>
+            <div class="type-chip"><span class="type-dot dot-${c.type}"></span>${TYPE_LABEL[c.type] || c.type}</div>
             <div class="card-art">${c.img ? `<img src="${c.img}" alt="${c.name}">` : c.icon}</div>
             <h3>${c.name}</h3>
             <p class="flavor">${c.desc}</p>
@@ -943,14 +948,14 @@ function renderCart(){
     document.getElementById('cartCount').textContent = count;
 
     if(cart.length === 0){
-        body.innerHTML = `<div class="empty-cart"><div class="big">🗃️</div>កន្ត្រករបស់អ្នកទទេ។<br>សូមទៅទាញយកកាតកម្រខ្លះ។</div>`;
+        body.innerHTML = `<div class="empty-cart"><div class="big">🗃️</div>កន្ត្រកទំនិញរបស់អ្នកទទេស្អាត។<br>ទៅរើសយកកាតកម្រៗមក!</div>`;
     } else {
         body.innerHTML = cart.map(i => `
             <div class="cart-row">
                 <div class="art">${i.img ? `<img src="${i.img}" alt="${i.name}">` : i.icon}</div>
                 <div class="info">
                     <h4>${i.name}</h4>
-                    <div class="meta mono">$${i.price.toFixed(2)} ក្នុងមួយ</div>
+                    <div class="meta mono">$${i.price.toFixed(2)} ក្នុងមួយសន្លឹក</div>
                     <div class="qty-controls">
                         <button onclick="changeQty(${i.id},-1)">−</button>
                         <span>${i.qty}</span>
@@ -971,11 +976,11 @@ function toggleCart(open){
 }
 
 async function checkout(){
-    if(cart.length === 0){ showToast("កន្ត្រករបស់អ្នកទោ"); return; }
+    if(cart.length === 0){ showToast("កន្ត្រកទំនិញរបស់អ្នកទទេ"); return; }
     
     const total = cart.reduce((s,i)=>s+i.price*i.qty,0);
     const order = {
-        date: new Date().toLocaleDateString('en-US',{month:'short', day:'numeric', year:'numeric'}),
+        date: new Date().toLocaleDateString('km-KH',{month:'short', day:'numeric', year:'numeric'}),
         items: cart.map(i=>({id:i.id, name:i.name, icon:i.icon, img:i.img, qty:i.qty, price:i.price})),
         total
     };
@@ -990,7 +995,7 @@ async function checkout(){
     }catch(err){
         console.error('Could not save order history', err);
     }
-    showToast(`បានបញ្ជាទិញដោយជោគជ័យ! 🎉`);
+    showToast(`ការបញ្ជាទិញជោគជ័យ! 🎉`);
     cart = [];
     renderCart();
     toggleCart(false);
